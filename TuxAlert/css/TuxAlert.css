@@ -1,0 +1,109 @@
+/*Variables de colores*/
+*{
+	--boton-cafe: #87683D;
+	--sombra-boton-alerta: #C73D44;
+	--default-background: #DBDBDB;
+	--bordes-botones-y-flechas: #BF0811;
+	--texto-barra-superior: #C02D34;
+	--barra-superior: #343434;
+	--fondo-tarjeta-1: #D94148;
+	--fondo-tarjeta-2: #8165A2;
+	--fondo-tarjeta-3: #E5B463;
+	--fondo-tarjeta-4: #75AD74;
+	--fondo-tarjeta-5: #009493;
+	--blanco: #FFFFFF;
+}
+
+/*Fuente que David puso*/
+@font-face {
+    font-family: 'Myriad'; /*a name to be used later*/
+    src: url('../fuentes/myriad-pro/MyriadProBoldSemiExtended.ttf'); /*URL to font*/
+}
+
+
+.bienvenida_1{
+	background-color: var(--fondo-tarjeta-1);
+}
+
+.cuadro-tarjeta-1{
+	width: 85%;
+	height: auto;
+	background-color: var(--blanco);
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 5px;
+	color: var(--fondo-tarjeta-1);
+	font-size: 45px;
+	font-family: 'Myriad';
+	font-weight: bold;
+}
+
+.circulo-logo{
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+	border: solid 3px var(--sombra-boton-alerta);
+	background-color: var(--blanco);
+	color: var(--fondo-tarjeta-1);
+	font-size: 45px;
+	font-family: 'Myriad';
+	text-align: center;
+	border-radius: 50em;
+	padding: 1em;
+}
+
+.texto-tarjeta-1{
+	text-align: center;
+	font-family: 'Myriad';
+	font-size: 40px;
+	font-weight: bold;
+	color: var(--blanco);
+}
+
+.circulo-next{
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	border: solid 3px var(--sombra-boton-alerta);
+	background-color: var(--blanco);
+	color: var(--fondo-tarjeta-1);
+	font-size: 30px;
+	font-family: 'Myriad';
+	text-align: center;
+	border-radius: 50em;
+	padding: 1em;
+}
+
+.puntos-guias{
+	display: flex;
+	color: var(--blanco);
+	margin: 0 auto;
+	text-align: center;
+}
+
+.dot{
+	font-family: 'Myriad';
+	color: var(--blanco);
+	margin: 0 auto;
+	width: 15px;
+	height: 15px;
+	border-radius: 50px;
+	background-color: var(--blanco);
+	margin: 0;
+	text-align: center;
+	padding: 5px;
+}
+
+.dot-selected{
+	font-family: 'Myriad';
+	color: var(--blanco);
+	margin: 0 auto;
+	width: 20px;
+	height: 20px;
+	border-radius: 50px;
+	background-color: var(--blanco);
+	margin: 0;
+	text-align: center;
+	padding: 5px;
+}
