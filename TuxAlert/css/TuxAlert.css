@@ -76,34 +76,41 @@
 }
 
 .puntos-guias{
-	display: flex;
-	color: var(--blanco);
 	margin: 0 auto;
+	width: 60%;
+	display: flex;
+	align-content: center;
+	align-items: center;
 	text-align: center;
 }
 
 .dot{
+	font-weight: bold;
 	font-family: 'Myriad';
+	font-size: 60px;
 	color: var(--blanco);
-	margin: 0 auto;
-	width: 15px;
-	height: 15px;
-	border-radius: 50px;
-	background-color: var(--blanco);
-	margin: 0;
+	display: inline;
 	text-align: center;
-	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
-.dot-selected{
+.actual-dot{
+	font-weight: bold;
 	font-family: 'Myriad';
+	font-size: 240px;
 	color: var(--blanco);
-	margin: 0 auto;
-	width: 20px;
-	height: 20px;
-	border-radius: 50px;
-	background-color: var(--blanco);
-	margin: 0;
+	display: inline;
 	text-align: center;
-	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	-ms-transform: translate(50px, 100px); /* IE 9 */
+    -webkit-transform: translate(50px, 100px); /* Safari */
+    transform: translate(0px,-0.12em);
 }
