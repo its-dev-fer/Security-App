@@ -25,6 +25,19 @@
 	background-color: var(--fondo-tarjeta-1);
 }
 
+.bienvenida_2{
+	background-color: var(--fondo-tarjeta-2);
+}
+.bienvenida_3{
+	background-color: var(--fondo-tarjeta-3);	
+}
+.bienvenida_4{
+	background-color: var(--fondo-tarjeta-4);	
+}
+.bienvenida_5{
+	background-color: var(--fondo-tarjeta-5);	
+}
+
 .cuadro-tarjeta-1{
 	width: 85%;
 	height: auto;
@@ -51,6 +64,24 @@
 	text-align: center;
 	border-radius: 50em;
 	padding: 1em;
+	left: auto;
+	right: auto;
+}
+
+li,a{
+	list-style: none;
+	text-decoration: none;
+	color: var(--fondo-tarjeta-1);
+	font-size: 45px;
+	font-family: 'Myriad';
+	text-align: center;
+	-ms-transform: translate(0px, 0.2em); /* IE 9 */
+    -webkit-transform: translate(0px,  0.2em); /* Safari */
+    transform: translate(0px, 0.2em);
+}
+
+a:link{
+	color: var(--fondo-tarjeta-1);
 }
 
 .texto-tarjeta-1{
@@ -62,17 +93,17 @@
 }
 
 .circulo-next{
-	width: 80px;
-	height: 80px;
-	margin: 0 auto;
-	border: solid 3px var(--sombra-boton-alerta);
-	background-color: var(--blanco);
-	color: var(--fondo-tarjeta-1);
-	font-size: 30px;
-	font-family: 'Myriad';
-	text-align: center;
-	border-radius: 50em;
-	padding: 1em;
+	width: 80px !important;
+	height: 80px !important;
+	margin: 0 auto !important;
+	border: solid 3px var(--sombra-boton-alerta) !important;
+	background-color: var(--blanco) !important;
+	color: var(--fondo-tarjeta-1) !important;
+	font-size: 30px  !important;
+	font-family: 'Myriad' !important;
+	text-align: center !important;
+	border-radius: 50em !important;
+	padding: 1em !important;
 }
 
 .puntos-guias{
@@ -110,7 +141,63 @@
 	margin-bottom: 0;
 	padding-top: 0;
 	padding-bottom: 0;
-	-ms-transform: translate(50px, 100px); /* IE 9 */
-    -webkit-transform: translate(50px, 100px); /* Safari */
+	-ms-transform: translate(0px, -0.12em); /* IE 9 */
+    -webkit-transform: translate(0px, -0.12em); /* Safari */
     transform: translate(0px,-0.12em);
+}
+
+
+.cuadro-tarjeta-2{
+	width: 85%;
+	height: auto;
+	background-color: var(--blanco);
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 5px;
+	color: var(--fondo-tarjeta-2);
+	font-size: 45px;
+	font-family: 'Myriad';
+	font-weight: lighter;
+}
+
+.cuadro-tarjeta-3{
+	width: 85%;
+	height: auto;
+	background-color: var(--blanco);
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 5px;
+	color: var(--fondo-tarjeta-3);
+	font-size: 45px;
+	font-family: 'Myriad';
+	font-weight: lighter;
+}
+
+.cuadro-tarjeta-4{
+	width: 85%;
+	height: auto;
+	background-color: var(--blanco);
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 5px;
+	color: var(--fondo-tarjeta-4);
+	font-size: 45px;
+	font-family: 'Myriad';
+	font-weight: lighter;
+}
+.cuadro-tarjeta-5{
+	width: 85%;
+	height: auto;
+	background-color: var(--blanco);
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 5px;
+	color: var(--fondo-tarjeta-5);
+	font-size: 45px;
+	font-family: 'Myriad';
+	font-weight: lighter;
 }

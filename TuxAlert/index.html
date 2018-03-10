@@ -8,12 +8,13 @@
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/TuxAlert.js"></script>
 </head>
 <body>
 
 
-	<!-- Div que será la página de bienvenida-->
-	<div id="bienvenida" data-role="page" class="bienvenida_1">
+	<!-- Tarjeta de bienvenida 1-->
+	<div id="tarjeta-1" data-role="page" class="bienvenida_1">
 		<br><br> <!-- XD -->
 		<div class="cuadro-tarjeta-1">
 			<p>Bienvenido a TuxAlert</p>
@@ -26,10 +27,8 @@
 		<p class="texto-tarjeta-1">Aprende a utilizarlo</p>
 
 		<div class="circulo-next">
-			<p>-></p>
+			<li><a href="#tarjeta-2"  data-transition="flip">-></a></li>
 		</div>
-		<br>
-
 		<!-- Puntitos -->
 		<div class="puntos-guias">
 			<p class="actual-dot">.</p>
@@ -40,5 +39,111 @@
 		</div>
 
 	</div>
+
+	<!-- Tarjeta de bienvenida 2-->
+	<div data-role="page" id="tarjeta-2" class="bienvenida_2">
+		
+		<br><br> <!-- XD -->
+		<div class="cuadro-tarjeta-2">
+			<p>Si ves algún accidente o robo</p>
+		</div>
+		<br> <!-- XD -->
+		<div class="cuadro-tarjeta-2">
+			<p>Imagen</p>
+		</div>
+		<br>
+		<div class="circulo-next">
+			<li><a href="#tarjeta-3"  data-transition="flip">-></a></li>
+		</div>
+		<!-- Puntitos -->
+		<div class="puntos-guias">
+			<p class="dot">.</p>
+			<p class="actual-dot">.</p>
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+		</div>
+
+	</div>
+
+	<!-- Tarjeta de bienvenida 3 -->
+	<div data-role="page" id="tarjeta-3" class="bienvenida_3">
+		
+		<br><br> <!-- XD -->
+		<div class="cuadro-tarjeta-3">
+			<p>Solo tienes que tocar el botón de alerta</p>
+		</div>
+		<br> <!-- XD -->
+		<div class="cuadro-tarjeta-3">
+			<p>Imagen</p>
+		</div>
+		<br>
+		<div class="circulo-next">
+			<li><a href="#tarjeta-4"  data-transition="flip">-></a></li>
+		</div>
+		<!-- Puntitos -->
+		<div class="puntos-guias">
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+			<p class="actual-dot">.</p>
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+		</div>
+
+
+	</div>
+
+	<!-- Tarjeta de bienvenida 4 -->
+	<div data-role="page" id="tarjeta-4" class="bienvenida_4">
+		
+		<br><br> <!-- XD -->
+		<div class="cuadro-tarjeta-4">
+			<p>Y la ayuda vendrá en camino</p>
+		</div>
+		<br> <!-- XD -->
+		<div class="cuadro-tarjeta-4">
+			<p>Imagen</p>
+		</div>
+		<br>
+		<div class="circulo-next">
+			<li><a href="#tarjeta-5"  data-transition="flip">-></a></li>
+		</div>
+		<!-- Puntitos -->
+		<div class="puntos-guias">
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+			<p class="actual-dot">.</p>
+			<p class="dot">.</p>
+		</div>
+
+	</div>
+
+	<div data-role="page" id="tarjeta-5" class="bienvenida_5">
+		
+		<br><br> <!-- XD -->
+		<div class="cuadro-tarjeta-5">
+			<p>¡Así de fácil!</p>
+		</div>
+		<br> <!-- XD -->
+		<div class="cuadro-tarjeta-5">
+			<p>Imagen</p>
+		</div>
+		<br>
+		<div class="circulo-next">
+			<li><a href="#inicio"  data-transition="flip">-></a></li>
+		</div>
+		<!-- Puntitos -->
+		<div class="puntos-guias">
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+			<p class="dot">.</p>
+			<p class="actual-dot">.</p>
+		</div>
+
+
+	</div>
+
 </body>
 </html>
