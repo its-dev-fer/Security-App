@@ -129,10 +129,8 @@
 		<div class="cuadro-tarjeta-5">
 			<p>Imagen</p>
 		</div>
-		<br>
-		<div class="circulo-next">
-			<li><a href="#inicio"  data-transition="flip">-></a></li>
-		</div>
+		<br><br>
+		<input id="goHome" type="button" class="red-button" value="Iniciar" data-transition="flip">
 		<!-- Puntitos -->
 		<div class="puntos-guias">
 			<p class="dot">.</p>
@@ -141,9 +139,24 @@
 			<p class="dot">.</p>
 			<p class="actual-dot">.</p>
 		</div>
-
-
 	</div>
 
+
+	<!-- Div de inicio con dos opciones -->
+	<div data-role="page" id="inicio" class="main-screen">
+
+		<div data-role="header" class="main-header">
+			<h3 class="red-text">TuxAlert</h3>
+		</div>
+		<br><br>
+		<div data-role="content">
+			<div class="main-buttons">
+				<br><br>
+				<input type="button" name="signup" class="red-button" value="Registrarse" data-transition="flip">
+				<br><br><br><br>
+				<input type="button" name="login" class="red-button" value="Iniciar sesión" data-transition="flip">
+			</div>
+		</div>
+	</div>
 </body>
 </html>

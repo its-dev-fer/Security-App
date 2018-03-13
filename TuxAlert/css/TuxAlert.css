@@ -201,3 +201,30 @@ a:link{
 	font-family: 'Myriad';
 	font-weight: lighter;
 }
+
+.red-button{
+	display: block;
+	position: relative;
+	background-color: var(--fondo-tarjeta-1) !important;
+	width: 60% !important;
+	padding: 1em !important;
+	font-family: 'Myriad' !important;
+	font-size: 25px !important;
+	margin: 0 auto !important;
+	border-style: none !important;
+	color: var(--blanco) !important;
+	text-align: center;
+}
+
+.main-screen{
+	background-color: var(--default-background);
+}
+
+.main-header{
+	font-family: 'Myriad';
+	font-size: 35px;
+	background-color: var(--barra-superior);
+	color: var(--texto-barra-superior);
+	text-align: center;
+	padding: 0.0005em;
+}
