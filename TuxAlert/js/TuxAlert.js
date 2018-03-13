@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	
+	location.href = "#inicio";
+
 	$("#goHome").click(function(e){
 		e.preventDefault();
 		location.href = "#inicio";
@@ -6,24 +9,27 @@ $(document).ready(function(){
 
 	$("#signup").click(function(e){
 		e.preventDefault();
-		location.href = "#registro";
+		location.href = "#tipoDeUsuario";
 	});
 
 	$("#login").click(function(e){
 		e.preventDefault();
-		alert("*c loguea*");
+		alert("Pantalla de Loguin de Usuario");
 	});
 
   $("#seguridad_publica").click(function(e){
     e.preventDefault();
-    location.href = "#registro_servidoresp";
-    
+    location.href = "#verificacionDeUsuario";
   });
 
   $("#ciudadano").click(function(e){
     e.preventDefault();
-    location.href = "#registro_normal";
-    
+    location.href = "#registro";
+	});
+
+	$("#button-registrarUsuario").click(function(e){
+    e.preventDefault();
+    alert("Usuario registrado exitósamente");
   });
 
 });

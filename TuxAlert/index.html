@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es-MX">
 <head>
 	<title>TuxAlert</title>
 	<meta charset="utf-8">
-	<meta author="Luis Fernando">
+	<meta author="Luis Fernando y David Pérez S.">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -11,7 +11,6 @@
 	<script type="text/javascript" src="js/TuxAlert.js"></script>
 </head>
 <body>
-
 
 	<!-- Tarjeta de bienvenida 1-->
 	<div id="tarjeta-1" data-role="page" class="bienvenida_1">
@@ -142,10 +141,10 @@
 	</div>
 
 
-	<!-- Div de inicio con dos opciones -->
-	<div data-role="page" id="inicio" class="main-screen">
+	<!-- Div de Tarjeta de Primer inicio con dos opciones -->
+	<div data-role="page" id="inicio" class="screen">
 
-		<div data-role="header" class="main-header">
+		<div data-role="header" class="header">
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 		<br><br>
@@ -162,10 +161,10 @@
 			</div>
 		</div>
 	</div>
-    
-    <!--escoger registro type-->
-	<div data-role="page" id="registro" class="register-screen">
-		<div data-role="header" class="register-header">
+
+	<!-- Div de tarjeta de Tipo de Usuario -->
+	<div data-role="page" id="tipoDeUsuario" class="screen">
+		<div data-role="header" class="header">
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 		<br><br>
@@ -173,7 +172,6 @@
 			<div class="descripcion">
 				<p>Selecciona una opción:</p>
 			</div>
-
 			<div class="main-buttons">
 				<br><br>
 				<button class="red-button" data-transition="flip" id="seguridad_publica">Seguridad Pública</button>
@@ -182,68 +180,62 @@
 			</div>
 		</div>
 	</div>
-    
-    <!--registro normal-->
-    <div data-role="page" id="registro_normal" class="">
-		<div data-role="header" class="register-header">
-			<h3 class="red-text">Registro Ciudadano</h3>
-		</div>
-		<br><br>
-		<div class="content">						
-            
-            <label for="nombre">Nombre:</label>
-            <input type="text"  placeholder="Full Name"name="nombre" id="name" value="">
-            
-            <label for="correo">Email:</label>
-            <input type="email"  placeholder="alguien@example.com" name="correo" id="email" value="">
-            
-            <label for="tel">Teléfono:</label>
-            <input type="tel" name="tel" id="tele" value="" placeholder="961234567">
-            
-            <label for="pass">Contraseña:</label>
-            <input type="password" name="pass" id="passs" value="" placeholder="*****">
-            
-            <label for="pass2">Repetir Contraseña:</label>
-            <input type="password" name="pass2" id="passs2" value="" placeholder="*****">
-            
-            <button class="red-button" data-transition="flip" id="submit">Registrarse</button>                                    			
-		</div>
-	</div>
-    
-    <!-- registro polizia-->
-    <div data-role="page" id="registro_servidoresp" class="">
-		<div data-role="header" class="register-header">
-			<h3 class="red-text">Registro Servidor Público</h3>
+
+	<!-- Div de tarjeta de Verificación de Credenciales -->
+	<div data-role="page" id="verificacionDeUsuario" class="screen">
+		<div data-role="header" class="header">
+			<h3 class="red-text">TuxAlert</h3>
 		</div>
 		<br><br>
 		<div class="content">
-			
-				<p>Ingrese clave verificadora</p>
-                <input type="text" name="check" id="claveP" value="">
-			
-            
-            <label for="nombre">Nombre:</label>
-            <input type="text"  placeholder="Full Name"name="nombre" id="name" value="">
-            
-            <label for="correo">Email:</label>
-            <input type="email"  placeholder="alguien@example.com" name="correo" id="email" value="">
-            
-            <label for="tel">Teléfono:</label>
-            <input type="tel" name="tel" id="tele" value="" placeholder="961234567">
-            
-            <label for="pass">Contraseña:</label>
-            <input type="password" name="pass" id="passs" value="" placeholder="*****">
-            
-            <label for="pass2">Repetir Contraseña:</label>
-            <input type="password" name="pass2" id="passs2" value="" placeholder="*****">
-            
-            <button class="red-button" data-transition="flip" id="submit">Registrarse</button>
-                        
-            
-			
+			<form action="#Base-de-Datos" method="POST" id="form-registro-usuario">
+				<div class="descripcion">
+					<p>Ingrese clave verificadora</p>
+				</div>
+				<br><br><br><br><br>
+				Clave<span class="dato-Obligatorio">*</span>: <input name="claveUsuario" type="text" class="textFieldRegistro" placeholder="Ingresa la clave de SP" required/>
+				<div class="main-buttons">
+					<br><br><br><br><br>
+					<button class="red-button" data-transition="flip" id="button-verificarUsuario" type="submit">Acceder</button>
+					<br><br><br>
+				</div>
+			</form>
 		</div>
 	</div>
 
+	<!-- Div de tarjeta de Registro de Usuario -->
+	<div data-role="page" id="registro" class="screen">
+		<div data-role="header" class="header">
+			<h3 class="red-text">TuxAlert</h3>
+		</div>
+		<br><br>
+		<div class="content">
+			<form action="#Base-de-Datos" method="POST" id="form-registro-usuario">
+				<div class="descripcion">
+					<p>Registro de Usuario Nuevo</p>
+				</div>
+				<br><br><br><br><br>
+				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuario" type="text" class="textFieldRegistro" placeholder="Ingresa tu(s) nombre(s)" required/>
+				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuario" type="text" class="textFieldRegistro" placeholder="Ingresa tus Apellidos" required/>
+				Género<span class="dato-Obligatorio">*</span>:
+					<select id="genero" name="generoUsuario">
+						<option value="masculino" selected>Masculino</option>
+						<option value="femenino">Femenino</option>
+						<option value="otro">Otro</option>
+					</select>
+				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuario" type="email" class="textFieldRegistro" placeholder="Ingresa tu Email que más usas" required/>
+				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuario" type="date" class="textFieldRegistro" placeholder="Ingresa tu fecha de nacimiento" required/>
+				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="textFieldRegistro" placeholder="Ingresa tu número de celular personal" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input name="contraseniaUsuario" type="password" class="textFieldRegistro" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input name="contraseniaRepetidaUsuario" type="password" class="textFieldRegistro" placeholder="Repite la contraseña de arriba" required/>
+				<div class="main-buttons">
+					<br><br><br><br><br>
+					<button class="red-button" data-transition="flip" id="button-registrarUsuario" type="submit">Registrarse</button>
+					<br><br><br>
+				</div>
+			</form>
+		</div>
+	</div>
 
 </body>
 </html>
