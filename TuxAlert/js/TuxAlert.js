@@ -1,4 +1,5 @@
 $(document).ready(function(){
+<<<<<<< HEAD
 
 	//Checar si es la primera vez que se abre la app
 	var primeraVez = localstorage.get('primeraVez');
@@ -8,6 +9,10 @@ $(document).ready(function(){
 	}else{
 		location.href = "#inicio";
 	}
+=======
+	
+	location.href = "#inicio";
+>>>>>>> 6ea3b6082271b081ff83a8e0a13a8574ef18b143
 
 	$("#goHome").click(function(e){
 		e.preventDefault();
@@ -16,22 +21,27 @@ $(document).ready(function(){
 
 	$("#signup").click(function(e){
 		e.preventDefault();
-		location.href = "#registro";
+		location.href = "#tipoDeUsuario";
 	});
 
 	$("#login").click(function(e){
 		e.preventDefault();
-		alert("*c loguea*");
+		alert("Pantalla de Loguin de Usuario");
 	});
 
   $("#seguridad_publica").click(function(e){
     e.preventDefault();
-    alert("Click seguridad publica");
+    location.href = "#verificacionDeUsuario";
   });
 
   $("#ciudadano").click(function(e){
     e.preventDefault();
-    alert("Click ciudadano");
+    location.href = "#registro";
+	});
+
+	$("#button-registrarUsuario").click(function(e){
+    e.preventDefault();
+    alert("Usuario registrado exitósamente");
   });
 
 });
