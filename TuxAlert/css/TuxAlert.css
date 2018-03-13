@@ -29,13 +29,13 @@
 	background-color: var(--fondo-tarjeta-2);
 }
 .bienvenida_3{
-	background-color: var(--fondo-tarjeta-3);	
+	background-color: var(--fondo-tarjeta-3);
 }
 .bienvenida_4{
-	background-color: var(--fondo-tarjeta-4);	
+	background-color: var(--fondo-tarjeta-4);
 }
 .bienvenida_5{
-	background-color: var(--fondo-tarjeta-5);	
+	background-color: var(--fondo-tarjeta-5);
 }
 
 .cuadro-tarjeta-1{
@@ -235,12 +235,34 @@ a:link{
 	background-color: var(--default-background);
 }
 
+.register-screen{
+	background-color: var(--default-background);
+}
+
 .main-header{
 	font-family: 'Myriad' !important;
 	font-size: 35px !important;
 	text-shadow: none !important;
 	background-color: var(--barra-superior) !important;
 	color: var(--texto-barra-superior) !important;
+	text-align: center !important;
+	padding: 0.0005em !important;
+}
+
+.register-header{
+	font-family: 'Myriad' !important;
+	font-size: 35px !important;
+	text-shadow: none !important;
+	background-color: var(--barra-superior) !important;
+	color: var(--texto-barra-superior) !important;
+	text-align: center !important;
+	padding: 0.0005em !important;
+}
+
+.descripcion{
+	font-family: 'Myriad' !important;
+	font-size: 33px !important;
+	text-shadow: none !important;
 	text-align: center !important;
 	padding: 0.0005em !important;
 }
