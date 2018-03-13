@@ -16,12 +16,14 @@ $(document).ready(function(){
 
   $("#seguridad_publica").click(function(e){
     e.preventDefault();
-    alert("Click seguridad publica");
+    location.href = "#registro_servidoresp";
+    
   });
 
   $("#ciudadano").click(function(e){
     e.preventDefault();
-    alert("Click ciudadano");
+    location.href = "#registro_normal";
+    
   });
 
 });

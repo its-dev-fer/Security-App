@@ -162,7 +162,8 @@
 			</div>
 		</div>
 	</div>
-
+    
+    <!--escoger registro type-->
 	<div data-role="page" id="registro" class="register-screen">
 		<div data-role="header" class="register-header">
 			<h3 class="red-text">TuxAlert</h3>
@@ -181,6 +182,68 @@
 			</div>
 		</div>
 	</div>
+    
+    <!--registro normal-->
+    <div data-role="page" id="registro_normal" class="">
+		<div data-role="header" class="register-header">
+			<h3 class="red-text">Registro Ciudadano</h3>
+		</div>
+		<br><br>
+		<div class="content">						
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text"  placeholder="Full Name"name="nombre" id="name" value="">
+            
+            <label for="correo">Email:</label>
+            <input type="email"  placeholder="alguien@example.com" name="correo" id="email" value="">
+            
+            <label for="tel">Teléfono:</label>
+            <input type="tel" name="tel" id="tele" value="" placeholder="961234567">
+            
+            <label for="pass">Contraseña:</label>
+            <input type="password" name="pass" id="passs" value="" placeholder="*****">
+            
+            <label for="pass2">Repetir Contraseña:</label>
+            <input type="password" name="pass2" id="passs2" value="" placeholder="*****">
+            
+            <button class="red-button" data-transition="flip" id="submit">Registrarse</button>                                    			
+		</div>
+	</div>
+    
+    <!-- registro polizia-->
+    <div data-role="page" id="registro_servidoresp" class="">
+		<div data-role="header" class="register-header">
+			<h3 class="red-text">Registro Servidor Público</h3>
+		</div>
+		<br><br>
+		<div class="content">
+			
+				<p>Ingrese clave verificadora</p>
+                <input type="text" name="check" id="claveP" value="">
+			
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text"  placeholder="Full Name"name="nombre" id="name" value="">
+            
+            <label for="correo">Email:</label>
+            <input type="email"  placeholder="alguien@example.com" name="correo" id="email" value="">
+            
+            <label for="tel">Teléfono:</label>
+            <input type="tel" name="tel" id="tele" value="" placeholder="961234567">
+            
+            <label for="pass">Contraseña:</label>
+            <input type="password" name="pass" id="passs" value="" placeholder="*****">
+            
+            <label for="pass2">Repetir Contraseña:</label>
+            <input type="password" name="pass2" id="passs2" value="" placeholder="*****">
+            
+            <button class="red-button" data-transition="flip" id="submit">Registrarse</button>
+                        
+            
+			
+		</div>
+	</div>
+
 
 </body>
 </html>
