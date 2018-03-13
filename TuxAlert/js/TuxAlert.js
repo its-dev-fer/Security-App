@@ -2,6 +2,6 @@
 $(document).ready(function(){
 	$("#goHome").click(function(e){
 		e.preventDefault();
-		location.href = "#home";
+		location.href = "#inicio";
 	});
 });

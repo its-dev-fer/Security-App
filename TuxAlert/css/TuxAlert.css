@@ -203,6 +203,7 @@ a:link{
 }
 
 .red-button{
+	/*
 	display: block;
 	position: relative;
 	background-color: var(--fondo-tarjeta-1) !important;
@@ -213,7 +214,13 @@ a:link{
 	margin: 0 auto !important;
 	border-style: none !important;
 	color: var(--blanco) !important;
-	text-align: center;
+	text-align: center !important;
+	top: 0 !important;
+	*/
+	background-color: var(--fondo-tarjeta-1) !important;
+	color: var(--blanco) !important;
+	opacity: 1 !important;
+	border-style: none !important;
 }
 
 .main-screen{
@@ -221,10 +228,11 @@ a:link{
 }
 
 .main-header{
-	font-family: 'Myriad';
-	font-size: 35px;
-	background-color: var(--barra-superior);
-	color: var(--texto-barra-superior);
-	text-align: center;
-	padding: 0.0005em;
+	font-family: 'Myriad' !important;
+	font-size: 35px !important;
+	text-shadow: none !important;
+	background-color: var(--barra-superior) !important;
+	color: var(--texto-barra-superior) !important;
+	text-align: center !important;
+	padding: 0.0005em !important;
 }
