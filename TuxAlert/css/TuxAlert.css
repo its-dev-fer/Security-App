@@ -75,9 +75,9 @@ li,a{
 	font-size: 45px;
 	font-family: 'Myriad';
 	text-align: center;
-	-ms-transform: translate(0px, 0.2em); /* IE 9 */
-    -webkit-transform: translate(0px,  0.2em); /* Safari */
-    transform: translate(0px, 0.2em);
+	-ms-transform: translate(0px, 0.3em); /* IE 9 */
+    -webkit-transform: translate(0px,  0.3em); /* Safari */
+    transform: translate(0px, 0.3em);
 }
 
 a:link{
@@ -116,6 +116,7 @@ a:link{
 }
 
 .dot{
+	margin: 0;
 	font-weight: bold;
 	font-family: 'Myriad';
 	font-size: 60px;
@@ -127,6 +128,7 @@ a:link{
 }
 
 .actual-dot{
+	margin: 0;
 	font-weight: bold;
 	font-family: 'Myriad';
 	font-size: 240px;
@@ -137,8 +139,8 @@ a:link{
 	margin-right: auto;
 	padding-top: 0;
 	padding-bottom: 0;
-	-ms-transform: translate(0px, -0.12em); /* IE 9 */
-    -webkit-transform: translate(0px, -0.12em); /* Safari */
+	-ms-transform: translate(0px, -0.15em); /* IE 9 */
+    -webkit-transform: translate(0px, -0.15em); /* Safari */
     transform: translate(0px,-0.12em);
 }
 
@@ -219,7 +221,7 @@ a:link{
 
 .header{
 	font-family: 'Myriad' !important;
-	font-size: 35px !important;
+	font-size: 25px !important;
 	text-shadow: none !important;
 	background-color: var(--barra-superior) !important;
 	color: var(--texto-barra-superior) !important;
