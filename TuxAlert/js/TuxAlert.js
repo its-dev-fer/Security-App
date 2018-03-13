@@ -1,4 +1,3 @@
-//Ahora si viene lo chido :v
 $(document).ready(function(){
 	$("#goHome").click(function(e){
 		e.preventDefault();
@@ -7,11 +6,22 @@ $(document).ready(function(){
 
 	$("#signup").click(function(e){
 		e.preventDefault();
-		alert("*c registra*");
+		location.href = "#registro";
 	});
 
 	$("#login").click(function(e){
 		e.preventDefault();
 		alert("*c loguea*");
 	});
+
+  $("#seguridad_publica").click(function(e){
+    e.preventDefault();
+    alert("Click seguridad publica");
+  });
+
+  $("#ciudadano").click(function(e){
+    e.preventDefault();
+    alert("Click ciudadano");
+  });
+
 });
