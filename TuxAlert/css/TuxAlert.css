@@ -203,20 +203,6 @@ a:link{
 }
 
 .red-button{
-	/*
-	display: block;
-	position: relative;
-	background-color: var(--fondo-tarjeta-1) !important;
-	width: 60% !important;
-	padding: 1em !important;
-	font-family: 'Myriad' !important;
-	font-size: 25px !important;
-	margin: 0 auto !important;
-	border-style: none !important;
-	color: var(--blanco) !important;
-	text-align: center !important;
-	top: 0 !important;
-	*/
 	display: block;
 	margin: 0 auto !important;
 	text-align: center !important;
