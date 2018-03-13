@@ -83,6 +83,18 @@ $(document).ready(function(){
 	//Gesto de deslizar hacia la derecha
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
+
+
+	//cerrar y abrir el panel
+	$("#inicio").on("swiperight",function(e){
+
+		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swiperight"  ) {
+                $( "#menu-panel_1" ).panel( "open" );
+            }
+        }
+
+	});
 });
 
 function regresarACasa(event){
