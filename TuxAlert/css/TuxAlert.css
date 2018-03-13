@@ -215,6 +215,18 @@ a:link{
 	padding: 1em !important;
 }
 
+.little-button{
+	position: absolute !important;
+	left: 2 !important;
+	top: 1em !important;
+	bottom: 1em !important;
+	background-color: var(--fondo-tarjeta-1) !important;
+	border-style: none !important;
+	border-radius: 3px !important;
+	color: var(--blanco) !important;
+	font-family: 'Myriad' !important;
+}
+
 .screen{
 	background-color: var(--default-background);
 }

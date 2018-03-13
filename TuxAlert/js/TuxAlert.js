@@ -77,4 +77,14 @@ $(document).ready(function(){
     alert("Usuario registrado exitósamente");
   });
 
+
+
+
+	//Gesto de deslizar hacia la derecha
+	$("#tipoDeUsuario").on("swiperight", regresarACasa);
+	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
 });
+
+function regresarACasa(event){
+	location.href = "#inicio";
+}
