@@ -1,0 +1,8 @@
+La BD de la App ya está completamente hecha.
+Se hicieron:
+
+	* 5 tablas (Usuarios, Alertas, CategoriasAlertas, TiposUsuarios y UbicacionesAlertas)
+	* Relaciones entre tablas (Llaves foráneas)
+	* Indexado de llaves
+
+Se deja el archivo SQL para que únicamente lo importen y ya quede listo.
