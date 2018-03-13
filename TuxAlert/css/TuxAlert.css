@@ -217,10 +217,18 @@ a:link{
 	text-align: center !important;
 	top: 0 !important;
 	*/
+	display: block;
+	margin: 0 auto !important;
+	text-align: center !important;
+	position: relative;
+	font-family: 'Myriad' !important;
+	font-size: 20px !important;
+	width: 60% !important;
 	background-color: var(--fondo-tarjeta-1) !important;
 	color: var(--blanco) !important;
 	opacity: 1 !important;
 	border-style: none !important;
+	padding: 1em !important;
 }
 
 .main-screen{

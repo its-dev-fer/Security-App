@@ -4,4 +4,14 @@ $(document).ready(function(){
 		e.preventDefault();
 		location.href = "#inicio";
 	});
+
+	$("#signup").click(function(e){
+		e.preventDefault();
+		alert("*c registra*");
+	});
+
+	$("#login").click(function(e){
+		e.preventDefault();
+		alert("*c loguea*");
+	});
 });
