@@ -27,7 +27,7 @@
 }
 
 .sm a{
-	
+
 	color: white;
 	text-decoration: none;
 	transition: ease 0.5;
@@ -38,7 +38,7 @@
 }
 
 .sm{
-	
+
 	width: 100%;
 	margin-left: 0%;
 	left: 0;
@@ -296,9 +296,57 @@ a:link{
 	width: 10%;
 }
 
-.boton-Logo-Rojo{	
+.boton-Logo-Rojo{
 	display: block;
 	margin: 0 auto;
 	width: 200px;
 	height: 200px;
+}
+
+.subtitulo-contacto{
+	color: var(--texto-barra-superior);
+	font-family: 'Myriad' !important;
+	font-size: 28px !important;
+	text-shadow: none !important;
+	text-align: left !important;
+	margin-left: 15px !important;
+}
+
+.subtitulo-contacto-2{
+	font-family: 'Myriad' !important;
+	font-size: 20px !important;
+	text-shadow: none !important;
+	text-align: left !important;
+	margin-left:  20px !important;
+}
+
+.subtitulo-contacto-3{
+	text-align: left;
+	margin-left: 20px !important;
+}
+
+.linea-separacion{
+	height: 2.8px;
+	color: #123455;
+	background-color: #123455;
+	margin-left: 2%;
+	margin-right: 2%;
+	border: none;
+}
+
+.titulo-operaciones-contacto{
+	font-family: 'Myriad' !important;
+	font-size: 26px !important;
+	text-shadow: none !important;
+	text-align: left !important;
+	margin-left:  20px !important;
+}
+
+.text-field-contacto{
+	margin-left: 2% !important;
+	margin-right: 2% !important;
+}
+
+.textAreaContacto{
+	resize: none;
 }
