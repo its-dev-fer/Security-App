@@ -11,7 +11,7 @@
  Target Server Version : 100130
  File Encoding         : 65001
 
- Date: 13/03/2018 01:50:01
+ Date: 13/03/2018 19:20:07
 */
 
 SET NAMES utf8mb4;
@@ -23,10 +23,10 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `alertas`;
 CREATE TABLE `alertas`  (
   `ID_Alerta` int(255) NOT NULL AUTO_INCREMENT,
-  `ID_CategoriaAlerta` int(255) NOT NULL,
-  `ID_UbicacionAlerta` int(255) NOT NULL,
-  `Fecha` date NOT NULL,
-  `Hora` time(6) NOT NULL,
+  `ID_CategoriaAlerta` int(255) NULL DEFAULT NULL,
+  `ID_UbicacionAlerta` int(255) NULL DEFAULT NULL,
+  `Fecha` date NULL DEFAULT NULL,
+  `Hora` time(6) NULL DEFAULT NULL,
   PRIMARY KEY (`ID_Alerta`) USING BTREE,
   INDEX `Indice_Fecha`(`Fecha`) USING BTREE,
   INDEX `Indice_Hora`(`Hora`) USING BTREE,
@@ -41,7 +41,7 @@ CREATE TABLE `alertas`  (
 DROP TABLE IF EXISTS `categoriasalertas`;
 CREATE TABLE `categoriasalertas`  (
   `ID_CategoriaAlerta` int(255) NOT NULL AUTO_INCREMENT,
-  `Nombre_Categoria` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `Nombre_Categoria` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   PRIMARY KEY (`ID_CategoriaAlerta`) USING BTREE,
   INDEX `Indice_Nombre_Categoria`(`Nombre_Categoria`) USING BTREE,
   CONSTRAINT `Foranea_ID_CategoriaAlerta` FOREIGN KEY (`ID_CategoriaAlerta`) REFERENCES `alertas` (`ID_CategoriaAlerta`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -53,7 +53,7 @@ CREATE TABLE `categoriasalertas`  (
 DROP TABLE IF EXISTS `tipousuarios`;
 CREATE TABLE `tipousuarios`  (
   `ID_TipoUsuario` int(255) NOT NULL AUTO_INCREMENT,
-  `Nombre_Tipo_Usuario` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `Nombre_Tipo_Usuario` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   PRIMARY KEY (`ID_TipoUsuario`) USING BTREE,
   INDEX `Indice_Nombre_Tipo_Usuario`(`Nombre_Tipo_Usuario`) USING BTREE,
   CONSTRAINT `Foranea_ID_TipoUsuario` FOREIGN KEY (`ID_TipoUsuario`) REFERENCES `usuarios` (`ID_TipoUsuario`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -65,12 +65,12 @@ CREATE TABLE `tipousuarios`  (
 DROP TABLE IF EXISTS `ubicacionesalertas`;
 CREATE TABLE `ubicacionesalertas`  (
   `ID_UbicacionAlerta` int(255) NOT NULL AUTO_INCREMENT,
-  `Latitud` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Longitud` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Pais` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Estado` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Municipio` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `URL` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
+  `Latitud` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Longitud` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Pais` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Estado` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Municipio` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `URL` varchar(255) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   PRIMARY KEY (`ID_UbicacionAlerta`) USING BTREE,
   INDEX `Indice_Municipio`(`Municipio`) USING BTREE,
   CONSTRAINT `Foranea_ID_UbicacionAlerta` FOREIGN KEY (`ID_UbicacionAlerta`) REFERENCES `alertas` (`ID_UbicacionAlerta`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -82,17 +82,17 @@ CREATE TABLE `ubicacionesalertas`  (
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios`  (
   `ID_Usuario` int(255) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Apellidos` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Correo_electronico` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Fecha_nacimiento` date NOT NULL,
-  `Telefono` int(15) NOT NULL,
-  `Contrasenia` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Genero` enum('masculino','femenino','otro') CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL,
-  `Borrado` int(1) NOT NULL,
-  `Ultima_Sesion` timestamp(6) NOT NULL ON UPDATE CURRENT_TIMESTAMP(6),
-  `ID_TipoUsuario` int(255) NOT NULL,
-  `ID_Alerta` int(255) NOT NULL,
+  `Nombre` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Apellidos` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Correo_electronico` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Fecha_nacimiento` date NULL DEFAULT NULL,
+  `Telefono` int(15) NULL DEFAULT NULL,
+  `Contrasenia` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Genero` enum('masculino','femenino','otro') CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
+  `Borrado` int(1) NULL DEFAULT NULL,
+  `Ultima_Sesion` timestamp(6) NULL ON UPDATE CURRENT_TIMESTAMP(6),
+  `ID_TipoUsuario` int(255) NULL DEFAULT NULL,
+  `ID_Alerta` int(255) NULL DEFAULT NULL,
   PRIMARY KEY (`ID_Usuario`) USING BTREE,
   INDEX `Indice_Nombre`(`Nombre`) USING BTREE,
   INDEX `Indice_Apellidos`(`Apellidos`) USING BTREE,
