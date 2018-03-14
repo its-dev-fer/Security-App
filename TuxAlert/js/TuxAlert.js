@@ -75,7 +75,7 @@ $(document).ready(function(){
 		e.preventDefault();
 		alert("Usuario registrado exitósamente");
 	});
-	  
+
 	$("#boton-Logo-Rojo").click(function(e){
 		e.preventDefault();
 		alert("Alerta Enviada");
