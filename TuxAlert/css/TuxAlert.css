@@ -14,7 +14,46 @@
 	--blanco: #FFFFFF;
 }
 
-/*Fuente que David puso*/
+.sm{
+	
+	
+	width: 100%;
+	left: 1px;
+	right: 0px;
+	margin-top: 2%;
+	color:white!important;
+}
+
+#menu-panel_1{
+	background-color: darkgray;
+}
+
+.sm a{
+	background-color: darkgray;
+	color: white;
+	text-decoration: none;
+	transition: ease 0.5;
+	width: 100%!important;
+	font-size: 33px;
+	padding: 10px;
+
+}
+
+.sm{
+	border: 1px solid black; 	
+	width: 100%;
+	margin-left: 0%;
+}
+
+.sm a:hover{
+	background-color: lightgray;
+
+
+}
+
+
+
+/*Fuente que David puso - SEAS MAMÓN pinsHI VATO*/
 @font-face {
     font-family: 'Myriad'; /*a name to be used later*/
     src: url('../fuentes/myriad-pro/MyriadProBoldSemiExtended.ttf'); /*URL to font*/
@@ -68,7 +107,7 @@
 	right: auto;
 }
 
-li,a{
+li{
 	list-style: none;
 	text-decoration: none;
 	color: var(--fondo-tarjeta-1);
