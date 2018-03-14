@@ -144,10 +144,6 @@
 
 	<!-- Div de Tarjeta de Primer inicio con dos opciones -->
 	<div data-role="page" id="inicio" class="screen">
-		<div data-role="header" class="header">
-			<a href="#menu-panel_1" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
-			<h3 class="red-text">TuxAlert</h3>
-		</div>
 		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
 		<div data-role="panel" id="menu-panel" data-position="left" data-display="push">
 			<ul>
@@ -160,7 +156,13 @@
 
 			</ul>
 		</div>
-		<br><br>
+
+		<div data-role="header" class="header">
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<h3 class="red-text">TuxAlert</h3>
+		</div>
+		
+		
 		<div data-role="content" id="primerInicio" class="screen">
 			<div class="main-buttons">
 
@@ -280,11 +282,25 @@
 
 	<!-- Div vista de la pagina CONTACTANOS -->
 	<div data-role="page" class="screen" id="page_contact">
+		
+		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
+		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="push">
+			<ul>
+				<li class="sm"><a href="#" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
+				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
+				<li class="sm"><a href="#" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Config.</a></li>
+
+			</ul>
+		</div>
+
 		<div data-role="header" class="header">
-			<a href="#menu-panel_1" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
 			<h3>Contáctenos</h3>
 		</div>
-		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
+
 		<div class="content">
 			<p class="subtitulo-contacto">Envíanos un correo</p>
 			<hr class="linea-separacion">
