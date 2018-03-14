@@ -6,7 +6,6 @@ $(document).ready(function(){
   		navigator.app.exitApp();
  	}
 
-
 	//Checar si es la primera vez que se abre la app
 	var primeraVez = localStorage.getItem('primeraVez',null);
 	if(!primeraVez){
@@ -59,7 +58,7 @@ $(document).ready(function(){
 
 	$("#login").click(function(e){
 		e.preventDefault();
-		alert("Pantalla de Loguin de Usuario");
+		location.href = "#pantallaPrincipal";
 	});
 
 	$("#seguridad_publica").click(function(e){
@@ -75,6 +74,11 @@ $(document).ready(function(){
 	$("#button-registrarUsuario").click(function(e){
 		e.preventDefault();
 		alert("Usuario registrado exitósamente");
+	});
+	  
+	$("#boton-Logo-Rojo").click(function(e){
+		e.preventDefault();
+		alert("Alerta Enviada");
   	});
 
 	//Gesto de deslizar hacia la derecha
@@ -86,7 +90,7 @@ $(document).ready(function(){
 
 		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
             if ( e.type === "swiperight"  ) {
-                $( "#menu-panel_1" ).panel( "open" );
+                $( "#menu-panel" ).panel( "open" );
             }
         }
 	});
