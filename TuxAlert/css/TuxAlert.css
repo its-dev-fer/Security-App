@@ -75,9 +75,9 @@ li,a{
 	font-size: 45px;
 	font-family: 'Myriad';
 	text-align: center;
-	-ms-transform: translate(0px, 0.2em); /* IE 9 */
-    -webkit-transform: translate(0px,  0.2em); /* Safari */
-    transform: translate(0px, 0.2em);
+	-ms-transform: translate(0px, 0.3em); /* IE 9 */
+    -webkit-transform: translate(0px,  0.3em); /* Safari */
+    transform: translate(0px, 0.3em);
 }
 
 a:link{
@@ -116,6 +116,7 @@ a:link{
 }
 
 .dot{
+	margin: 0;
 	font-weight: bold;
 	font-family: 'Myriad';
 	font-size: 60px;
@@ -124,11 +125,10 @@ a:link{
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: auto;
-	margin-bottom: auto;
 }
 
 .actual-dot{
+	margin: 0;
 	font-weight: bold;
 	font-family: 'Myriad';
 	font-size: 240px;
@@ -137,12 +137,10 @@ a:link{
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 0;
-	margin-bottom: 0;
 	padding-top: 0;
 	padding-bottom: 0;
-	-ms-transform: translate(0px, -0.12em); /* IE 9 */
-    -webkit-transform: translate(0px, -0.12em); /* Safari */
+	-ms-transform: translate(0px, -0.15em); /* IE 9 */
+    -webkit-transform: translate(0px, -0.15em); /* Safari */
     transform: translate(0px,-0.12em);
 }
 
@@ -203,20 +201,6 @@ a:link{
 }
 
 .red-button{
-	/*
-	display: block;
-	position: relative;
-	background-color: var(--fondo-tarjeta-1) !important;
-	width: 60% !important;
-	padding: 1em !important;
-	font-family: 'Myriad' !important;
-	font-size: 25px !important;
-	margin: 0 auto !important;
-	border-style: none !important;
-	color: var(--blanco) !important;
-	text-align: center !important;
-	top: 0 !important;
-	*/
 	display: block;
 	margin: 0 auto !important;
 	text-align: center !important;
@@ -231,27 +215,25 @@ a:link{
 	padding: 1em !important;
 }
 
-.main-screen{
+.little-button{
+	position: absolute !important;
+	left: 2 !important;
+	top: 1em !important;
+	bottom: 1em !important;
+	background-color: var(--fondo-tarjeta-1) !important;
+	border-style: none !important;
+	border-radius: 3px !important;
+	color: var(--blanco) !important;
+	font-family: 'Myriad' !important;
+}
+
+.screen{
 	background-color: var(--default-background);
 }
 
-.register-screen{
-	background-color: var(--default-background);
-}
-
-.main-header{
+.header{
 	font-family: 'Myriad' !important;
-	font-size: 35px !important;
-	text-shadow: none !important;
-	background-color: var(--barra-superior) !important;
-	color: var(--texto-barra-superior) !important;
-	text-align: center !important;
-	padding: 0.0005em !important;
-}
-
-.register-header{
-	font-family: 'Myriad' !important;
-	font-size: 35px !important;
+	font-size: 25px !important;
 	text-shadow: none !important;
 	background-color: var(--barra-superior) !important;
 	color: var(--texto-barra-superior) !important;
@@ -265,4 +247,14 @@ a:link{
 	text-shadow: none !important;
 	text-align: center !important;
 	padding: 0.0005em !important;
+}
+
+.dato-Obligatorio{
+	color: var(--fondo-tarjeta-1);
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.textFieldRegistro{
+	width: 10%;
 }
