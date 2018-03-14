@@ -15,8 +15,6 @@
 }
 
 .sm{
-	
-	
 	width: 100%;
 	left: 1px;
 	right: 0px;
@@ -29,7 +27,7 @@
 }
 
 .sm a{
-	background-color: darkgray;
+	
 	color: white;
 	text-decoration: none;
 	transition: ease 0.5;
@@ -40,15 +38,15 @@
 }
 
 .sm{
-	border: 1px solid black; 	
+	
 	width: 100%;
 	margin-left: 0%;
+	left: 0;
+	position: relative;
 }
 
-.sm a:hover{
+.sm:hover{
 	background-color: lightgray;
-
-
 }
 
 
