@@ -295,3 +295,10 @@ a:link{
 .textFieldRegistro{
 	width: 10%;
 }
+
+.boton-Logo-Rojo{	
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+}
