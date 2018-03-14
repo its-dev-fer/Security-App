@@ -62,28 +62,24 @@ $(document).ready(function(){
 		alert("Pantalla de Loguin de Usuario");
 	});
 
-  $("#seguridad_publica").click(function(e){
-    e.preventDefault();
-    location.href = "#verificacionDeUsuario";
-  });
+	$("#seguridad_publica").click(function(e){
+		e.preventDefault();
+		location.href = "#verificacionDeUsuario";
+	});
 
-  $("#ciudadano").click(function(e){
-    e.preventDefault();
-    location.href = "#registro";
+	$("#ciudadano").click(function(e){
+		e.preventDefault();
+		location.href = "#registro";
 	});
 
 	$("#button-registrarUsuario").click(function(e){
-    e.preventDefault();
-    alert("Usuario registrado exitósamente");
-  });
-
-
-
+		e.preventDefault();
+		alert("Usuario registrado exitósamente");
+  	});
 
 	//Gesto de deslizar hacia la derecha
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
-
 
 	//cerrar y abrir el panel
 	$("#inicio").on("swiperight",function(e){
@@ -93,7 +89,6 @@ $(document).ready(function(){
                 $( "#menu-panel_1" ).panel( "open" );
             }
         }
-
 	});
 });
 
