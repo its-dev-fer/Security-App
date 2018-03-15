@@ -12,6 +12,7 @@
 	--fondo-tarjeta-4: #75AD74;
 	--fondo-tarjeta-5: #009493;
 	--blanco: #FFFFFF;
+	background-color: var(--default-background) !important;
 }
 
 .sm{
@@ -19,17 +20,16 @@
 	left: 1px;
 	right: 0px;
 	margin-top: 2%;
-	color:white!important;
+	color: white!important;
 }
 
 #menu-panel{
-	background-color: darkgray;
+	background-color: var(--default-background);
 }
 
 .sm a{
-
 	color: white;
-	text-decoration: none;
+	text-decoration: none !important;
 	transition: ease 0.5;
 	width: 100%!important;
 	font-size: 33px;
@@ -38,7 +38,6 @@
 }
 
 .sm{
-
 	width: 100%;
 	margin-left: 0%;
 	left: 0;
@@ -59,26 +58,26 @@
 
 
 .bienvenida_1{
-	background-color: var(--fondo-tarjeta-1);
+	background-color: var(--fondo-tarjeta-1) !important;
 }
 
 .bienvenida_2{
-	background-color: var(--fondo-tarjeta-2);
+	background-color: var(--fondo-tarjeta-2) !important;
 }
 .bienvenida_3{
-	background-color: var(--fondo-tarjeta-3);
+	background-color: var(--fondo-tarjeta-3) !important;
 }
 .bienvenida_4{
-	background-color: var(--fondo-tarjeta-4);
+	background-color: var(--fondo-tarjeta-4) !important;
 }
 .bienvenida_5{
-	background-color: var(--fondo-tarjeta-5);
+	background-color: var(--fondo-tarjeta-5) !important;
 }
 
 .cuadro-tarjeta-1{
 	width: 85%;
 	height: auto;
-	background-color: var(--blanco);
+	background-color: var(--blanco) !important;
 	text-align: center;
 	margin: 0 auto;
 	border-radius: 20px;
@@ -94,7 +93,7 @@
 	height: 150px;
 	margin: 0 auto;
 	border: solid 3px var(--sombra-boton-alerta);
-	background-color: var(--blanco);
+	background-color: var(--blanco) !important;
 	color: var(--fondo-tarjeta-1);
 	font-size: 45px;
 	font-family: 'Myriad';
@@ -106,19 +105,24 @@
 }
 
 li{
-	list-style: none;
-	text-decoration: none;
-	color: var(--fondo-tarjeta-1);
-	font-size: 45px;
-	font-family: 'Myriad';
-	text-align: center;
-	-ms-transform: translate(0px, 0.3em); /* IE 9 */
-    -webkit-transform: translate(0px,  0.3em); /* Safari */
-    transform: translate(0px, 0.3em);
+	list-style: none !important;
+	text-decoration: none !important;
+	color: var(--fondo-tarjeta-1) !important;
+	font-size: 45px !important;
+	font-family: 'Myriad' !important;
+	text-align: center !important;
+	-ms-transform: translate(0px, 0.3em) !important; /* IE 9 */
+    -webkit-transform: translate(0px,  0.3em) !important; /* Safari */
+    transform: translate(0px, 0.3em) !important;
+}
+
+li > a{
+	text-decoration: none  !important;	
 }
 
 a:link{
 	color: var(--fondo-tarjeta-1);
+	text-decoration: none  !important;
 }
 
 .texto-tarjeta-1{
@@ -150,6 +154,7 @@ a:link{
 	align-content: center;
 	align-items: center;
 	text-align: center;
+	background-color: transparent !important;
 }
 
 .dot{
@@ -185,7 +190,7 @@ a:link{
 .cuadro-tarjeta-2{
 	width: 85%;
 	height: auto;
-	background-color: var(--blanco);
+	background-color: var(--blanco) !important;
 	text-align: center;
 	margin: 0 auto;
 	border-radius: 20px;
@@ -199,7 +204,7 @@ a:link{
 .cuadro-tarjeta-3{
 	width: 85%;
 	height: auto;
-	background-color: var(--blanco);
+	background-color: var(--blanco) !important;
 	text-align: center;
 	margin: 0 auto;
 	border-radius: 20px;
@@ -213,7 +218,7 @@ a:link{
 .cuadro-tarjeta-4{
 	width: 85%;
 	height: auto;
-	background-color: var(--blanco);
+	background-color: var(--blanco) !important;
 	text-align: center;
 	margin: 0 auto;
 	border-radius: 20px;
@@ -226,7 +231,7 @@ a:link{
 .cuadro-tarjeta-5{
 	width: 85%;
 	height: auto;
-	background-color: var(--blanco);
+	background-color: var(--blanco) !important;
 	text-align: center;
 	margin: 0 auto;
 	border-radius: 20px;
@@ -265,7 +270,7 @@ a:link{
 }
 
 .screen{
-	background-color: var(--default-background);
+	background-color: var(--default-background) !important;
 }
 
 .header{
@@ -276,6 +281,10 @@ a:link{
 	color: var(--texto-barra-superior) !important;
 	text-align: center !important;
 	padding: 0.0005em !important;
+}
+
+.red-text{
+	background-color: transparent !important ;
 }
 
 .descripcion{
@@ -328,7 +337,7 @@ a:link{
 .linea-separacion{
 	height: 2.8px;
 	color: #123455;
-	background-color: #123455;
+	background-color: #123455 !important;
 	margin-left: 2%;
 	margin-right: 2%;
 	border: none;
@@ -349,4 +358,12 @@ a:link{
 
 .textAreaContacto{
 	resize: none;
+}
+
+.main-buttons{
+	background-color: transparent !important;
+}
+
+p,li,a{
+	background-color: transparent !important;
 }
