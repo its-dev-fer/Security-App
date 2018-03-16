@@ -1,4 +1,4 @@
-/*Variables de colores*/
+﻿/*Variables de colores*/
 *{
 	--boton-cafe: #87683D;
 	--sombra-boton-alerta: #C73D44;
@@ -407,3 +407,26 @@ p,li,a{
 ol{
 	list-style: decimal;
 }
+.collapsible {
+	    background-color: #777;
+	    color: white;
+	    cursor: pointer;
+	    padding: 18px;
+	    width: 100%;
+	    border: none;
+	    text-align: left;
+	    outline: none;
+	    font-size: 15px;
+	}
+
+	.active, .collapsible:hover {
+	    background-color: #555;
+	}
+
+	.content {
+	    padding: 0 18px;
+	    max-height: 0;
+	    overflow: hidden;
+	    transition: max-height 0.2s ease-out;
+	    background-color: #f1f1f1;
+	}
