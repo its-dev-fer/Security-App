@@ -7,6 +7,7 @@
 	<meta author="Lambda Studios">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="js/TuxAlert.js"></script>
@@ -151,7 +152,7 @@
 				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
 				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
 				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Config.</a></li>
 
 			</ul>
@@ -256,6 +257,91 @@
 		</div>
 	</div>
 
+	<!-- TARJETA ACERCA DE -->
+	<div id="ventana_acerca_de" data-role="page" >
+		<div class="card" style="width:400px">
+		    <img class="card-img-top" src="img/Andre.jpg" alt="Card image" style="width:100%">
+		    <div class="card-body">
+		      <h4 class="card-title">Carlos André Sanchez Malpica</h4>
+		      <button class="collapsible">Mas información</button>
+		    	<div class="content">
+			      Alumno: Universidad Politecnica de Chiapas.<p><p>
+			      Actualmente Cursa el 5° Cuatrimestre<p>
+			      Fecha de nacimiento: 22 de Junio 1987<p>
+			      Vive en: Tuxtla Gutierrez Chiapas.<p>
+				</div>
+		    </div>
+    	</div>
+
+
+    	<div class="card" style="width:400px">
+		    <img class="card-img-top" src="img/ramon.jpg" alt="Card image" style="width:100%">
+		    <div class="card-body">
+		      <h4 class="card-title">José Ramón Palacios Martínez</h4>
+		      <button class="collapsible">Mas información</button>
+		    	<div class="content">
+			      Alumno: Universidad Politecnica de Chiapas.<p><p>
+			      Actualmente Cursa el 5° Cuatrimestre<p>
+			      Fecha de nacimiento: 15 Marzo de 1998<p>
+			      Vive en: Lacandona Chiapas.<p>
+				</div>
+		    </div>
+    	</div>
+		
+
+    	<div class="card" style="width:400px">
+		    <img class="card-img-top" src="img/David.jpg" alt="Card image" style="width:100%">
+		    <div class="card-body">
+		      <h4 class="card-title">David Pérez</h4>
+		      <button class="collapsible">Mas información</button>
+		    	<div class="content">
+			      Alumno: Universidad Politecnica de Chiapas.<p><p>
+			      Actualmente Cursa el 5° Cuatrimestre<p>
+			      Fecha de nacimiento: 30 Septiembre de 1997<p>
+			      Vive en: Tuxtla Gutierrez Chiapas.<p>
+				</div>
+		    </div>
+    	</div>
+
+
+    	<div class="card" style="width:400px">
+		    <img class="card-img-top" src="img/luis.jpg" alt="Card image" style="width:100%">
+		    <div class="card-body">
+		      <h4 class="card-title">Luis Fernando Hernández</h4>
+		      <button class="collapsible">Mas información</button>
+		    	<div class="content">
+			      Alumno: Universidad Politecnica de Chiapas.<p><p>
+			      Actualmente Cursa el 5° Cuatrimestre<p>
+			      Fecha de nacimiento: 12 de Mayo de 1998<p>
+			      Vive en: Tuxtla Gutierrez Chiapas.<p>
+				</div>
+		    </div>
+    	</div>
+	</div>
+
+	<script>
+	var coll = document.getElementsByClassName("collapsible");
+	var i;
+
+	for (i = 0; i < coll.length; i++) {
+	  coll[i].addEventListener("click", function() {
+	    this.classList.toggle("active");
+	    var content = this.nextElementSibling;
+	    if (content.style.maxHeight){
+	      content.style.maxHeight = null;
+	    } else {
+	      content.style.maxHeight = content.scrollHeight + "px";
+	    } 
+	  });
+	}
+	</script>
+
+
+
+
+
+
+
 	<!-- Div de tarjeta de Pantalla Principal -->
 	<div data-role="page" id="pantallaPrincipal">
 		<div data-role="header" class="header">
@@ -290,7 +376,7 @@
 				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
 				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
 				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Config.</a></li>
 
 			</ul>
@@ -323,6 +409,8 @@
 		</div>
 
 	</div>
+
+
 
 
 

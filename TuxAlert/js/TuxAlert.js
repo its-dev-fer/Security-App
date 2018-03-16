@@ -81,6 +81,11 @@ $(document).ready(function(){
 		alert("Alerta Enviada");
   	});
 
+  	$("#boton_acerca_de").click(function(e){
+  		e.preventDefault();
+  		location.href = ("#ventana_acerca_de")
+  	})
+
 	//Gesto de deslizar hacia la derecha
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
@@ -114,6 +119,8 @@ $(document).ready(function(){
 	        }
 	    }
 	});
+
+
 
 });
 
