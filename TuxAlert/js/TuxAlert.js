@@ -86,6 +86,7 @@ $(document).ready(function(){
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
 
 	//cerrar y abrir el panel
+	/*
 	$("#inicio").on("swiperight",function(e){
 
 		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
@@ -94,6 +95,26 @@ $(document).ready(function(){
             }
         }
 	});
+	*/
+
+	$("#inicio").on("swiperight", function(e){
+		e.preventDefault();
+		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+	        if ( e.type === "swiperight"  ) {
+	            $( "#menu-panel" ).panel( "open" );
+	        }
+	    }
+	});
+
+	$("#historial").on("swiperight",function(e){
+		e.preventDefault();
+		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+	        if ( e.type === "swiperight"  ) {
+	            $( "#menu-panel" ).panel( "open" );
+	        }
+	    }
+	});
+
 });
 
 function regresarACasa(event){
