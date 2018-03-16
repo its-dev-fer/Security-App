@@ -15,6 +15,12 @@
 	background-color: var(--default-background) !important;
 }
 
+.ui-panel-dismiss-open.ui-panel-dismiss-position-left{
+	background-color: rgba(0,0,0,0.4) !important;
+	transition: ease-in-out 0.3s !important;
+}
+
+
 .sm{
 	width: 100%;
 	left: 1px;
