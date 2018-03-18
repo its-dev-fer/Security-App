@@ -90,18 +90,6 @@ $(document).ready(function(){
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
 
-	//cerrar y abrir el panel
-	/*
-	$("#inicio").on("swiperight",function(e){
-
-		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-            if ( e.type === "swiperight"  ) {
-                $( "#menu-panel" ).panel( "open" );
-            }
-        }
-	});
-	*/
-
 	$("#inicio").on("swiperight", function(e){
 		e.preventDefault();
 		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
