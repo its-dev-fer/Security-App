@@ -123,7 +123,7 @@ li{
 }
 
 li > a{
-	text-decoration: none  !important;	
+	text-decoration: none  !important;
 }
 
 a:link{
@@ -362,11 +362,14 @@ h3{
 }
 
 .text-field-contacto{
-	margin-left: 2% !important;
-	margin-right: 2% !important;
+	background-color: white !important;
+
 }
 
 .textAreaContacto{
+	width: 100% !important;
+	height: 40px !important;
+	background-color: white !important;
 	resize: none;
 }
 
@@ -396,7 +399,7 @@ p,li,a{
 	margin: 0 auto !important;
 	width: 60% !important;
 	color: black !important;
-	font-size: 15px !important;	
+	font-size: 15px !important;
 	font-family: 'Myriad' !important;
 	text-align: center !important;
 	padding: 2em !important;
