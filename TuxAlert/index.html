@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="js/TuxAlert.js"></script>
@@ -153,7 +154,7 @@
 				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
 				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Config.</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
 
 			</ul>
 		</div>
@@ -257,6 +258,8 @@
 		</div>
 	</div>
 
+
+
 	<!-- TARJETA ACERCA DE -->
 	<div id="ventana_acerca_de" data-role="page" >
 		<div class="card" style="width:400px">
@@ -319,13 +322,47 @@
     	</div>
 	</div>
 
+	<!-- TARJETA CONFIGURACION -->
+
+	<div id="ventana_configuracion" data-role="page" >
+		<!-- aca va el header -->
+		<br><br>
+		<div id="contenedorPricipal">
+			<button class="w3-button w3-xlarge w3-circle w3-card-4" style="" id="boton_cerrar_sesion"></button>
+		</div>
+		<br><br><br>
+		<div class="panel-group" id="accordion" style="background-color: green;">
+	    	<form>
+			    <fieldset data-role="collapsible">
+			        <legend>Cambiar Informacion De La Cuenta</legend>
+			        <form>
+					<label>Nombre Usuario: </label>
+					  <input type="text" name="firstname" placeholder="Ingrese Nuevo Nombre Usuario" required="">
+					  <br>
+					  <label>Contraseña: </label><br>
+					  <input type="password" name="cambiarContrasena" placeholder="Ingrese Nueva Contraseña" required=""><br>
+					  <label>Confirmas Contraseña: </label><br>
+					  <input type="password" name="confirmarCambiarContrasena" placeholder="Confirme contraseña" required="">
+					  <br><br>
+					  <input type="submit" value="Guardar">
+					</form>
+			    </fieldset>
+			</form>
+		</div>
+		<div class="panel-group" id="accordion" style="background-color: green;">
+	    	<form>
+			    <fieldset data-role="collapsible">
+			        <legend>Reportar un Problema</legend>
+			        <form>
+
+					  <input type="submit" value="Submit">
+					</form>
+			    </fieldset>
+			</form>
+		</div>
+	</div>
+
 	
-
-
-
-
-
-
 
 	<!-- Div de tarjeta de Pantalla Principal -->
 	<div data-role="page" id="pantallaPrincipal">
@@ -362,7 +399,7 @@
 				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
 				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Config.</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
 
 			</ul>
 		</div>
@@ -407,7 +444,7 @@
 				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
 				<li class="sm"><a href="#" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Config.</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
 
 			</ul>
 		</div>
