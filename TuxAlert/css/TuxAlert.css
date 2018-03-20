@@ -438,3 +438,9 @@ ol{
 	    transition: max-height 0.2s ease-out;
 	    background-color: #f1f1f1;
 	}
+
+.texto-negritas{
+	font-family: 'Myriad' !important;
+	font-size: 18px !important;
+	font-weight: bold !important;
+}
