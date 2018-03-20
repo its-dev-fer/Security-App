@@ -145,7 +145,7 @@ li{
 }
 
 li > a{
-	text-decoration: none  !important;	
+	text-decoration: none  !important;
 }
 
 a:link{
@@ -313,6 +313,7 @@ h3{
 	color: var(--texto-barra-superior) !important;
 	text-align: center !important;
 	padding: 0.0005em !important;
+	margin-top: -1px !important;
 }
 
 .red-text{
@@ -384,11 +385,14 @@ h3{
 }
 
 .text-field-contacto{
-	margin-left: 2% !important;
-	margin-right: 2% !important;
+	background-color: white !important;
+
 }
 
 .textAreaContacto{
+	width: 100% !important;
+	height: 40px !important;
+	background-color: white !important;
 	resize: none;
 }
 
@@ -418,7 +422,7 @@ p,li,a{
 	margin: 0 auto !important;
 	width: 60% !important;
 	color: black !important;
-	font-size: 15px !important;	
+	font-size: 15px !important;
 	font-family: 'Myriad' !important;
 	text-align: center !important;
 	padding: 2em !important;
@@ -426,8 +430,16 @@ p,li,a{
 	right: 0 !important;
 }
 
+tr{
+	border-bottom: solid 1px black;
+}
+
 ol{
 	list-style: decimal;
+}
+
+input{
+	background-color: white;
 }
 .collapsible {
 	    background-color: #777;
@@ -452,3 +464,9 @@ ol{
 	    transition: max-height 0.2s ease-out;
 	    background-color: #f1f1f1;
 	}
+
+.texto-negritas{
+	font-family: 'Myriad' !important;
+	font-size: 18px !important;
+	font-weight: bold !important;
+}
