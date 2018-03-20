@@ -262,6 +262,22 @@
 
 	<!-- TARJETA ACERCA DE -->
 	<div id="ventana_acerca_de" data-role="page" >
+		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
+			<ul>
+				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
+				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
+				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
+
+			</ul>
+		</div>
+
+		<div data-role="header" class="header">
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<h3>ACERCA DE</h3>
+		</div>
 		<div class="card" style="width:400px">
 		    <img class="card-img-top" src="img/Andre.jpg" alt="Card image" style="width:100%">
 		    <div class="card-body">
@@ -325,8 +341,23 @@
 	<!-- TARJETA CONFIGURACION -->
 
 	<div id="ventana_configuracion" data-role="page" >
-		<!-- aca va el header -->
-		<br><br>
+		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
+			<ul>
+				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
+				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
+				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
+
+			</ul>
+		</div>
+
+		<div data-role="header" class="header">
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<h3>Configuración</h3>
+		</div>
+		
 		<div id="contenedorPricipal">
 			<button class="w3-button w3-xlarge w3-circle w3-card-4" style="" id="boton_cerrar_sesion"></button>
 		</div>
@@ -334,7 +365,7 @@
 		<div class="panel-group" id="accordion" style="background-color: green;">
 	    	<form>
 			    <fieldset data-role="collapsible">
-			        <legend>Cambiar Informacion De La Cuenta</legend>
+			        <legend>Cambiar Información De Mi Cuenta</legend>
 			        <form>
 					<label>Nombre Usuario: </label>
 					  <input type="text" name="firstname" placeholder="Ingrese Nuevo Nombre Usuario" required="">
