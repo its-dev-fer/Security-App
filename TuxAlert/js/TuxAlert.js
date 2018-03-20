@@ -56,6 +56,11 @@ $(document).ready(function(){
 		location.href = "#tipoDeUsuario";
 	});
 
+	$("#btn_configuracion").click(function(e){
+		e.preventDefault();
+		location.href = "#ventana_configuracion";
+	});
+
 	$("#login").click(function(e){
 		e.preventDefault();
 		location.href = "#pantallaPrincipal";
@@ -134,8 +139,6 @@ $(document).ready(function(){
 	    } 
 	  });
 	}
-
-
 
 });
 
