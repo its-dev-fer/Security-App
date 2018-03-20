@@ -415,6 +415,10 @@ tr{
 ol{
 	list-style: decimal;
 }
+
+input{
+	background-color: white;
+}
 .collapsible {
 	    background-color: #777;
 	    color: white;
