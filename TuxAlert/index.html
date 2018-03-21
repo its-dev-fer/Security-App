@@ -314,7 +314,7 @@
 				</div>
 		    </div>
     	</div>
-		
+
 
     	<div class="card" style="width:400px">
 		    <img class="card-img-top" src="img/David.jpg" alt="Card image" style="width:100%">
@@ -365,7 +365,7 @@
 			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
 			<h3>Configuración</h3>
 		</div>
-		
+
 		<div id="contenedorPricipal">
 			<button class="w3-button w3-xlarge w3-circle w3-card-4" style="" id="boton_cerrar_sesion"></button>
 		</div>
@@ -402,7 +402,7 @@
 		</div>
 	</div>
 
-	
+
 
 	<!-- Div de tarjeta de Pantalla Principal -->
 	<div data-role="page" id="pantallaPrincipal">
@@ -454,16 +454,10 @@
 			<hr class="linea-separacion">
 			<p class="subtitulo-contacto-2">¿Tienes algún problema o sugerencia?</p>
 			<small class="subtitulo-contacto-3">Descuida, estamos aquí para ayudarte:</small>
-			<form class="" method="post" id="mail_contactanos">
-				<p class="titulo-operaciones-contacto">Categoría: </p>
-				<select id="genero" name="generoUsuario">
-					<option value="masculino">Reportar Bug</option>
-					<option value="femenino">Sugerencia</option>
-					<option value="otro">Otro</option>
-				</select>
-				
-				<p class="titulo-operaciones-contacto">Asunto: </p> <input type="text" name="" value="" class="text-field-contacto" placeholder="Asunto" required>
-				<p class="titulo-operaciones-contacto">Mensaje: </p> <textarea name="name" rows="8" cols="80" placeholder="Mensaje" class="textAreaContacto" required></textarea>
+			<form class="" method="post" id="mail_contactanos" action="php/sendMail.php">
+
+				<p class="titulo-operaciones-contacto">Asunto: </p> <input type="text" name="asunto" value="" class="text-field-contacto" placeholder="Asunto" required>
+				<p class="titulo-operaciones-contacto">Mensaje: </p> <textarea name="mensaje" rows="8" cols="80" placeholder="Mensaje" class="textAreaContacto" required></textarea>
 				<br>
 				<button type="submit" name="button" class="red-button">Enviar</button>
 			</form>
@@ -514,7 +508,7 @@
 							<li class="historial-item">07/01/2018</li>
 						</td>
 					</tr>
-					<tr>						
+					<tr>
 						<td>
 							<li class="historial-item">Atropello de peatón</li>
 						</td>
@@ -531,7 +525,7 @@
 						</td>
 					</tr>
 				</tbody>
-				
+
 			</table>
 		</div>
 
