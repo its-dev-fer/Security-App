@@ -295,6 +295,12 @@ h3{
 	padding: 1em !important;
 }
 
+
+.bigass{
+	font-size: 25px !important;
+	text-align: center !important;
+}
+
 .rounded-button{
 	display: block;
 	margin: 0 auto !important;

@@ -83,7 +83,7 @@ $(document).ready(function(){
 
 	$("#login").click(function(e){
 		e.preventDefault();
-		location.href = "#pantallaPrincipal";
+		location.href = "#tarjeta-login";
 	});
 
 	$("#seguridad_publica").click(function(e){
