@@ -15,12 +15,32 @@ $(document).ready(function(){
 		location.href = "#inicio";
 	}
 
+
+	$("#btn-1").click(function(e){
+		e.preventDefault();
+		location.href = "#tarjeta-2";
+	});
+
+	$("#btn-2").click(function(e){
+		e.preventDefault();
+		location.href = "#tarjeta-3";
+	});
+
+	$("#btn-3").click(function(e){
+		e.preventDefault();
+		location.href = "#tarjeta-4";
+	});
+
+	$("#btn-4").click(function(e){
+		e.preventDefault();
+		location.href = "#tarjeta-5";
+	});
 	/* ======================================================= */
 
 	//Asignar un ID a cada botón de las tarjetas de presentación
 	$("#btn-tarjeta-1").click(function(e){
 		e.preventDefault();
-		location.href =  "#tarjeta-1";
+		location.href =  "#tarjeta-2";
 	});
 
 	$("#btn-tarjeta-2").click(function(e){
@@ -94,15 +114,6 @@ $(document).ready(function(){
 	//Gesto de deslizar hacia la derecha
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
-
-	$("#inicio").on("swiperight", function(e){
-		e.preventDefault();
-		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-	        if ( e.type === "swiperight"  ) {
-	            $( "#menu-panel" ).panel( "open" );
-	        }
-	    }
-	});
 
 	$("#historial").on("swiperight",function(e){
 		e.preventDefault();
