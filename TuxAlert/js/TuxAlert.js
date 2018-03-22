@@ -95,11 +95,16 @@ $(document).ready(function(){
 		e.preventDefault();
 		location.href = "#registro";
 	});
-
+	/*
 	$("#button-registrarUsuario").click(function(e){
 		e.preventDefault();
-		alert("Usuario registrado exitósamente");
-	});
+		var contraseniaUsuario= document.getElementById("contraseniaUsuario").value;
+		var contraseniaRepetidaUsuario= document.getElementById("contraseniaRepetidaUsuario").value;
+		if(contraseniaUsuario == contraseniaRepetidaUsuario){
+			location.href= "#pantallaPrincipal"
+		}else
+			alert("Verifique que las contraseñas sean iguales");
+	});*/
 
 	$("#boton-Logo-Rojo").click(function(e){
 		e.preventDefault();

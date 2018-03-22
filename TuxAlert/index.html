@@ -203,7 +203,7 @@
 				Clave<span class="dato-Obligatorio">*</span>: <input name="claveUsuario" type="text" class="text-field-contacto" placeholder="Ingresa la clave de SP" required/>
 				<div class="main-buttons">
 					<br><br><br><br><br>
-					<button class="red-button" data-transition="flip" id="button-verificarUsuario" type="submit">Acceder</button>
+					<button class="red-button" data-transition="flip" id="button-verificarUsuario" name="button-verificarUsuario" type="submit">Acceder</button>
 					<br><br><br>
 				</div>
 			</form>
@@ -217,7 +217,7 @@
 		</div>
 		<br><br>
 		<div>
-			<form action="#Base-de-Datos" method="POST" id="form-registro-usuario">
+			<form action="php/registrarUsuario.php" method="POST" id="form-registro-usuario">
 				<div class="descripcion">
 					<p>Registro de Usuario Nuevo</p>
 				</div>
@@ -225,7 +225,7 @@
 				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tu(s) nombre(s)" required/>
 				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
 				Género<span class="dato-Obligatorio">*</span>:
-					<select id="genero" name="generoUsuario">
+					<select id="genero" name="generoUsuario" required>
 						<option value="masculino" selected>Masculino</option>
 						<option value="femenino">Femenino</option>
 						<option value="otro">Helicóptero de combate</option>
@@ -234,11 +234,11 @@
 				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuario" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
 				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuario" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
 				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
-				Contraseña<span class="dato-Obligatorio">*</span>: <input name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
-				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
 				<div class="main-buttons">
 					<br><br><br><br><br>
-					<button class="red-button" data-transition="flip" id="button-registrarUsuario" type="submit">Registrarse</button>
+					<button class="red-button" data-transition="flip" id="button-registrarUsuario" name="button-registrarUsuario" type="submit">Registrarse</button>
 					<br><br><br>
 				</div>
 			</form>
@@ -367,7 +367,7 @@
 		</div>
 
 		<div id="contenedorPricipal">
-			<button class="w3-button w3-xlarge w3-circle w3-card-4" style="" id="boton_cerrar_sesion"></button>
+			<button class="w3-button w3-xlarge w3-circle w3-card-4" id="boton_cerrar_sesion"></button>
 		</div>
 		<br><br><br>
 		<div class="panel-group" id="accordion" style="background-color: green;">
