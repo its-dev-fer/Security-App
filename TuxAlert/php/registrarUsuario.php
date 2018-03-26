@@ -3,18 +3,21 @@
     function salir(){
         header("location: #pantallaPrincipal");
     }
-    echo '<script type="text/javascript">'.'alert("Holaaaaaaaaa")'.'</script>';
+
+    echo "Hola";
+    /*
+    echo '<script type="text/javascript">'.'alert("Holaaaaaaaaa");'.'</script>';
 
     $serverName= "localhost";
     $userName= "root";  
     $password= "";
-    $dbName= "tuxalert_app_db";
+    $dbName= "tuxaleert_app_db";
     // Create Connection DB
     $conn= new mysqli($serverName, $userName, $password, $dbName);
     // Check connection
     if($conn->connect_error)
         die("Conexión fallida: " .$conn->connect_error);
-    if(isset($_POST['button-registrarUsuario'])){
+   
         $nombreUsuario= $_POST['nombreUsuario'];
         $apellidoUsuario= $_POST['apellidoUsuario'];
         $generoUsuario= $_POST['generoUsuario'];
@@ -43,7 +46,7 @@
             '$numeroUsuario',
             '$contraseniaUsuario',
             '$generoUsuario',
-            '1', /* Uno es usuario activo y cero es usuario borrado*/
+            '1', // Uno es usuario activo y cero es usuario borrado
             '1'
         )";
 
@@ -53,5 +56,5 @@
             echo '<script type="text/javascript">'.'alert("Registro fallido")'.'</script>';
         mysqli_close($conn);
         salir();
-    }
-?>
+        */
+        ?>
