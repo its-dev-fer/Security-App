@@ -8,12 +8,11 @@ $(document).ready(function(){
 
 	//Checar si es la primera vez que se abre la app
 	var primeraVez = localStorage.getItem('primeraVez',null);
+	/*
 	if(!primeraVez){
 		//localStorage.setItem('primeraVez',1);
 		location.href = "#tarjeta-1"
-	}else{
-		location.href = "#inicio";
-	}
+	}*/
 
 
 	$("#btn-1").click(function(e){
@@ -95,16 +94,20 @@ $(document).ready(function(){
 		e.preventDefault();
 		location.href = "#registro";
 	});
-	/*
+	
 	$("#button-registrarUsuario").click(function(e){
 		e.preventDefault();
 		var contraseniaUsuario= document.getElementById("contraseniaUsuario").value;
 		var contraseniaRepetidaUsuario= document.getElementById("contraseniaRepetidaUsuario").value;
 		if(contraseniaUsuario == contraseniaRepetidaUsuario){
 			location.href= "#pantallaPrincipal"
+			$("#form-registro-usuario").submit(function(e){
+				e.preventDefault();
+				location.href = ("../php/registroDeUsuario.php");
+			});
 		}else
 			alert("Verifique que las contraseñas sean iguales");
-	});*/
+	});
 
 	$("#boton-Logo-Rojo").click(function(e){
 		e.preventDefault();
@@ -113,8 +116,15 @@ $(document).ready(function(){
 
   	$("#boton_acerca_de").click(function(e){
   		e.preventDefault();
-  		location.href = ("#ventana_acerca_de")
-  	})
+  		location.href = ("#ventana_acerca_de");
+  	});
+/*
+  	$("#form-registro-usuario").submit(function(e){
+  		e.preventDefault();
+  		location.href = ("../php/registroDeUsuario.php");
+  	});
+*/
+
 
 	//Gesto de deslizar hacia la derecha
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
