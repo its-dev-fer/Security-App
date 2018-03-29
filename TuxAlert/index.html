@@ -269,7 +269,7 @@
 
 
 	<!-- TARJETA ACERCA DE -->
-	<div id="ventana_acerca_de" data-role="page" >
+	<div id="ventana_acerca_de" data-role="page">
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
 				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
@@ -286,6 +286,8 @@
 			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
 			<h3>ACERCA DE</h3>
 		</div>
+		
+		<div data-role="content">
 			<BR>
 			<BR>
 			<h5><b>&nbsp; &nbsp; ACERCA DE NOSOTROS</b></h5>			
@@ -326,8 +328,8 @@
 		    		&nbsp; &nbsp; &nbsp; &nbsp;kamh.1996.hmak@hotmail.com<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp;u n k n o w n<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp;Villaflores, Chis.
-		    </p> 
-
+		    </p>
+		</div>
 	</div>
 
 	<!-- TARJETA CONFIGURACION -->
@@ -350,39 +352,40 @@
 			<h3>Configuración</h3>
 		</div>
 
-		<div id="contenedorPricipal">
+		<div data-role="content">
+			<div id="contenedorPricipal">
 			<button class="w3-button w3-xlarge w3-circle w3-card-4" id="boton_cerrar_sesion"></button>
-		</div>
-		<br><br><br>
-		<div class="panel-group" id="accordion" style="background-color: green;">
-	    	<form>
-			    <fieldset data-role="collapsible">
-			        <legend>Cambiar Información De Mi Cuenta</legend>
-			        <form>
-					<label>Nombre Usuario: </label>
-					  <input type="text" name="firstname" placeholder="Ingrese Nuevo Nombre Usuario" required="">
-					  <br>
-					  <label>Contraseña: </label><br>
-					  <I
-					  ´-input type="password" name="cambiarContrasena" placeholder="Ingrese Nueva Contraseña" required=""><br>
-					  <label>Confirmas Contraseña: </label><br>
-					  <input type="password" name="confirmarCambiarContrasena" placeholder="Confirme contraseña" required="">
-					  <br><br>
-					  <input type="submit" value="Guardar">
-					</form>
-			    </fieldset>
-			</form>
-		</div>
-		<div class="panel-group" id="accordion" style="background-color: green;">
-	    	<form>
-			    <fieldset data-role="collapsible">
-			        <legend>Reportar un Problema</legend>
-			        <form>
+			</div>
+			<br><br><br>
+			<div class="panel-group" id="accordion" style="background-color: green;">
+		    	<form>
+				    <fieldset data-role="collapsible">
+				        <legend>Cambiar Información De Mi Cuenta</legend>
+				        <form>
+						<label>Nombre Usuario: </label>
+						  <input type="text" name="firstname" placeholder="Ingrese Nuevo Nombre Usuario" required="">
+						  <br>
+						  <label>Contraseña: </label><br>
+						  <input type="password" name="cambiarContrasena" placeholder="Ingrese Nueva Contraseña" required=""><br>
+						  <label>Confirmas Contraseña: </label><br>
+						  <input type="password" name="confirmarCambiarContrasena" placeholder="Confirme contraseña" required="">
+						  <br><br>
+						  <input type="submit" value="Guardar">
+						</form>
+				    </fieldset>
+				</form>
+			</div>
+			<div class="panel-group" id="accordion" style="background-color: green;">
+		    	<form>
+				    <fieldset data-role="collapsible">
+				        <legend>Reportar un Problema</legend>
+				        <form>
 
-					  <input type="submit" value="Submit">
-					</form>
-			    </fieldset>
-			</form>
+						  <input type="submit" value="Submit">
+						</form>
+				    </fieldset>
+				</form>
+			</div>
 		</div>
 	</div>
 
