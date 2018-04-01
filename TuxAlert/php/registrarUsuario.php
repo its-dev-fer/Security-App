@@ -1,7 +1,7 @@
 <?php
 
     function salir(){
-        header("location: #pantallaPrincipal");
+        
     }
 
     $serverName= "127.0.0.1";

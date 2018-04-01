@@ -12,6 +12,7 @@ $(document).ready(function(){
 		        success: function () {
 		         alert('Se ha registrado al usuario');
 		         location.href = "#pantallaPrincipal";
+		         //Guardar en local storage para el inicio de sesión rápido xd
 		        }
 		    });
 		}else{
