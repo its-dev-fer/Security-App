@@ -5,13 +5,11 @@
     }
 
     echo "Hola";
-    /*
-    echo '<script type="text/javascript">'.'alert("Holaaaaaaaaa");'.'</script>';
 
     $serverName= "localhost";
     $userName= "root";  
     $password= "";
-    $dbName= "tuxaleert_app_db";
+    $dbName= "tuxalert";
     // Create Connection DB
     $conn= new mysqli($serverName, $userName, $password, $dbName);
     // Check connection
@@ -56,5 +54,4 @@
             echo '<script type="text/javascript">'.'alert("Registro fallido")'.'</script>';
         mysqli_close($conn);
         salir();
-        */
         ?>
