@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	//Validar que el usario esté conectado a internet
+		//Validar que el usario esté conectado a internet
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
   		navigator.app.exitApp();
