@@ -1,5 +1,26 @@
 $(document).ready(function(){
 
+	$("#form-registro-usuario").on('submit',function(e){
+		e.preventDefault();
+		$p1 = $("#contraseniaUsuario").val();
+		$p2 = $("#contraseniaRepetidaUsuario").val();
+		if($p1 == $p2){
+			$.ajax({
+		        type: 'post',
+		        url: '../php/registrarUsuario.php',
+		        data: $('#form-registro-usuario').serialize(),
+		        success: function () {
+		         alert('Se ha registrado al usuario');
+		         location.href = "#pantallaPrincipal";
+		        }
+		    });
+		}else{
+			alert("Las contraseñas no coinciden.");
+			$("#contraseniaUsuario").val("");
+			$("#contraseniaRepetidaUsuario").val("");
+		}
+	});
+
 		//Validar que el usario esté conectado a internet
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
@@ -94,21 +115,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		location.href = "#registro";
 	});
-	
-	$("#button-registrarUsuario").click(function(e){
-		e.preventDefault();
-		var contraseniaUsuario= document.getElementById("contraseniaUsuario").value;
-		var contraseniaRepetidaUsuario= document.getElementById("contraseniaRepetidaUsuario").value;
-		if(contraseniaUsuario == contraseniaRepetidaUsuario){
-			location.href= "#pantallaPrincipal"
-			$("#form-registro-usuario").submit(function(e){
-				e.preventDefault();
-				location.href = ("../php/registroDeUsuario.php");
-			});
-		}else
-			alert("Verifique que las contraseñas sean iguales");
-	});
-
 	$("#boton-Logo-Rojo").click(function(e){
 		e.preventDefault();
 		alert("Alerta Enviada");
@@ -118,12 +124,7 @@ $(document).ready(function(){
   		e.preventDefault();
   		location.href = ("#ventana_acerca_de");
   	});
-/*
-  	$("#form-registro-usuario").submit(function(e){
-  		e.preventDefault();
-  		location.href = ("../php/registroDeUsuario.php");
-  	});
-*/
+
 
 
 	//Gesto de deslizar hacia la derecha

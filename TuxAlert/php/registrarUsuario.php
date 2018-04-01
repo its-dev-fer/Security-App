@@ -4,9 +4,7 @@
         header("location: #pantallaPrincipal");
     }
 
-    echo "Hola";
-
-    $serverName= "localhost";
+    $serverName= "127.0.0.1";
     $userName= "root";  
     $password= "";
     $dbName= "tuxalert";
@@ -34,7 +32,7 @@
             Telefono,
             Contrasenia,
             Genero,
-            Borrado
+            Borrado,
             ID_TipoUsuario
         ) VALUES (
             '$nombreUsuario',
@@ -42,16 +40,16 @@
             '$emailUsuario',
             '$fechaUsuario',
             '$numeroUsuario',
-            '$contraseniaUsuario',
+            '$passEnc',
             '$generoUsuario',
-            '1', // Uno es usuario activo y cero es usuario borrado
+            '1', 
             '1'
         )";
 
         if($conn->query($sql) == TRUE)
-            echo '<script type="text/javascript">'.'alert("Registro exitóso")'.'</script>';
+            echo $conn."<br>";
         else
-            echo '<script type="text/javascript">'.'alert("Registro fallido")'.'</script>';
+            echo $conn."<br>";
         mysqli_close($conn);
-        salir();
+        //salir();
         ?>
