@@ -12,7 +12,7 @@
 	--fondo-tarjeta-4: #75AD74;
 	--fondo-tarjeta-5: #009493;
 	--blanco: #FFFFFF;
-	background-color: var(--default-background) !important;
+	/*background-color: var(--default-background) !important;*/
 }
 
 

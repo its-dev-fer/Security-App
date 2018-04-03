@@ -3,12 +3,15 @@
 $(document).ready(function(){
 
 	//gelocation aki pq soy mui cul
+	var lon;
+	var lat;
 	function GoogleMap(position) {
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
+	  lon= position.coords.longitude;
+	  lat = position.coords.latitude;
 	  var map = new google.maps.Map(document.getElementById('map-canvas'), {
 	    zoom: 20,
-	    disableDefaultUI: true,
+	    disableDefaultUI: false,
 	    mapTypeId: google.maps.MapTypeId.ROADMAP
 	  });
 
