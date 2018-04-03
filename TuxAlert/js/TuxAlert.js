@@ -4,9 +4,9 @@ $(document).ready(function(){
 
 	//gelocation aki pq soy mui cul
 	
-	function GoogleMap(position) {
+	function GoogleMap(position) {	
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	  console.log("xd");
+	  console.log(location);
 	  console.log("latitud:" + position.coords.latitude+ " longitud:" + position.coords.longitude);
 	  var map = new google.maps.Map(document.getElementById('map-canvas'), {
 	    zoom: 20,
@@ -23,6 +23,20 @@ $(document).ready(function(){
 	  });
 
 	  map.setCenter(location);
+
+	  var circle = new google.maps.Circle({
+		    center: location,
+		    radius: 20,
+			map: map,
+			fillColor: '#ff6666',
+			fillOpacity: 0.6,
+			strokeColor: '#000',
+			strokeOpacity: 1.0
+	   });
+	   
+	   circle.bindTo('center', marker, 'position');
+	   
+
 	}
 
 	function showError() {
