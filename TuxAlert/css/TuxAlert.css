@@ -519,10 +519,10 @@ input{
 
 
 /*REGLAS DEL MAPA*/
-#map-page, #map-canvas { width: 95%; height: 80%; padding: 0; 
+#map-page, #map-canvas { width: 560px; height: 400px; padding: 0; 
 	
 	position: absolute;
-
+	border:1px solid black;
 }
 
 #map-canvas a{
