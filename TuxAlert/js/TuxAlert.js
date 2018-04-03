@@ -18,22 +18,23 @@ $(document).ready(function(){
 	    map: map,
 	    position: location,
 	    animation: google.maps.Animation.DROP,
-	    title: "This is your location"
+	    title: "Usted se encuentra aquí",
+	    draggable:true
 	  });
 
 	  map.setCenter(location);
 	}
 
 	function showError() {
-	  alert("Location can't be found");
+	  alert("No te pudimos encontrar:(");
 	}
 
    $(document).on( "pageinit", "#mapaVista", function(e) {
    		e.preventDefault();
    		if (navigator.geolocation) {
-		  navigator.geolocation.getCurrentPosition(GoogleMap, showError);
+		  navigator.geolocation.getCurrentPosition(GoogleMap, showError);		 
 		} else {
-		  alert("Your browser does not support Geolocation.");
+		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
 		}
 	});
 
