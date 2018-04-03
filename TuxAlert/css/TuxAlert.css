@@ -516,3 +516,15 @@ input{
 	font-size: 18px !important;
 	font-weight: bold !important;
 }
+
+
+/*REGLAS DEL MAPA*/
+#map-page, #map-canvas { width: 95%; height: 80%; padding: 0; 
+	
+	position: absolute;
+
+}
+
+#map-canvas a{
+	border:0px solid black!important;
+}

@@ -1,5 +1,7 @@
 //weas del mapa y geolocation
-   $(document).on( "pageinit", "#mapaVista", function() {
+alert("pofavo");
+   $(document).on( "pageload", "#mapaVista", function() {
+   	alert("yipiyaiyo");
     var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
     if ( navigator.geolocation ) {
         function success(pos) {
