@@ -523,8 +523,23 @@ input{
 	margin:0 auto;
 	position: absolute;
 	border:1px solid black;
+	left: 0;
+	right: 0;
+}
+
+
+.not center{
+	border:1px solid black;
+	width: 100%;
+	background-color: tomato;
+	left: 0;
+	font-family: Helvetica;	
+	right: 0;
+	margin:0 auto;
 }
 
 #map-canvas a{
 	border:0px solid black!important;
+
 }
+

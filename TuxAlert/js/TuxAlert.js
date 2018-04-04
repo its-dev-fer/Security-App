@@ -3,6 +3,18 @@
 $(document).ready(function(){
 
 	//gelocation aki pq soy mui cul
+
+	var kmaras = {
+		kmara1:{
+			center:{lat:16.7751810, lng: -93.0799510}
+		},
+
+		kmara2:{
+			center:{lat:16.7759637, lng: -93.0808115}
+		}
+
+
+	}
 	
 	function GoogleMap(position) {	
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -14,22 +26,46 @@ $(document).ready(function(){
 	    mapTypeId: "hybrid"//google.maps.MapTypeId.ROADMAP
 	  });
 
+	  var image = 'img/kmera.png';
+
 	  var marker = new google.maps.Marker({
 	    map: map,
 	    position: location,
 	    animation: google.maps.Animation.DROP,
 	    title: "Usted se encuentra aquí",
-	    draggable:true
+	    draggable:true,	    	    
 	  });
 
 	  map.setCenter(location);
+
+	  for(var kamara in kmaras){
+	  	var camaras = new google.maps.Circle({
+            strokeColor: '#000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#00ff00',
+            fillOpacity: 0.35,
+            map: map,
+            icon:image,
+            center: kmaras[kamara].center,
+            radius: 25
+          });
+	  		
+	  	 var markers = new google.maps.Marker({
+		    map: map,
+		    position: kmaras[kamara].center,		    		  
+		    draggable:false,	    	   
+		    icon:image
+	     });
+
+	  }
 
 	  var circle = new google.maps.Circle({
 		    center: location,
 		    radius: 20,
 			map: map,
 			fillColor: '#ff6666',
-			fillOpacity: 0.6,
+			fillOpacity: 0.8,
 			strokeColor: '#000',
 			strokeOpacity: 1.0
 	   });
