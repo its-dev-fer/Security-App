@@ -16,6 +16,8 @@ $(document).ready(function(){
 
 	}
 	
+	var distance;
+
 	function GoogleMap(position) {	
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	  console.log(location);
@@ -25,6 +27,8 @@ $(document).ready(function(){
 	    disableDefaultUI: false,
 	    mapTypeId: "hybrid"//google.maps.MapTypeId.ROADMAP
 	  });
+
+
 
 	  var image = 'img/kmera.png';
 
@@ -36,9 +40,12 @@ $(document).ready(function(){
 	    draggable:true,	    	    
 	  });
 
-	  map.setCenter(location);
+	  //google.maps.event.addListener(marker, 'position_changed', update);
 
+	  map.setCenter(location);
+	  var i=0;
 	  for(var kamara in kmaras){
+	  	
 	  	var camaras = new google.maps.Circle({
             strokeColor: '#000',
             strokeOpacity: 0.8,
@@ -58,7 +65,19 @@ $(document).ready(function(){
 		    icon:image
 	     });
 
+	  	 var path = [markers.getPosition(), marker.getPosition()];
+	  	 distance = google.maps.geometry.spherical.computeHeading(path[0], path[1]);
+	  	 if(distance<50){
+	  	 	console.log("ESTAS CERCA DE UNA KMARA");
+	  	 }
+	  	 console.log("Distancia camara["+ i +"]: "+ distance);
+	  	 i++;
+//	  	 update();
 	  }
+
+//	  function update(){
+
+//	  }
 
 	  var circle = new google.maps.Circle({
 		    center: location,
