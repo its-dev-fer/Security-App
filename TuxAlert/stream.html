@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>----</title>
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+</head>
+<body>
+
+	<video src="" id="video" autoplay="true">
+		
+	</video>
+
+	<canvas id="preview">
+		
+	</canvas>
+
+	<div id="logger">
+		
+	</div>
+
+	<script type="text/javascript">
+		var canvas = document.getElementById("preview");
+		var context = canvas.getContext("2d");
+		var video = document.getElementById("video");
+		canvas.width = 800;
+		canvas.heigth = 600;
+		context.width = canvas.width;
+		context.heigth = canvas.heigth;
+
+		function loadCam(){
+			console.log("Cámara conectada");
+		}
+		function failCam(){
+			console.log("Error al acceder a la cámara");
+		}
+		function viewVideo(video,context){
+			context.drawImage(video,0,0,context.width,context.heigth);
+		}
+
+		$(function(){
+			navigator.getUserMdia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgetUserMedia);
+
+			if(navigator.getUserMedia){
+				navigator.getUserMedia({video:true},loadCam,failCam);
+			}
+		});
+
+	</script>
+</body>
+</html>
