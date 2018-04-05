@@ -1,7 +1,9 @@
 var express = require("express");
-var app = new express();
 var http = require("http").Server(app);
-var io = require("socket.io")(http);
+var app = new express();
+var server = http.createServer(app);
+//var io = require("socket.io")(http);
+var io = require('socket.io').listen(server);
 var log = require('log');
 	log = new log('debug');
 
@@ -11,6 +13,8 @@ app.use(express.static(__dirname));
 app.get('/',function(req, res){
 	res.redirect('stream.html');
 });
+
+server.listen(port);
 
 io.on('connection',function(socket){
 	socket.on('stream',function(image){

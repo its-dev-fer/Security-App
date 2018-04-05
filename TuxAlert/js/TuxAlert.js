@@ -1,7 +1,6 @@
 
 
 $(document).ready(function(){
-
 	//gelocation aki pq soy mui cul
 	var kmaras = {
 		kmara1:{
