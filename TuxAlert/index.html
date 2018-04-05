@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/node_modules/socket.io/lib/socket.js"></script>
 	<!--http://maps.google.com/maps?file=api&amp;v=2&amp;-->
 	<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtxMuwsaP5UbC2LVmRE5eimZf8VhMx1J0"></script>	-->
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtxMuwsaP5UbC2LVmRE5eimZf8VhMx1J0&libraries=geometry"></script>
@@ -217,6 +218,7 @@
 	<!-- Div de tarjeta de Registro de Usuario -->
 	<div data-role="page" id="registro">
 		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button"> Volver</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 		<br><br>
@@ -265,6 +267,7 @@
 	<!-- Tarjeta de inicio de sesión -->
 	<div data-role="page" id="tarjeta-login">
 		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button"> Volver</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 
@@ -556,6 +559,61 @@
 			<p>
 				R: Las veces que sean necesarias, siempre y cuando las alertas sean verídicas.
 			</p>
+		</div>
+	</div>
+
+	<!-- Div de streaming xd -->
+	<div data-role="page" id="streaming-card">
+		<div data-role="header">
+			<h5 class="red-text">Observando cámara</h5>
+		</div>
+
+		<div data-role="content">
+			<video src="" id="wacheando-kmera" autoplay="true">
+				
+			</video>
+
+			<canvas id="preview">
+				<div id="logger"></div>
+			</canvas>
+
+			<script type="text/javascript">
+				var canvas = document.getElementById("preview");
+				var context = canvas.getContext("2d")
+				canvas.width = 800;
+				canvas.height = 600;
+				context.width = 800;
+				context.height = 600;
+
+				var video = document.getElementById("wacheando-kmera");
+				var socket = io();
+
+				function logger(msg){
+					$("#logger").text(msg);
+				}
+
+				function loadCam(stream){
+					video.src = window.URL.createObjectURL(stream);
+					logger('Camara conectada correctamente.');
+				}
+
+				function loadFail(){
+					logger("Camara no conectada :c");
+				}
+
+				function viewVideo(){
+					context.drawImage(video,0,0, context.width, context.height);
+				}
+
+				$(function(){
+					navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgGetUserMedia);
+					if(navigator.getUserMedia){
+						navigator.getUserMedia({video:true}, loadCam,loadFail);
+					}
+				});
+
+			</script>
+
 		</div>
 	</div>
 

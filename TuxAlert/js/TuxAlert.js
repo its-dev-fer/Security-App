@@ -3,7 +3,6 @@
 $(document).ready(function(){
 
 	//gelocation aki pq soy mui cul
-
 	var kmaras = {
 		kmara1:{
 			center:{lat:16.7751810, lng: -93.0799510}
@@ -239,6 +238,8 @@ $(document).ready(function(){
 	//Gesto de deslizar hacia la derecha
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
+	$("#registro").on("swiperight", regresarACasa);
+	$("#tarjeta-login").on("swiperight", regresarACasa);
 
 	$("#historial").on("swiperight",function(e){
 		e.preventDefault();
