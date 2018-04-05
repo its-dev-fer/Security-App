@@ -4,7 +4,7 @@
 	<title>----</title>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-	<script type="text/javascript" src="js/node_modules/socket.io/lib/socket.js"></script>
+	<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
 		
 	</video>
 
-	<canvas id="preview">
+	<canvas style="display: none;" id="preview">
 		
 	</canvas>
 
@@ -24,12 +24,14 @@
 		var canvas = document.getElementById("preview");
 		var context = canvas.getContext("2d");
 		var video = document.getElementById("video");
-		canvas.width = 800px;
-		canvas.heigth = 600px;
+		var socket = io();
+		canvas.width = 800;
+		canvas.heigth = 600;
 		context.width = canvas.width;
 		context.heigth = canvas.heigth;
 
-		function loadCam(){
+		function loadCam(stream){
+			video.src = window.URL.createObjectURL(stream);
 			console.log("Cámara conectada");
 		}
 		function failCam(){
@@ -45,6 +47,9 @@
 			if(navigator.getUserMedia){
 				navigator.getUserMedia({video:true},loadCam,failCam);
 			}
+			setInterval(function(){
+				viewVideo(video, context);
+			},60);
 		});
 
 	</script>
