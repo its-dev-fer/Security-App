@@ -43,16 +43,40 @@
 		}
 
 		$(function(){
-			navigator.getUserMdia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgetUserMedia);
 
-			if(navigator.getUserMedia){
-				navigator.getUserMedia({video:true},loadCam,failCam);
-			}
-			setInterval(function(){
-				viewVideo(video, context);
-			},60);
+			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+				var constraints = { audio: true, video: { width: 1280, height: 720 } };
+				navigator.mediaDevices.getUserMedia(constraints);
+				setInterval(function(){
+					viewVideo(video, context);
+				},60);
+				/*
+				.then(function(mediaStream) {
+				  var video = document.querySelector('video');
+				  video.srcObject = mediaStream;
+				  video.onloadedmetadata = function(e) {
+				    video.play();
+				  };
+				})
+				.catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+				*/
+			}else{
+
+				navigator.getUserMdia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msgetUserMedia);
+			
+				if(navigator.getUserMedia){
+					navigator.getUserMedia({video:true},loadCam,failCam);
+				}else{
+					alert("No cam");
+				}
+				setInterval(function(){
+					viewVideo(video, context);
+				},60);
+
+				}
 		});
 
 	</script>
 </body>
+
 </html>
