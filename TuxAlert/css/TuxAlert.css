@@ -543,3 +543,12 @@ input{
 
 }
 
+#wacheando-kmera{
+	display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+	text-align: center !important;
+	width: 80% !important;
+	height: auto !important;
+	box-shadow:0px 8px 23px #807978 !important;
+}
