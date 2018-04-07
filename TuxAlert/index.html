@@ -567,16 +567,14 @@
 		</div>
 
 		<div data-role="content">
-			<img id="wacheando-kmera">
+			<!-- <img id="wacheando-kmera">-->
+			<!-- 
+			//Descarguen la app -> https://play.google.com/store/apps/details?id=com.techlogix.home.security.monitor.ip.webcam (es la //que usé en mi cel)
+			//Abrá que obtener la dirección ip de la cámara "cercana" e inyectarla en el img del div...
+			-->
+			<img src="http://192.168.1.7:8080/video" height="450" width="700">
 		</div>
 	</div>
-	<script type="text/javascript">
-		var socket = io.connect('http://127.0.0.1:3000');
-		socket.on('stream',function(image){
-			var img = document.getElementById("wacheando-kmera");
-			img.src = image;
-		});
-	</script>
-
 </body>
 </html>
+
