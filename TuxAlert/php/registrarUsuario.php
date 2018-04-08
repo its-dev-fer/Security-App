@@ -5,7 +5,7 @@
     }
 
     $serverName= "127.0.0.1";
-    $userName= "root";  
+    $userName= "root";
     $password= "";
     $dbName= "tuxalert_app_db";
     // Create Connection DB
@@ -42,7 +42,7 @@
             '$numeroUsuario',
             '$passEnc',
             '$generoUsuario',
-            '1', 
+            '1',
             '1'
         )";
 
