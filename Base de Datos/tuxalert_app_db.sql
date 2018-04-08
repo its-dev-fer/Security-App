@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Conexión 1
+ Source Server         : Nomada
  Source Server Type    : MySQL
- Source Server Version : 100130
+ Source Server Version : 100131
  Source Host           : localhost:3306
  Source Schema         : tuxalert_app_db
 
  Target Server Type    : MySQL
- Target Server Version : 100130
+ Target Server Version : 100131
  File Encoding         : 65001
 
- Date: 13/03/2018 19:20:07
+ Date: 08/04/2018 12:53:34
 */
 
 SET NAMES utf8mb4;
@@ -46,6 +46,17 @@ CREATE TABLE `categoriasalertas`  (
   INDEX `Indice_Nombre_Categoria`(`Nombre_Categoria`) USING BTREE,
   CONSTRAINT `Foranea_ID_CategoriaAlerta` FOREIGN KEY (`ID_CategoriaAlerta`) REFERENCES `alertas` (`ID_CategoriaAlerta`) ON DELETE NO ACTION ON UPDATE CASCADE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Compact;
+
+-- ----------------------------
+-- Table structure for keys
+-- ----------------------------
+DROP TABLE IF EXISTS `keys`;
+CREATE TABLE `keys`  (
+  `id_key` int(255) NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `estado` int(1) NOT NULL,
+  PRIMARY KEY (`id_key`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for tipousuarios
@@ -90,7 +101,7 @@ CREATE TABLE `usuarios`  (
   `Contrasenia` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   `Genero` enum('masculino','femenino','otro') CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   `Borrado` int(1) NULL DEFAULT NULL,
-  `Ultima_Sesion` timestamp(6) NULL ON UPDATE CURRENT_TIMESTAMP(6),
+  `Ultima_Sesion` timestamp(6) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(6),
   `ID_TipoUsuario` int(255) NULL DEFAULT NULL,
   `ID_Alerta` int(255) NULL DEFAULT NULL,
   PRIMARY KEY (`ID_Usuario`) USING BTREE,
