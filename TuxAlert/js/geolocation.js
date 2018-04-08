@@ -28,7 +28,6 @@ alert("pofavo");
             position: latlng,
             map: map,
             title: "kp2!"
-            title
 		});
        }
 	});

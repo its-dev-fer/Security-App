@@ -41,8 +41,5 @@ require("PHPMailer/class.smtp.php");
 			die();
 		}
 	}
-
-
-
 $html = sendDos($_POST['asunto'],$_POST['mensaje']);
 ?>

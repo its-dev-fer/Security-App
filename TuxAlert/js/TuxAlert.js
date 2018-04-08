@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
 	//gelocation aki pq soy mui cul
 	var kmaras = {
@@ -10,8 +8,6 @@ $(document).ready(function(){
 		kmara2:{
 			center:{lat:16.7759637, lng: -93.0808115}
 		}
-
-
 	}
 	
 	var distance;
@@ -25,8 +21,6 @@ $(document).ready(function(){
 	    disableDefaultUI: false,
 	    mapTypeId: "hybrid"//google.maps.MapTypeId.ROADMAP
 	  });
-
-
 
 	  var image = 'img/kmera.png';
 
@@ -86,10 +80,7 @@ $(document).ready(function(){
 			strokeColor: '#000',
 			strokeOpacity: 1.0
 	   });
-	   
 	   circle.bindTo('center', marker, 'position');
-	   
-
 	}
 
 	function showError() {
@@ -122,7 +113,12 @@ $(document).ready(function(){
 			$("#contraseniaRepetidaUsuario").val("");
 		}
 	});
+<<<<<<< HEAD
 		//Validar que el usario esté conectado a internet
+=======
+
+	//Validar que el usario esté conectado a internet
+>>>>>>> b698b155705d4f25a3e08e6288f3c10c386e07a0
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
   		navigator.app.exitApp();

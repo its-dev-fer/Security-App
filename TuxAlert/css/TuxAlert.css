@@ -15,16 +15,15 @@
 	/*background-color: var(--default-background) !important;*/
 }
 
-
 .ui-panel-dismiss-open.ui-panel-dismiss-position-left{
 	background-color: rgba(0,0,0,0.4) !important;
 	transition: ease-in-out 0.3s !important;
 }
 
 hr{
-
 	color: #123455;
 }
+
 #boton_cerrar_sesion{
 	width: 50px;
 	height: 50px;
@@ -81,9 +80,8 @@ hr{
 	background-color: lightgray;
 }
 
-
-
 /*Fuente que David puso - SEAS MAMÓN pinsHI VATO*/
+/*		JAJAJAJA XD  - David*/
 @font-face {
     font-family: 'Myriad'; /*a name to be used later*/
     src: url('../fuentes/myriad-pro/MyriadProBoldSemiExtended.ttf'); /*URL to font*/
@@ -154,7 +152,7 @@ a{
 	text-shadow: none !important;
 	border: solid 5px black !important;
 	display: inline !important;
-	float: right !important;
+	/*float: right !important;*/
 }
 
 a:link{
@@ -229,7 +227,6 @@ h3{
     transform: translate(0px,-0.12em);
 }
 
-
 .cuadro-tarjeta-2{
 	width: 85%;
 	height: auto;
@@ -300,7 +297,6 @@ h3{
 	padding: 1em !important;
 	color: white !important;
 }
-
 
 .bigass{
 	font-size: 25px !important;
@@ -488,28 +484,28 @@ input{
 	background-color: white;
 }
 .collapsible {
-	    background-color: #777;
-	    color: white;
-	    cursor: pointer;
-	    padding: 18px;
-	    width: 100%;
-	    border: none;
-	    text-align: left;
-	    outline: none;
-	    font-size: 15px;
-	}
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
 
-	.active, .collapsible:hover {
-	    background-color: #555;
-	}
+.active, .collapsible:hover {
+    background-color: #555;
+}
 
-	.content {
-	    padding: 0 18px;
-	    max-height: 0;
-	    overflow: hidden;
-	    transition: max-height 0.2s ease-out;
-	    background-color: #f1f1f1;
-	}
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
 
 .texto-negritas{
 	font-family: 'Myriad' !important;
@@ -526,7 +522,6 @@ input{
 	left: 0;
 	right: 0;
 }
-
 
 .not center{
 	border:1px solid black;
