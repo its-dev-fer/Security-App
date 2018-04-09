@@ -20,6 +20,8 @@
 	transition: ease-in-out 0.3s !important;
 }
 
+#acercaFuente{
+	line-height: normal;
 hr{
 	color: #123455;
 }
