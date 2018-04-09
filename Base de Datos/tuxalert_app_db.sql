@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Nomada
+ Source Server         : localhost_3306
  Source Server Type    : MySQL
  Source Server Version : 100131
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 100131
  File Encoding         : 65001
 
- Date: 08/04/2018 12:53:34
+ Date: 08/04/2018 22:23:40
 */
 
 SET NAMES utf8mb4;
@@ -97,7 +97,7 @@ CREATE TABLE `usuarios`  (
   `Apellidos` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   `Correo_electronico` varchar(80) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   `Fecha_nacimiento` date NULL DEFAULT NULL,
-  `Telefono` int(15) NULL DEFAULT NULL,
+  `Telefono` varchar(15) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   `Contrasenia` varchar(50) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   `Genero` enum('masculino','femenino','otro') CHARACTER SET utf8 COLLATE utf8_spanish2_ci NULL DEFAULT NULL,
   `Borrado` int(1) NULL DEFAULT NULL,
@@ -111,6 +111,6 @@ CREATE TABLE `usuarios`  (
   INDEX `Indice_Ultima_Sesion`(`Ultima_Sesion`) USING BTREE,
   INDEX `ID_Alerta`(`ID_Alerta`) USING BTREE,
   INDEX `ID_TipoUsuario`(`ID_TipoUsuario`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Compact;
+) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;

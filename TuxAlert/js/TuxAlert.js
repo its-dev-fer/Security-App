@@ -64,12 +64,7 @@ $(document).ready(function(){
 	  	 }
 	  	 console.log("Distancia camara["+ i +"]: "+ distance);
 	  	 i++;
-//	  	 update();
 	  }
-
-//	  function update(){
-
-//	  }
 
 	  var circle = new google.maps.Circle({
 		    center: location,
@@ -97,40 +92,44 @@ $(document).ready(function(){
 	});
 
 	//fin geolocation
-	$("#form-registro-usuario").on('submit',function(e){
-		e.preventDefault();
-		$p1 = $("#contraseniaUsuario").val();
-		$p2 = $("#contraseniaRepetidaUsuario").val();
-		if($p1 == $p2){
-			$form = $( this ),
-          	$url = $form.attr( 'action' );
-          	console.log($url);
-          	$.post("../php/registrarUsuario.php", $("#form-registro-usuario").serialize());
-          	location.href = "#pantallaPrincipal"; 
-		}else{
-			alert("Las contraseñas no coinciden.");
-			$("#contraseniaUsuario").val("");
-			$("#contraseniaRepetidaUsuario").val("");
-		}
-	});
-<<<<<<< HEAD
-		//Validar que el usario esté conectado a internet
-=======
-
 	//Validar que el usario esté conectado a internet
->>>>>>> b698b155705d4f25a3e08e6288f3c10c386e07a0
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
-  		navigator.app.exitApp();
+  		//navigator.app.exitApp();
  	}
 
 	//Checar si es la primera vez que se abre la app
 	var primeraVez = localStorage.getItem('primeraVez',null);
-	/*
+	var _tipoDeUsuario = localStorage.getItem("tipoUsuario",null);
 	if(!primeraVez){
-		//localStorage.setItem('primeraVez',1);
 		location.href = "#tarjeta-1"
-	}*/
+	}else{
+		if(_tipoDeUsuario == "NORMIE"){
+			location.href = "#pantallaPrincipal";
+		}else{
+			location.href = "#pantallaPrincipalSP";
+		}
+	}
+
+
+	//Guardar datos del usuario al registrarse
+	$("form-registro-usuariosp").on('submit',function(){
+		localStorage.setItem('primeraVez',1);
+		$usrnme = $("#usrnmeSP").val();
+		localStorage.setItem('usuario', $usrnme);
+		localStorage.setItem('tipoUsuario', "SP");
+		location.href = "index.html#pantallaPrincipalSP";
+	});
+
+	$("#form-registro-usuario").on('submit',function(){
+		localStorage.setItem('primeraVez',1);
+		$usrnme = $("#usrnme").val();
+		localStorage.setItem('usuario', $usrnme);
+		localStorage.setItem('tipoUsuario', "NORMIE");
+		location.href = "index.html#pantallaPrincipal";
+	});
+
+
 
 
 	$("#btn-1").click(function(e){
@@ -185,7 +184,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		location.href = "#inicio";
 		$("#goHome").attr('data-transition','flip');
-		localStorage.setItem('primeraVez',1);
 	});
 
 	$("#signup").click(function(e){
@@ -230,15 +228,6 @@ $(document).ready(function(){
 	$("#registro").on("swiperight", regresarACasa);
 	$("#tarjeta-login").on("swiperight", regresarACasa);
 
-	$("#historial").on("swiperight",function(e){
-		e.preventDefault();
-		if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
-	        if ( e.type === "swiperight"  ) {
-	            $( "#menu-panel" ).panel( "open" );
-	        }
-	    }
-	});
-
 	var coll = document.getElementsByClassName("collapsible");
 	var i;
 
@@ -254,8 +243,20 @@ $(document).ready(function(){
 	  });
 	}
 
+
+
+	//Actualizar las alarmas al abrir la pantalla principal de seguridad publica
+	$(document).on( "pageinit", "#pantallaPrincipalSP", function(e) {
+   		e.preventDefault();
+   		alert("Holi");
+	});
+
 });
 
 function regresarACasa(event){
 	location.href = "#inicio";
+}
+
+function getCookieValue(a) {
+    return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
 }

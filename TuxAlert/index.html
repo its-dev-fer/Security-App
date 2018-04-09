@@ -226,7 +226,7 @@
 					<p>Registro de Usuario Nuevo</p>
 				</div>
 				<br><br><br><br><br>
-				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tu(s) nombre(s)" required/>
+				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tu(s) nombre(s)" id="usrnme" required/>
 				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
 				Género<span class="dato-Obligatorio">*</span>:
 					<select id="genero" name="generoUsuario" required>
@@ -291,9 +291,9 @@
 			<ul>
 				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
 				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
 				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
 
 			</ul>
@@ -356,9 +356,9 @@
 			<ul>
 				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
 				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
 				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
 
 			</ul>
@@ -410,18 +410,22 @@
 
 	<!-- Div de tarjeta de Pantalla Principal -->
 	<div data-role="page" id="pantallaPrincipal">
+		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
+			<ul>
+				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
+				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
+				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
+
+			</ul>
+		</div>
 		<div data-role="header" class="header">
-			<a href="#inicio" class="little-button"> Volver</a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
-		<div data-role="panel" id="menu-panel" data-position="left" data-display="overlay">
-		<ul>
-			<li>Opción</li>
-			<li>Opción</li>
-			<li>Opción</li>
-		</ul>
-		</div>
 		<br><br>
 		<div >
 			<br><br><br><br><br>
@@ -438,11 +442,11 @@
 		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
-				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
 				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
 				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
 
 			</ul>
@@ -477,18 +481,18 @@
 	<div data-role="page" id="historial">
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
-				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
 				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
 				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#ventana_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
 				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
 
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#inicio" class="little-button"> Volver</a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
 			<h3 class="red-text">Historial</h3>
 		</div>
 
@@ -538,8 +542,19 @@
 
 	<!-- Div de FAQ -->
 	<div data-role="page" id="FAQ">
+		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
+			<ul>
+				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
+				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
+				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
+				<li class="sm"><a href="#ventana_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
+
+			</ul>
+		</div>
 		<div data-role="header" class="header">
-			<a href="#inicio" class="little-button"> Volver</a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
 			<h3 class="red-text">FAQ</h3>
 		</div>
 
@@ -579,7 +594,7 @@
 	<!-- DIV PAGE GEN KEY -->
 	<div data-role="page" id="sp_genKey">
 		<div data-role="header" class="header">
-			<a href="#inicio" class="little-button">Volver</a>
+			<a href="#pantallaPrincipalSP" class="little-button">Volver</a>
 			<h3 class="red-text">Generar Clave</h3>
 		</div>
 
@@ -603,22 +618,42 @@
 					<p>Registro seguridad publica</p>
 				</div>
 				<br><br><br><br><br>
-				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tu(s) nombre(s)" required/>
-				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
+				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuarioSP" type="text" class="text-field-contacto" id="usrnmeSP" placeholder="Ingresa tu(s) nombre(s)" required/>
+				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuarioSP" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
 				Género<span class="dato-Obligatorio">*</span>:
-					<select id="genero" name="generoUsuario" required>
+					<select id="generoSP" name="generoUsuario" required>
 						<option value="masculino" selected>Masculino</option>
 						<option value="femenino">Femenino</option>
 						<option value="otro">Helicóptero de combate</option>
 						<option value="otro">Otro</option>
 					</select>
-				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuario" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
-				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuario" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
-				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
-				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
-				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
-				<input type="submit" name="registarBD" id="button-registrarUsuario" value="Registar">
+				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuarioSP" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
+				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuarioSP" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
+				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuarioSP" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				<input type="submit" name="registarBD" id="button-registrarUsuarioSP" value="Registar">
 			</form>
+		</div>
+	</div>
+
+	<!-- DIV de la vista para los agentes de seguridad pública -->
+	<div data-role="page" id="pantallaPrincipalSP">
+		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
+			<ul>
+				<li class="sm"><a href="#pantallaPrincipalSP" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
+				<li class="sm"><a href="#" class="ui-icon-plus ui-btn-icon-left">Mapa de cámaras</a></li>
+				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Generar nueva clave</a></li>
+			</ul>
+		</div>
+
+		<div data-role="header" class="header">
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<h3 class="red-tex">Seguridad pública</h3>
+		</div>
+
+		<div data-role="content" id="contenedor-alarmas-nuevas">
+			
 		</div>
 	</div>
 

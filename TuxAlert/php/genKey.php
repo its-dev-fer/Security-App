@@ -1,6 +1,6 @@
 <?php
 function salir(){
-    header("location: ../index.html/#sp_genKey");
+    header("location: ../index.html#sp_genKey");
 }
   try{
     $conn = new PDO('mysql:host=localhost;dbname=tuxalert_app_db', 'root', '');

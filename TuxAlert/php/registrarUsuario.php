@@ -1,9 +1,19 @@
 <?php
 
     function salir(){
-        header("location: #pantallaPrincipal");
+        $url="http://127.0.0.1";
+        $ch = curl_init();
+        $a = curl_exec($ch); // $a will contain all headers
+        $ch = curl_init();
+        $url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL); // This is what you need, it will return you the last effective URL
+        exit(); //exit() ya es una función de php, oyeron >:v
     }
 
+    function back(){
+        echo "xd";
+    }
+
+    echo "Hola, te estamos registrando...";
     $serverName= "127.0.0.1";
     $userName= "root";
     $password= "";
@@ -13,8 +23,8 @@
     // Check connection
     if($conn->connect_error)
         die("Conexión fallida con la BD: " .$conn->connect_error);
-    if(isset($_POST['registarBD'])){
-        $nombreUsuario= $_POST['nombreUsuario'];
+
+    $nombreUsuario= $_POST['nombreUsuario'];
         $apellidoUsuario= $_POST['apellidoUsuario'];
         $generoUsuario= $_POST['generoUsuario'];
         $emailUsuario= $_POST['emailUsuario'];
@@ -24,35 +34,36 @@
         $contraseniaRepetidaUsuario= $_POST['contraseniaRepetidaUsuario'];
         $passEnc= md5($contraseniaUsuario);
 
-        $sql= "INSERT INTO Usuarios (
-            Nombre,
-            Apellidos,
-            Correo_electronico,
-            Fecha_nacimiento,
-            Telefono,
-            Contrasenia,
-            Genero,
-            Borrado,
-            ID_TipoUsuario
-        ) VALUES (
-            '$nombreUsuario',
-            '$apellidoUsuario',
-            '$emailUsuario',
-            '$fechaUsuario',
-            '$numeroUsuario',
-            '$passEnc',
-            '$generoUsuario',
-            '1',
-            '1'
-        )";
+        if($contraseniaUsuario == $contraseniaRepetidaUsuario){
+            $sql= "INSERT INTO Usuarios (
+                Nombre,
+                Apellidos,
+                Correo_electronico,
+                Fecha_nacimiento,
+                Telefono,
+                Contrasenia,
+                Genero,
+                Borrado,
+                ID_TipoUsuario
+            ) VALUES (
+                '$nombreUsuario',
+                '$apellidoUsuario',
+                '$emailUsuario',
+                '$fechaUsuario',
+                '$numeroUsuario',
+                '$passEnc',
+                '$generoUsuario',
+                '1',
+                '1'
+            )";
 
-        if($conn->query($sql) == TRUE){
-            //echo $conn."<br>";
-            console.log("Usuario agregado exitósamente");
-            salir();
+            if($conn->query($sql) == TRUE){
+                //echo $conn."<br>";
+                mysqli_close($conn);
+                setcookie("MyCookie", "Soy una galletita :3");
+                echo "<script type='text/javascript>'"."localStorage.setItem('primeraVez',1);"."</script>";
+                salir();
+            }
+        }else{
+            echo "<script type='text/javascript'>alert('Las contraseñas no coinciden, intente de nuevo.');</script>";
         }
-        else
-            console.log("No se pudo agregar el usuario");
-        mysqli_close($conn);
-    }
-?>
