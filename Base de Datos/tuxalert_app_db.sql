@@ -114,7 +114,7 @@ CREATE TABLE `usuarios`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 86 CHARACTER SET = utf8 COLLATE = utf8_spanish2_ci ROW_FORMAT = Compact;
 
 SET FOREIGN_KEY_CHECKS = 1;
-=======
+
 /*
  Navicat Premium Data Transfer
 
