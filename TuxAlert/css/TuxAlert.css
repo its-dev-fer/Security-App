@@ -12,7 +12,7 @@
 	--fondo-tarjeta-4: #75AD74;
 	--fondo-tarjeta-5: #009493;
 	--blanco: #FFFFFF;
-	background-color: var(--default-background) !important;
+	/*background-color: var(--default-background) !important;*/
 }
 
 .ui-panel-dismiss-open.ui-panel-dismiss-position-left{
@@ -20,8 +20,12 @@
 	transition: ease-in-out 0.3s !important;
 }
 
+<<<<<<< HEAD
 #acercaFuente{
 	line-height: normal;
+=======
+hr{
+>>>>>>> 1fd004828b3ccde4902bcb74cb6d448f5d48be19
 	color: #123455;
 }
 
@@ -29,10 +33,10 @@
 	width: 50px;
 	height: 50px;
 	background-image: url("../img/log_out.png");
-	background-size: 100% 100%;	
+	background-size: 100%;
 	position: absolute;
 	border: 3px;
-	left: 85%; 
+	left: 85%;
 	border-radius: 70%;
 }
 #contenedorPricipal{
@@ -81,9 +85,8 @@
 	background-color: lightgray;
 }
 
-
-
 /*Fuente que David puso - SEAS MAMÓN pinsHI VATO*/
+/*		JAJAJAJA XD  - David*/
 @font-face {
     font-family: 'Myriad'; /*a name to be used later*/
     src: url('../fuentes/myriad-pro/MyriadProBoldSemiExtended.ttf'); /*URL to font*/
@@ -154,7 +157,7 @@ a{
 	text-shadow: none !important;
 	border: solid 5px black !important;
 	display: inline !important;
-	float: right !important;
+	/*float: right !important;*/
 }
 
 a:link{
@@ -229,7 +232,6 @@ h3{
     transform: translate(0px,-0.12em);
 }
 
-
 .cuadro-tarjeta-2{
 	width: 85%;
 	height: auto;
@@ -286,10 +288,10 @@ h3{
 }
 
 .red-button{
-	display: block;
+	display: block !important;
 	margin: 0 auto !important;
 	text-align: center !important;
-	position: relative;
+	position: relative !important;
 	font-family: 'Myriad' !important;
 	font-size: 20px !important;
 	width: 60% !important;
@@ -298,8 +300,8 @@ h3{
 	opacity: 1 !important;
 	border-style: none !important;
 	padding: 1em !important;
+	color: white !important;
 }
-
 
 .bigass{
 	font-size: 25px !important;
@@ -401,6 +403,17 @@ h3{
 	margin-left: 20px !important;
 }
 
+.subtitulo-configuracion-2{
+	font-size: 18px !important;
+	text-shadow: none !important;
+	text-align: left !important;
+	margin-left:  20px !important;
+}
+
+p, small{
+	font-family: 'Arial' !important;
+}
+
 .linea-separacion{
 	height: 2.8px;
 	color: #123455;
@@ -476,31 +489,66 @@ input{
 	background-color: white;
 }
 .collapsible {
-	    background-color: #777;
-	    color: white;
-	    cursor: pointer;
-	    padding: 18px;
-	    width: 100%;
-	    border: none;
-	    text-align: left;
-	    outline: none;
-	    font-size: 15px;
-	}
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
 
-	.active, .collapsible:hover {
-	    background-color: #555;
-	}
+.active, .collapsible:hover {
+    background-color: #555;
+}
 
-	.content {
-	    padding: 0 18px;
-	    max-height: 0;
-	    overflow: hidden;
-	    transition: max-height 0.2s ease-out;
-	    background-color: #f1f1f1;
-	}
+.content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+}
 
 .texto-negritas{
 	font-family: 'Myriad' !important;
 	font-size: 18px !important;
 	font-weight: bold !important;
+}
+
+
+/*REGLAS DEL MAPA*/
+#map-page, #map-canvas { width: 95%; height: 80%; padding: 0; 
+	margin:0 auto;
+	position: absolute;
+	border:1px solid black;
+	left: 0;
+	right: 0;
+}
+
+.not center{
+	border:1px solid black;
+	width: 100%;
+	background-color: tomato;
+	left: 0;
+	font-family: Helvetica;	
+	right: 0;
+	margin:0 auto;
+}
+
+#map-canvas a{
+	border:0px solid black!important;
+
+}
+
+#wacheando-kmera{
+	display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+	text-align: center !important;
+	width: 80% !important;
+	height: auto !important;
+	box-shadow:0px 8px 23px #807978 !important;
 }

@@ -4,20 +4,16 @@
         header("location: #pantallaPrincipal");
     }
 
-    echo "Hola";
-    /*
-    echo '<script type="text/javascript">'.'alert("Holaaaaaaaaa");'.'</script>';
-
-    $serverName= "localhost";
-    $userName= "root";  
+    $serverName= "127.0.0.1";
+    $userName= "root";
     $password= "";
-    $dbName= "tuxaleert_app_db";
+    $dbName= "tuxalert_app_db";
     // Create Connection DB
     $conn= new mysqli($serverName, $userName, $password, $dbName);
     // Check connection
     if($conn->connect_error)
-        die("Conexión fallida: " .$conn->connect_error);
-   
+        die("Conexión fallida con la BD: " .$conn->connect_error);
+    if(isset($_POST['registarBD'])){
         $nombreUsuario= $_POST['nombreUsuario'];
         $apellidoUsuario= $_POST['apellidoUsuario'];
         $generoUsuario= $_POST['generoUsuario'];
@@ -36,7 +32,7 @@
             Telefono,
             Contrasenia,
             Genero,
-            Borrado
+            Borrado,
             ID_TipoUsuario
         ) VALUES (
             '$nombreUsuario',
@@ -44,17 +40,19 @@
             '$emailUsuario',
             '$fechaUsuario',
             '$numeroUsuario',
-            '$contraseniaUsuario',
+            '$passEnc',
             '$generoUsuario',
-            '1', // Uno es usuario activo y cero es usuario borrado
+            '1',
             '1'
         )";
 
-        if($conn->query($sql) == TRUE)
-            echo '<script type="text/javascript">'.'alert("Registro exitóso")'.'</script>';
+        if($conn->query($sql) == TRUE){
+            //echo $conn."<br>";
+            console.log("Usuario agregado exitósamente");
+            salir();
+        }
         else
-            echo '<script type="text/javascript">'.'alert("Registro fallido")'.'</script>';
+            console.log("No se pudo agregar el usuario");
         mysqli_close($conn);
-        salir();
-        */
-        ?>
+    }
+?>

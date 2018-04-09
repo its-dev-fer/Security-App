@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script type="text/javascript" src="js/node_modules/socket.io-client/dist/socket.io.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtxMuwsaP5UbC2LVmRE5eimZf8VhMx1J0&libraries=geometry"></script>
 	<script type="text/javascript" src="js/TuxAlert.js"></script>
 </head>
 <body>
@@ -31,7 +33,7 @@
 		<div id="btn-1" class="rounded-button">
 			->
 		</div>
-		<!-- Puntitos -->
+		<!-- Psuuntitos -->
 		<div class="puntos-guias">
 			<p class="actual-dot" id="btn-tarjeta-1">.</p>
 			<p class="dot" id="btn-tarjeta-2">.</p>
@@ -213,6 +215,7 @@
 	<!-- Div de tarjeta de Registro de Usuario -->
 	<div data-role="page" id="registro">
 		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button"> Volver</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 		<br><br>
@@ -236,12 +239,24 @@
 				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
 				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
 				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
-				<div class="main-buttons">
-					<br><br><br><br><br>
-					<button class="red-button" data-transition="flip" id="button-registrarUsuario" name="button-registrarUsuario" type="submit">Registrarse</button>
-					<br><br><br>
-				</div>
+				<input type="submit" name="registarBD" id="button-registrarUsuario" value="Registar">
 			</form>
+		</div>
+	</div>
+
+	<!--soyelmapasoyelmapa..-->
+	<div data-role="page" id="mapaVista">
+		<div data-role="header" class="header">
+			<h3 class="red-text">TuxAlert</h3>
+		</div>
+
+		<div class="not" data-role="content" style="width:100%; height:100%;">
+			<center>Tu localización</center>
+			<div role="main" class="ui-content" id="map-canvas" class="not">
+        	<!-- el mapa se carga aki -->
+
+    		</div>
+
 		</div>
 	</div>
 
@@ -249,6 +264,7 @@
 	<!-- Tarjeta de inicio de sesión -->
 	<div data-role="page" id="tarjeta-login">
 		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button"> Volver</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 
@@ -269,7 +285,7 @@
 
 
 	<!-- TARJETA ACERCA DE -->
-	<div id="ventana_acerca_de" data-role="page" >
+	<div id="ventana_acerca_de" data-role="page">
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
 				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
@@ -286,6 +302,7 @@
 			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
 			<h3>ACERCA DE</h3>
 		</div>
+<<<<<<< HEAD
 		<BR>
 			</BR>
 			<div id="acercaFuente">
@@ -293,6 +310,14 @@
 				<hr style="border-width: 3px;  margin-left: 40px; margin-right: 40px; border-top: 4px solid black;">
 				<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;Desarrollado por: </strong>
 			</div>
+=======
+
+		<div data-role="content">
+			<BR>
+			<BR>
+			<h5><b>&nbsp; &nbsp; ACERCA DE NOSOTROS</b></h5>
+			<strong>&nbsp; &nbsp; Desarrollado por: </strong>
+>>>>>>> 1fd004828b3ccde4902bcb74cb6d448f5d48be19
 			<br><br><br>
 
 		    <p> &nbsp; <img class="card-img-top " src="img/Andre.jpg" alt="Card image" style="width:100px; height: 100px; margin-left: 30px; border-radius: 90%; float: left;">
@@ -318,19 +343,35 @@
 		    </p><br><br>
 		    <p> &nbsp; <img class="card-img-top " src="img/ramon.jpg" alt="Card image" style="width:100px; height: 100px; margin-left: 30px; border-radius: 90%; float: left;">
 
+<<<<<<< HEAD
 		    		<strong> &nbsp; &nbsp; &nbsp;Jose Ramón Palacios<br></strong>
 		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;fer_itamar@hotmail.com<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;+52 961 100 31 41<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;Tuxtla Gutiérrez, Chis.
+=======
+		    		<strong> &nbsp; &nbsp; &nbsp; Jose Ramón Palacios<br></strong>
+		    		&nbsp; &nbsp; &nbsp; &nbsp;fer_itamar@hotmail.com<br>
+		    		&nbsp; &nbsp; &nbsp; &nbsp;+52 966 117 59 91<br>
+		    		&nbsp; &nbsp; &nbsp; &nbsp;Tuxtla Gutiérrez, Chis.
+>>>>>>> 1fd004828b3ccde4902bcb74cb6d448f5d48be19
 		    </p><br><br>
 		    <p> &nbsp; <img class="card-img-top " src="img/yo_merengues.jpg" alt="Card image" style="width:100px; margin-left: 30px; height: 100px; border-radius: 90%; float: left;">
 
+<<<<<<< HEAD
 		    		<strong> &nbsp; &nbsp; &nbsp; Kevin Alejandro Martinez <br></strong>
 		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kamh.1996.hmak@hotmail.com<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u n k n o w n<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Villaflores, Chis.
 		    </p> 
 
+=======
+		    		<strong> &nbsp; &nbsp; &nbsp; Kevin Alejandro Martinez H<br></strong>
+		    		&nbsp; &nbsp; &nbsp; &nbsp;kamh.1996.hmak@hotmail.com<br>
+		    		&nbsp; &nbsp; &nbsp; &nbsp;u n k n o w n<br>
+		    		&nbsp; &nbsp; &nbsp; &nbsp;Villaflores, Chis.
+		    </p>
+		</div>
+>>>>>>> 1fd004828b3ccde4902bcb74cb6d448f5d48be19
 	</div>
 
 	<!-- TARJETA CONFIGURACION -->
@@ -353,6 +394,7 @@
 			<h3 style="margin-left: 80px; margin-right: 40px;">Configuración</h3>
 		</div>
 
+<<<<<<< HEAD
 		<br><br><br>
 		
 		<div style="margin-left: 50px">
@@ -370,6 +412,41 @@
 			<div style="margin-left: 40px">
 				<strong>Versión: </strong>1.0<br><br>
 				<strong>Fecha: </strong>12 de marzo
+=======
+		<div data-role="content">
+			<div id="contenedorPricipal">
+			<button class="w3-button w3-xlarge w3-circle w3-card-4" id="boton_cerrar_sesion"></button>
+			</div>
+			<br><br><br>
+			<div class="panel-group" id="accordion" style="background-color: green;">
+		    	<form>
+				    <fieldset data-role="collapsible">
+				        <legend>Cambiar Información De Mi Cuenta</legend>
+				        <form>
+						<label>Nombre Usuario: </label>
+						  <input type="text" name="firstname" placeholder="Ingrese Nuevo Nombre Usuario" required="">
+						  <br>
+						  <label>Contraseña: </label><br>
+						  <input type="password" name="cambiarContrasena" placeholder="Ingrese Nueva Contraseña" required=""><br>
+						  <label>Confirmas Contraseña: </label><br>
+						  <input type="password" name="confirmarCambiarContrasena" placeholder="Confirme contraseña" required="">
+						  <br><br>
+						  <input type="submit" value="Guardar">
+						</form>
+				    </fieldset>
+				</form>
+			</div>
+			<div class="panel-group" id="accordion" style="background-color: green;">
+		    	<form>
+				    <fieldset data-role="collapsible">
+				        <legend>Reportar un Problema</legend>
+				        <form>
+
+						  <input type="submit" value="Submit">
+						</form>
+				    </fieldset>
+				</form>
+>>>>>>> 1fd004828b3ccde4902bcb74cb6d448f5d48be19
 			</div>
 		</div>
 	</div>
@@ -399,7 +476,7 @@
 			</div>
 		</div>
 	</div>
-
+	<!--mapita-->
 	<!-- Div vista de la pagina CONTACTANOS -->
 	<div data-role="page" class="screen" id="page_contact">
 
@@ -525,6 +602,68 @@
 			<p>
 				R: Las veces que sean necesarias, siempre y cuando las alertas sean verídicas.
 			</p>
+		</div>
+	</div>
+
+	<!-- Div de streaming xd -->
+	<div data-role="page" id="streaming-card">
+		<div data-role="header" class="header">
+			<h5 class="red-text">Observando cámara</h5>
+		</div>
+
+		<div data-role="content">
+			<!-- <img id="wacheando-kmera">-->
+			<!--
+			//Descarguen la app -> https://play.google.com/store/apps/details?id=com.techlogix.home.security.monitor.ip.webcam (es la //que usé en mi cel)
+			//Abrá que obtener la dirección ip de la cámara "cercana" e inyectarla en el img del div...
+			-->
+			<img id="wacheando-kmera" src="http://192.168.1.7:8080/video" height="450" width="700">
+		</div>
+	</div>
+
+	<!-- DIV PAGE GEN KEY -->
+	<div data-role="page" id="sp_genKey">
+		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button">Volver</a>
+			<h3 class="red-text">Generar Clave</h3>
+		</div>
+
+		<form action="php/genKey.php" method="post" id="form-genclave">
+			<input type="submit" name="newKey" value="Generar Clave">
+		</form>
+
+	</div>
+
+
+	<!-- REGISTRO SEGURIDAD PUBLICA -->
+	<div data-role="page" id="registrosp">
+		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button"> Volver</a>
+			<h3 class="red-text">TuxAlert</h3>
+		</div>
+		<br><br>
+		<div>
+			<form action="php/registrarSP.php" method="POST" id="form-registro-usuariosp">
+				<div class="descripcion">
+					<p>Registro seguridad publica</p>
+				</div>
+				<br><br><br><br><br>
+				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tu(s) nombre(s)" required/>
+				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
+				Género<span class="dato-Obligatorio">*</span>:
+					<select id="genero" name="generoUsuario" required>
+						<option value="masculino" selected>Masculino</option>
+						<option value="femenino">Femenino</option>
+						<option value="otro">Helicóptero de combate</option>
+						<option value="otro">Otro</option>
+					</select>
+				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuario" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
+				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuario" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
+				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				<input type="submit" name="registarBD" id="button-registrarUsuario" value="Registar">
+			</form>
 		</div>
 	</div>
 

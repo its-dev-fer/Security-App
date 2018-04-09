@@ -1,6 +1,124 @@
 $(document).ready(function(){
+	//gelocation aki pq soy mui cul
+	var kmaras = {
+		kmara1:{
+			center:{lat:16.7751810, lng: -93.0799510}
+		},
+
+		kmara2:{
+			center:{lat:16.7759637, lng: -93.0808115}
+		}
+	}
+	
+	var distance;
+
+	function GoogleMap(position) {	
+	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	  console.log(location);
+	  console.log("latitud:" + position.coords.latitude+ " longitud:" + position.coords.longitude);
+	  var map = new google.maps.Map(document.getElementById('map-canvas'), {
+	    zoom: 20,
+	    disableDefaultUI: false,
+	    mapTypeId: "hybrid"//google.maps.MapTypeId.ROADMAP
+	  });
+
+	  var image = 'img/kmera.png';
+
+	  var marker = new google.maps.Marker({
+	    map: map,
+	    position: location,
+	    animation: google.maps.Animation.DROP,
+	    title: "Usted se encuentra aquí",
+	    draggable:true,	    	    
+	  });
+
+	  //google.maps.event.addListener(marker, 'position_changed', update);
+
+	  map.setCenter(location);
+	  var i=0;
+	  for(var kamara in kmaras){
+	  	
+	  	var camaras = new google.maps.Circle({
+            strokeColor: '#000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#00ff00',
+            fillOpacity: 0.35,
+            map: map,
+            icon:image,
+            center: kmaras[kamara].center,
+            radius: 25
+          });
+	  		
+	  	 var markers = new google.maps.Marker({
+		    map: map,
+		    position: kmaras[kamara].center,		    		  
+		    draggable:false,	    	   
+		    icon:image
+	     });
+
+	  	 var path = [markers.getPosition(), marker.getPosition()];
+	  	 distance = google.maps.geometry.spherical.computeHeading(path[0], path[1]);
+	  	 if(distance<50){
+	  	 	console.log("ESTAS CERCA DE UNA KMARA");
+	  	 }
+	  	 console.log("Distancia camara["+ i +"]: "+ distance);
+	  	 i++;
+//	  	 update();
+	  }
+
+//	  function update(){
+
+//	  }
+
+	  var circle = new google.maps.Circle({
+		    center: location,
+		    radius: 20,
+			map: map,
+			fillColor: '#ff6666',
+			fillOpacity: 0.8,
+			strokeColor: '#000',
+			strokeOpacity: 1.0
+	   });
+	   circle.bindTo('center', marker, 'position');
+	}
+
+	function showError() {
+	  alert("No te pudimos encontrar:(");
+	}
+
+   $(document).on( "pageinit", "#mapaVista", function(e) {
+   		e.preventDefault();
+   		if (navigator.geolocation) {
+		  navigator.geolocation.getCurrentPosition(GoogleMap, showError);		 
+		} else {
+		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
+		}
+	});
+
+	//fin geolocation
+	$("#form-registro-usuario").on('submit',function(e){
+		e.preventDefault();
+		$p1 = $("#contraseniaUsuario").val();
+		$p2 = $("#contraseniaRepetidaUsuario").val();
+		if($p1 == $p2){
+			$form = $( this ),
+          	$url = $form.attr( 'action' );
+          	console.log($url);
+          	$.post("../php/registrarUsuario.php", $("#form-registro-usuario").serialize());
+          	location.href = "#pantallaPrincipal"; 
+		}else{
+			alert("Las contraseñas no coinciden.");
+			$("#contraseniaUsuario").val("");
+			$("#contraseniaRepetidaUsuario").val("");
+		}
+	});
+<<<<<<< HEAD
+		//Validar que el usario esté conectado a internet
+=======
 
 	//Validar que el usario esté conectado a internet
+>>>>>>> b698b155705d4f25a3e08e6288f3c10c386e07a0
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
   		navigator.app.exitApp();
@@ -94,21 +212,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		location.href = "#registro";
 	});
-	
-	$("#button-registrarUsuario").click(function(e){
-		e.preventDefault();
-		var contraseniaUsuario= document.getElementById("contraseniaUsuario").value;
-		var contraseniaRepetidaUsuario= document.getElementById("contraseniaRepetidaUsuario").value;
-		if(contraseniaUsuario == contraseniaRepetidaUsuario){
-			location.href= "#pantallaPrincipal"
-			$("#form-registro-usuario").submit(function(e){
-				e.preventDefault();
-				location.href = ("../php/registroDeUsuario.php");
-			});
-		}else
-			alert("Verifique que las contraseñas sean iguales");
-	});
-
 	$("#boton-Logo-Rojo").click(function(e){
 		e.preventDefault();
 		alert("Alerta Enviada");
@@ -118,17 +221,14 @@ $(document).ready(function(){
   		e.preventDefault();
   		location.href = ("#ventana_acerca_de");
   	});
-/*
-  	$("#form-registro-usuario").submit(function(e){
-  		e.preventDefault();
-  		location.href = ("../php/registroDeUsuario.php");
-  	});
-*/
+
 
 
 	//Gesto de deslizar hacia la derecha
 	$("#tipoDeUsuario").on("swiperight", regresarACasa);
 	$("#verificacionDeUsuario").on("swiperight", regresarACasa);
+	$("#registro").on("swiperight", regresarACasa);
+	$("#tarjeta-login").on("swiperight", regresarACasa);
 
 	$("#historial").on("swiperight",function(e){
 		e.preventDefault();
