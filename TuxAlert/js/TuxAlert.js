@@ -102,24 +102,23 @@ $(document).ready(function(){
 		$p1 = $("#contraseniaUsuario").val();
 		$p2 = $("#contraseniaRepetidaUsuario").val();
 		if($p1 == $p2){
-			$.ajax({
-		        type: 'post',
-		        url: '../php/registrarUsuario.php',
-		        data: $('#form-registro-usuario').serialize(),
-		        success: function () {
-		         alert('Se ha registrado al usuario');
-		         location.href = "#pantallaPrincipal";
-		         //Guardar en local storage para el inicio de sesión rápido xd
-		        }
-		    });
+			$form = $( this ),
+          	$url = $form.attr( 'action' );
+          	console.log($url);
+          	$.post("../php/registrarUsuario.php", $("#form-registro-usuario").serialize());
+          	location.href = "#pantallaPrincipal"; 
 		}else{
 			alert("Las contraseñas no coinciden.");
 			$("#contraseniaUsuario").val("");
 			$("#contraseniaRepetidaUsuario").val("");
 		}
 	});
+<<<<<<< HEAD
+		//Validar que el usario esté conectado a internet
+=======
 
 	//Validar que el usario esté conectado a internet
+>>>>>>> b698b155705d4f25a3e08e6288f3c10c386e07a0
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
   		navigator.app.exitApp();

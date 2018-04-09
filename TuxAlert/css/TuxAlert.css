@@ -20,7 +20,12 @@
 	transition: ease-in-out 0.3s !important;
 }
 
+<<<<<<< HEAD
+#acercaFuente{
+	line-height: normal;
+=======
 hr{
+>>>>>>> 1fd004828b3ccde4902bcb74cb6d448f5d48be19
 	color: #123455;
 }
 
