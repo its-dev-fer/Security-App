@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	alert("Holi");
 	//gelocation aki pq soy mui cul
 	var kmaras = {
 		kmara1:{
@@ -9,10 +10,10 @@ $(document).ready(function(){
 			center:{lat:16.7759637, lng: -93.0808115}
 		}
 	}
-	
+
 	var distance;
 
-	function GoogleMap(position) {	
+	function GoogleMap(position) {
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	  console.log(location);
 	  console.log("latitud:" + position.coords.latitude+ " longitud:" + position.coords.longitude);
@@ -29,7 +30,7 @@ $(document).ready(function(){
 	    position: location,
 	    animation: google.maps.Animation.DROP,
 	    title: "Usted se encuentra aquí",
-	    draggable:true,	    	    
+	    draggable:true,
 	  });
 
 	  //google.maps.event.addListener(marker, 'position_changed', update);
@@ -37,7 +38,7 @@ $(document).ready(function(){
 	  map.setCenter(location);
 	  var i=0;
 	  for(var kamara in kmaras){
-	  	
+
 	  	var camaras = new google.maps.Circle({
             strokeColor: '#000',
             strokeOpacity: 0.8,
@@ -49,11 +50,11 @@ $(document).ready(function(){
             center: kmaras[kamara].center,
             radius: 25
           });
-	  		
+
 	  	 var markers = new google.maps.Marker({
 		    map: map,
-		    position: kmaras[kamara].center,		    		  
-		    draggable:false,	    	   
+		    position: kmaras[kamara].center,
+		    draggable:false,
 		    icon:image
 	     });
 
@@ -85,7 +86,7 @@ $(document).ready(function(){
    $(document).on( "pageinit", "#mapaVista", function(e) {
    		e.preventDefault();
    		if (navigator.geolocation) {
-		  navigator.geolocation.getCurrentPosition(GoogleMap, showError);		 
+		  navigator.geolocation.getCurrentPosition(GoogleMap, showError);
 		} else {
 		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
 		}
@@ -239,7 +240,7 @@ $(document).ready(function(){
 	      content.style.maxHeight = null;
 	    } else {
 	      content.style.maxHeight = content.scrollHeight + "px";
-	    } 
+	    }
 	  });
 	}
 
@@ -256,6 +257,7 @@ $(document).ready(function(){
 function regresarACasa(event){
 	location.href = "#inicio";
 }
+
 
 function getCookieValue(a) {
     return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];

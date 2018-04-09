@@ -34,36 +34,36 @@
         $contraseniaRepetidaUsuario= $_POST['contraseniaRepetidaUsuario'];
         $passEnc= md5($contraseniaUsuario);
 
-        if($contraseniaUsuario == $contraseniaRepetidaUsuario){
-            $sql= "INSERT INTO Usuarios (
-                Nombre,
-                Apellidos,
-                Correo_electronico,
-                Fecha_nacimiento,
-                Telefono,
-                Contrasenia,
-                Genero,
-                Borrado,
-                ID_TipoUsuario
-            ) VALUES (
-                '$nombreUsuario',
-                '$apellidoUsuario',
-                '$emailUsuario',
-                '$fechaUsuario',
-                '$numeroUsuario',
-                '$passEnc',
-                '$generoUsuario',
-                '1',
-                '1'
-            )";
+    if($contraseniaUsuario == $contraseniaRepetidaUsuario){
+        $sql= "INSERT INTO Usuarios (
+            Nombre,
+            Apellidos,
+            Correo_electronico,
+            Fecha_nacimiento,
+            Telefono,
+            Contrasenia,
+            Genero,
+            Borrado,
+            ID_TipoUsuario
+        ) VALUES (
+            '$nombreUsuario',
+            '$apellidoUsuario',
+            '$emailUsuario',
+            '$fechaUsuario',
+            '$numeroUsuario',
+            '$passEnc',
+            '$generoUsuario',
+            '1',
+            '1'
+        )";
 
-            if($conn->query($sql) == TRUE){
-                //echo $conn."<br>";
-                mysqli_close($conn);
-                setcookie("MyCookie", "Soy una galletita :3");
-                echo "<script type='text/javascript>'"."localStorage.setItem('primeraVez',1);"."</script>";
-                salir();
-            }
-        }else{
-            echo "<script type='text/javascript'>alert('Las contraseñas no coinciden, intente de nuevo.');</script>";
+        if($conn->query($sql) == TRUE){
+            //echo $conn."<br>";
+            mysqli_close($conn);
+            setcookie("MyCookie", "Soy una galletita :3");
+            echo "<script type='text/javascript>'"."localStorage.setItem('primeraVez',1);"."</script>";
+            salir();
         }
+    }else{
+        echo "<script type='text/javascript'>alert('Las contraseñas no coinciden, intente de nuevo.');</script>";
+    }

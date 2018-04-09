@@ -22,6 +22,7 @@
 
 #acercaFuente{
 	line-height: normal;
+}
 hr{
 	color: #123455;
 }
@@ -536,7 +537,7 @@ input{
 }
 
 #map-canvas a{
-	border:0px solid black!important;
+	border:0px solid black !important;
 
 }
 
