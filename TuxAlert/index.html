@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="js/node_modules/socket.io-client/dist/socket.io.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtxMuwsaP5UbC2LVmRE5eimZf8VhMx1J0&libraries=geometry"></script>
@@ -35,7 +34,7 @@
 		<div id="btn-1" class="rounded-button">
 			->
 		</div>
-		<!-- Puntitos -->
+		<!-- Psuuntitos -->
 		<div class="puntos-guias">
 			<p class="actual-dot" id="btn-tarjeta-1">.</p>
 			<p class="dot" id="btn-tarjeta-2">.</p>
@@ -238,7 +237,7 @@
 					</select>
 				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuario" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
 				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuario" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
-				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
+				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
 				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
 				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
 				<input type="submit" name="registarBD" id="button-registrarUsuario" value="Registar">
@@ -247,16 +246,16 @@
 	</div>
 
 	<!--soyelmapasoyelmapa..-->
-	<div data-role="page" id="mapaVista">	
+	<div data-role="page" id="mapaVista">
 		<div data-role="header" class="header">
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
-		
+
 		<div class="not" data-role="content" style="width:100%; height:100%;">
 			<center>Tu localización</center>
 			<div role="main" class="ui-content" id="map-canvas" class="not">
         	<!-- el mapa se carga aki -->
-        	
+
     		</div>
 
 		</div>
@@ -569,13 +568,59 @@
 
 		<div data-role="content">
 			<!-- <img id="wacheando-kmera">-->
-			<!-- 
+			<!--
 			//Descarguen la app -> https://play.google.com/store/apps/details?id=com.techlogix.home.security.monitor.ip.webcam (es la //que usé en mi cel)
 			//Abrá que obtener la dirección ip de la cámara "cercana" e inyectarla en el img del div...
 			-->
 			<img id="wacheando-kmera" src="http://192.168.1.7:8080/video" height="450" width="700">
 		</div>
 	</div>
+
+	<!-- DIV PAGE GEN KEY -->
+	<div data-role="page" id="sp_genKey">
+		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button">Volver</a>
+			<h3 class="red-text">Generar Clave</h3>
+		</div>
+
+		<form action="php/genKey.php" method="post" id="form-genclave">
+			<input type="submit" name="newKey" value="Generar Clave">
+		</form>
+
+	</div>
+
+
+	<!-- REGISTRO SEGURIDAD PUBLICA -->
+	<div data-role="page" id="registrosp">
+		<div data-role="header" class="header">
+			<a href="#inicio" class="little-button"> Volver</a>
+			<h3 class="red-text">TuxAlert</h3>
+		</div>
+		<br><br>
+		<div>
+			<form action="php/registrarSP.php" method="POST" id="form-registro-usuariosp">
+				<div class="descripcion">
+					<p>Registro seguridad publica</p>
+				</div>
+				<br><br><br><br><br>
+				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tu(s) nombre(s)" required/>
+				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuario" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
+				Género<span class="dato-Obligatorio">*</span>:
+					<select id="genero" name="generoUsuario" required>
+						<option value="masculino" selected>Masculino</option>
+						<option value="femenino">Femenino</option>
+						<option value="otro">Helicóptero de combate</option>
+						<option value="otro">Otro</option>
+					</select>
+				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuario" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
+				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuario" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
+				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				<input type="submit" name="registarBD" id="button-registrarUsuario" value="Registar">
+			</form>
+		</div>
+	</div>
+
 </body>
 </html>
-
