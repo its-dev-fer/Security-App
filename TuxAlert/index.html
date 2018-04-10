@@ -9,13 +9,15 @@
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="js/node_modules/socket.io-client/dist/socket.io.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtxMuwsaP5UbC2LVmRE5eimZf8VhMx1J0&libraries=geometry"></script>
 	<script type="text/javascript" src="js/TuxAlert.js"></script>
-</head>
-<body>
 
 	<!-- Tarjeta de bienvenida 1-->
 	<div id="tarjeta-1" data-role="page" class="bienvenida_1">
@@ -272,13 +274,14 @@
 			<p class="texto-negritas bigass ">
 				Inicio de sesión
 			</p>
-
-			<label class="texto-negritas">Nombre de usuario</label>
-			<input name="login_username" type="text" class="text-field-contacto" placeholder="Nombre de usuario" required/>
-			<label class="texto-negritas">Contraseña:</label>
-			<input name="login_password" type="password" class="text-field-contacto" placeholder="Contraseña" required/>
-			<br><br>
-			<button class="red-button" data-transition="flip" id="btn-iniciar-sesion" type="submit">Acceder</button>
+			<form action="php/validar.php" method="POST" id="form-login" data-ajax="false">
+				<label class="texto-negritas">Nombre de usuario</label>
+				<input name="login_username" type="text" class="text-field-contacto" placeholder="Nombre de usuario" required/>
+				<label class="texto-negritas">Contraseña:</label>
+				<input name="login_password" type="password" class="text-field-contacto" placeholder="Contraseña" required/>
+				<br><br>
+				<input type="submit" id="btn-iniciar-sesion" value="Acceder">
+			</form>
 		</div>
 	</div>
 
@@ -678,11 +681,10 @@
 
 	<!-- DIV de la vista para los agentes de seguridad pública -->
 	<div data-role="page" id="pantallaPrincipalSP">
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"><a href="#pantallaPrincipalSP" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
-				<li class="sm"><a href="#" class="ui-icon-plus ui-btn-icon-left">Mapa de cámaras</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left">Generar nueva clave</a></li>
+		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+				<li class="sm"> <a href="#" data-transition="flip">Mapa de cámaras</a> </li>
+				<li class="sm"> <a href="#" data-transition="flip">Generar nueva clave</a> </li>
 			</ul>
 		</div>
 

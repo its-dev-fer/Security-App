@@ -130,10 +130,11 @@ $(document).ready(function(){
  	}
 
 	//Checar si es la primera vez que se abre la app
+	/*
 	var primeraVez = localStorage.getItem('primeraVez',null);
 	var _tipoDeUsuario = localStorage.getItem("tipoUsuario",null);
 	if(!primeraVez){
-		location.href = "#tarjeta-1"
+		//:v
 	}else{
 		if(_tipoDeUsuario == "NORMIE"){
 			location.href = "#pantallaPrincipal";
@@ -141,7 +142,7 @@ $(document).ready(function(){
 			location.href = "#pantallaPrincipalSP";
 		}
 	}
-
+	*/
 
 	//Guardar datos del usuario al registrarse
 	$("form-registro-usuariosp").on('submit',function(){
@@ -159,9 +160,6 @@ $(document).ready(function(){
 		localStorage.setItem('tipoUsuario', "NORMIE");
 		location.href = "index.html#pantallaPrincipal";
 	});
-
-
-
 
 	$("#btn-1").click(function(e){
 		e.preventDefault();
@@ -279,7 +277,7 @@ $(document).ready(function(){
 	//Actualizar las alarmas al abrir la pantalla principal de seguridad publica
 	$(document).on( "pageinit", "#pantallaPrincipalSP", function(e) {
    		e.preventDefault();
-   		alert("Holi");
+   		//Actualizar alertas
 	});
 
 });
