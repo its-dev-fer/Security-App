@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -289,20 +290,20 @@
 
 	<!-- TARJETA ACERCA DE -->
 	<div id="ventana_acerca_de" data-role="page">
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
-				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
-				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
-
+		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+				<li class="sm"> <a href="#FAQ" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+				<li class="sm"> <a href="#ventana_acerca_de" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
+				<hr class="linea-separacion">
+				<li class="sm"> <a href="#ventana_configuracion" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3>ACERCA DE</h3>
 		</div>
 		<BR>
@@ -361,78 +362,45 @@
 	<!-- TARJETA CONFIGURACION -->
 
 	<div id="ventana_configuracion" data-role="page" >
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"><a href="#inicio" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
-				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
-				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
-
+		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+				<li class="sm"> <a href="#FAQ" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+				<li class="sm"> <a href="#ventana_acerca_de" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
+				<hr class="linea-separacion">
+				<li class="sm"> <a href="#ventana_configuracion" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 style="margin-left: 80px; margin-right: 40px;">Configuración</h3>
 		</div>
 
 		<br><br><br>
 
-		<div style="margin-left: 50px">
-			<h4><b>Cuenta de Usuario</b></h4>
-			<hr style="border-top: 4px solid black; margin-right: 80px">
-			<div style="margin-left: 40px"><br>
-				información<br><br>
-				Actualizar Datos<br><br>
-				<strong>Eliminar Cuenta</strong>
-			</div>
-			<br><br>
-
-			<h4><b>Aplicación </b></h4>
-			<hr style="border-top: 4px solid black; margin-right: 80px">
-			<div style="margin-left: 40px">
-				<strong>Versión: </strong>1.0<br><br>
-				<strong>Fecha: </strong>12 de marzo
-
-				</div>
-				</div>
 
 		<div data-role="content">
-			<div id="contenedorPricipal">
-			<button class="w3-button w3-xlarge w3-circle w3-card-4" id="boton_cerrar_sesion"></button>
-			</div>
-			<br><br><br>
-			<div class="panel-group" id="accordion" style="background-color: green;">
-		    	<form>
-				    <fieldset data-role="collapsible">
-				        <legend>Cambiar Información De Mi Cuenta</legend>
-				        <form>
-						<label>Nombre Usuario: </label>
-						  <input type="text" name="firstname" placeholder="Ingrese Nuevo Nombre Usuario" required="">
-						  <br>
-						  <label>Contraseña: </label><br>
-						  <input type="password" name="cambiarContrasena" placeholder="Ingrese Nueva Contraseña" required=""><br>
-						  <label>Confirmas Contraseña: </label><br>
-						  <input type="password" name="confirmarCambiarContrasena" placeholder="Confirme contraseña" required="">
-						  <br><br>
-						  <input type="submit" value="Guardar">
-						</form>
-				    </fieldset>
-				</form>
-			</div>
-			<div class="panel-group" id="accordion" style="background-color: green;">
-		    	<form>
-				    <fieldset data-role="collapsible">
-				        <legend>Reportar un Problema</legend>
-				        <form>
+			<div style="margin-left: 50px">
+				<h4><b>Cuenta de Usuario</b></h4>
+				<hr style="border-top: 4px solid black; margin-right: 80px">
+				<div style="margin-left: 40px"><br>
+					información<br><br>
+					Actualizar Datos<br><br>
+					<strong>Eliminar Cuenta</strong>
+				</div>
+				<br><br>
 
-						  <input type="submit" value="Submit">
-						</form>
-				    </fieldset>
-				</form>
-			</div>
+				<h4><b>Aplicación </b></h4>
+				<hr style="border-top: 4px solid black; margin-right: 80px">
+				<div style="margin-left: 40px">
+					<strong>Versión: </strong>1.0<br><br>
+					<strong>Fecha: </strong>12 de marzo
+
+					</div>
+					</div>
 		</div>
 	</div>
 
@@ -442,14 +410,14 @@
 	<div data-role="page" id="pantallaPrincipal" class="ui-responsive-panel">
 
 		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
-				<li class="sm"> <a href="#" data-transition="flip">Inicio</a> </li>
-				<li class="sm"> <a href="#" data-transition="flip">Historial</a> </li>
-				<li class="sm"> <a href="#" data-transition="flip">FAQ</a> </li>
-				<li class="sm"> <a href="#" data-transition="flip">Contáctenos</a></li>
-				<li class="sm"> <a href="#" data-transition="flip">Acerca de</a></li>
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+				<li class="sm"> <a href="#FAQ" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+				<li class="sm"> <a href="#ventana_acerca_de" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
 				<hr class="linea-separacion">
-				<li class="sm"> <a href="#" data-transition="flip">Configuración</a></li>
+				<li class="sm"> <a href="#ventana_configuracion" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
 			</ul>
 		</div>
 
@@ -457,7 +425,7 @@
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
-		
+
 		<br><br>
 		<div >
 			<br><br><br><br><br>
@@ -472,20 +440,20 @@
 	<div data-role="page" class="screen" id="page_contact">
 
 		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-icon="video" data-theme="b">Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-role="button" data-icon="video" data-theme="b" data-transition="flip">Historial</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Contáctenos</a></li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Acerca de</a></li>
+		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+				<li class="sm"> <a href="#FAQ" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+				<li class="sm"> <a href="#ventana_acerca_de" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
 				<hr class="linea-separacion">
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Configuración</a></li>
+				<li class="sm"> <a href="#ventana_configuracion" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3>Contáctenos</h3>
 		</div>
 
@@ -511,20 +479,20 @@
 
 
 	<div data-role="page" id="historial">
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-icon="video" data-theme="b">Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-role="button" data-icon="video" data-theme="b" data-transition="flip">Historial</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Contáctenos</a></li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Acerca de</a></li>
+		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+				<li class="sm"> <a href="#FAQ" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+				<li class="sm"> <a href="#ventana_acerca_de" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
 				<hr class="linea-separacion">
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Configuración</a></li>
+				<li class="sm"> <a href="#ventana_configuracion" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">Historial</h3>
 		</div>
 
@@ -574,19 +542,19 @@
 
 	<!-- Div de FAQ -->
 	<div data-role="page" id="FAQ">
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-icon="video" data-theme="b">Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-role="button" data-icon="video" data-theme="b" data-transition="flip">Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-role="button"data-icon="video" data-theme="b" data-transition="flip">FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Contáctenos</a></li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Acerca de</a></li>
+		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+				<li class="sm"> <a href="#FAQ" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+				<li class="sm"> <a href="#ventana_acerca_de" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
 				<hr class="linea-separacion">
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Configuración</a></li>
+				<li class="sm"> <a href="#ventana_configuracion" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
 			</ul>
 		</div>
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">FAQ</h3>
 		</div>
 
