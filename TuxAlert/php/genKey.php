@@ -15,7 +15,7 @@ function salir(){
 
     $estado = 1;
 
-    $stmt = $conn->prepare("INSERT INTO `tuxalert_app_db`.`usuarios` (`id_key`,`key`,`estado`) VALUES (NULL, ?,?)");
+    $stmt = $conn->prepare("INSERT INTO `tuxalert_app_db`.`keys` (`id_key`,`key`,`estado`) VALUES (NULL, ?,?)");
     $stmt->bindParam(1, $cadena);
     $stmt->bindParam(2, $estado);
     $stmt->execute();
