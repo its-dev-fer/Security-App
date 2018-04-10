@@ -146,18 +146,18 @@ $(document).ready(function(){
 
 	//Guardar datos del usuario al registrarse
 	$("form-registro-usuariosp").on('submit',function(){
-		localStorage.setItem('primeraVez',1);
+		//localStorage.setItem('primeraVez',1);
 		$usrnme = $("#usrnmeSP").val();
-		localStorage.setItem('usuario', $usrnme);
-		localStorage.setItem('tipoUsuario', "SP");
+		//localStorage.setItem('usuario', $usrnme);
+		//localStorage.setItem('tipoUsuario', "SP");
 		location.href = "index.html#pantallaPrincipalSP";
 	});
 
 	$("#form-registro-usuario").on('submit',function(){
-		localStorage.setItem('primeraVez',1);
+		//localStorage.setItem('primeraVez',1);
 		$usrnme = $("#usrnme").val();
-		localStorage.setItem('usuario', $usrnme);
-		localStorage.setItem('tipoUsuario', "NORMIE");
+		//localStorage.setItem('usuario', $usrnme);
+		//localStorage.setItem('tipoUsuario', "NORMIE");
 		location.href = "index.html#pantallaPrincipal";
 	});
 

@@ -16,15 +16,25 @@ $servername = "localhost";
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "SELECT * FROM usuarios WHERE 'Nombre' = '$usuario' AND 'Contrasenia' = '$md5ps'";
+	$sql = "SELECT * FROM usuarios WHERE Nombre = '$usuario' AND Contrasenia = '$md5ps'";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
-		while ($row = $result->fetch_assoc()) {
-
+		$row = mysqli_fetch_assoc($result);
+		//ID_TipoUsuario
+		switch ($row['ID_TipoUsuario']) {
+			case 1:
+					header("location: http://127.0.0.1/index.html#pantallaPrincipal");		
+				break;
+			case 2: 
+					header("location: http://127.0.0.1/index.html#pantallaPrincipalSP");
+				break;
+			default:
+					header("location: http://www.google.com.mx");
+				break;
 		}
-		header("location: http://127.0.0.1/index.html#pantallaPrincipal");
+		//header("location: http://127.0.0.1/index.html#pantallaPrincipal");
 	}else{
-		header("location: http://127.0.0.1/index.html#$result->num_rows");
+		header("location: http://127.0.0.1/index.html#");
 	}
 	$conn->close();
 	//header("Location: http://127.0.0.1/index.html#pantallaPrincipal");
