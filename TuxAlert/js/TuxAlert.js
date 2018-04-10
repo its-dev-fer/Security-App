@@ -1,38 +1,51 @@
 $(document).ready(function(){	
 	//gelocation aki pq soy mui cul
+
+	var data={
+		id:1,
+		ipkam:false
+	}
+
 	var kmaras = {
 		kmara1:{
 			center:{lat: 16.6155879, lng: -93.0905934},
-			alerta: false
+			alerta: false,
+			ip: "192.169.1.0"
 		},
 
 		kmara2:{
 			center:{lat:16.6152431, lng: -93.0897087},
-			alerta: false
+			alerta: false,
+			ip: "192.1691.0"
 		},
 
 		kmara3:{
 			center:{lat:16.6155873, lng:-93.0884087},
-			alerta: false
+			alerta: false,
+			ip: "192.169.1.0"
 		},
 
 		kmara4:{
 			center:{lat:16.6275549,lng:-93.0980324},
-			alerta: false
+			alerta: false,
+			ip: "192.169.1.0"
 		},
 
 		kmara5:{
 			center:{lat:16.627588,lng:-93.0971251},
-			alerta: false
+			alerta: false,
+			ip: "192.169.1.0"
 		},
 		kmara6:{
 			center:{lat:16.6276658,lng:-93.0973038},
-			alerta: false
+			alerta: false,
+			ip: "192.169.1.0"
 		}
 
 	}
 
 	var distance;
+	var ipkam,id;
 
 	function GoogleMap(position) {
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -90,24 +103,46 @@ $(document).ready(function(){
 		    icon:image
 	     });
 
-	  	 //manera 1212312
-	  	 
-
-
-	  	 ///
-
 	  	 var path = [markers.getPosition(), marker.getPosition()];	  	 
 	  	 distance = Math.ceil(google.maps.geometry.spherical.computeDistanceBetween(path[0], path[1]));	  
-	  	 if(distance<40 ){
+	  	 if(distance<70 ){
 	  	 	console.log("ESTAS CERCA DE UNA KMARA");
 	  	 	kmaras[kamara].alerta = true;
+	  	 	id=i;
 	  	 }
 	  	 console.log("Distancia camara["+ i +"]: "+ distance);
 	  	 i++;
 	  }
 
-	
+	var cont=0;
+	for(var kamara in kmaras){
+		if(kmaras[kamara].alerta==true && cont==0){
+			cont++;
+			ipkam = kmaras[kamara].alerta;
+			console.log("ip> "+ ipkam);
+		}
 	}
+
+	UpdateRecord(id,ipkam);
+		
+	}
+
+
+	function UpdateRecord(id,ipkam){
+	  console.log("func>" + id+" - " + ipkam);
+      $.ajax({
+       type: "POST",
+       data: {id:id,ipkam:ipkam},   // <-- put on top
+       url: "../php/kmaras.php",
+       cache: false,
+       success: function(response)
+       {
+         alert("Record successfully updated");
+       }
+     });
+ }
+
+
 
 	function showError() {
 	  alert("No te pudimos encontrar:(");
