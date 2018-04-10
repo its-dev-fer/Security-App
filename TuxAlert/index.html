@@ -342,8 +342,8 @@
 
 		    		<strong> &nbsp; &nbsp; &nbsp;Jose Ramón Palacios<br></strong>
 		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;fer_itamar@hotmail.com<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;+52 961 100 31 41<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;Tuxtla Gutiérrez, Chis.
+		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;+52 966 117 59 91<br>
+		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;Tonalá, Chis.
 		    </p><br><br>
 		    <p> &nbsp; <img class="card-img-top " src="img/yo_merengues.jpg" alt="Card image" style="width:100px; margin-left: 30px; height: 100px; border-radius: 90%; float: left;">
 
@@ -351,7 +351,6 @@
 		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kamh.1996.hmak@hotmail.com<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u n k n o w n<br>
 		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Villaflores, Chis.
-		    </p> 
 		    </p>
 		</div>
 	</div>
@@ -377,7 +376,7 @@
 		</div>
 
 		<br><br><br>
-		
+
 		<div style="margin-left: 50px">
 			<h4><b>Cuenta de Usuario</b></h4>
 			<hr style="border-top: 4px solid black; margin-right: 80px">
@@ -393,7 +392,10 @@
 			<div style="margin-left: 40px">
 				<strong>Versión: </strong>1.0<br><br>
 				<strong>Fecha: </strong>12 de marzo
-				
+
+				</div>
+				</div>
+
 		<div data-role="content">
 			<div id="contenedorPricipal">
 			<button class="w3-button w3-xlarge w3-circle w3-card-4" id="boton_cerrar_sesion"></button>
@@ -437,17 +439,15 @@
 	<div data-role="page" id="pantallaPrincipal">
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
-				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
-				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
-				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
-
+				<li class="sm"> <a href="#" data-role="button" data-icon="video" data-theme="b">TV ENVIVO</a> </li>
+				<li class="sm"> <a href="#" data-role="button" data-icon="video" data-theme="b" data-transition="flip">PELÍCULAS</a> </li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">SERIES</a> </li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Pide tu película</a></li>
 			</ul>
 		</div>
+
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
@@ -618,8 +618,18 @@
 
 	<!-- DIV PAGE GEN KEY -->
 	<div data-role="page" id="sp_genKey">
+
+		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
+			<ul>
+				<li class="sm"> <a href="#tvenvivo" data-role="button" data-icon="video" data-theme="b">TV ENVIVO</a> </li>
+				<li class="sm"> <a href="#" data-role="button" data-icon="video" data-theme="b" data-transition="flip">PELÍCULAS</a> </li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">SERIES</a> </li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Pide tu película</a></li>
+			</ul>
+		</div>
+
 		<div data-role="header" class="header">
-			<a href="#pantallaPrincipalSP" class="little-button">Volver</a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 			<h3 class="red-text">Generar Clave</h3>
 		</div>
 
@@ -678,7 +688,7 @@
 		</div>
 
 		<div data-role="content" id="contenedor-alarmas-nuevas">
-			
+
 		</div>
 	</div>
 
