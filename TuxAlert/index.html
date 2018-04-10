@@ -222,7 +222,7 @@
 		</div>
 		<br><br>
 		<div>
-			<form action="php/registrarUsuario.php" method="POST" id="form-registro-usuario">
+			<form action="php/registrarUsuario.php" method="POST" id="form-registro-usuario" data-ajax="false">
 				<div class="descripcion">
 					<p>Registro de Usuario Nuevo</p>
 				</div>
@@ -655,12 +655,12 @@
 		</div>
 		<br><br>
 		<div>
-			<form action="php/registrarSP.php" method="POST" id="form-registro-usuariosp">
+			<form action="php/registrarSP.php" method="POST" id="form-registro-usuariosp" data-ajax="false">
 				<div class="descripcion">
 					<p>Registro seguridad publica</p>
 				</div>
 				<br><br><br><br><br>
-				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuarioSP" type="text" class="text-field-contacto" id="usrnmeSP" placeholder="Ingresa tu(s) nombre(s)" required/>
+				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuarioSP" type="text" class="text-field-contacto" placeholder="Ingresa tu(s) nombre(s)" required/>
 				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuarioSP" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
 				Género<span class="dato-Obligatorio">*</span>:
 					<select id="generoSP" name="generoUsuario" required>
@@ -672,8 +672,8 @@
 				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuarioSP" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
 				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuarioSP" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
 				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuarioSP" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
-				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
-				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input  name="contraseniaUsuarioSP" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuarioSP" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
 				<input type="submit" name="registarBD" id="button-registrarUsuarioSP" value="Registar">
 			</form>
 		</div>

@@ -145,6 +145,7 @@ $(document).ready(function(){
 	*/
 
 	//Guardar datos del usuario al registrarse
+	/*
 	$("form-registro-usuariosp").on('submit',function(){
 		//localStorage.setItem('primeraVez',1);
 		$usrnme = $("#usrnmeSP").val();
@@ -160,7 +161,7 @@ $(document).ready(function(){
 		//localStorage.setItem('tipoUsuario', "NORMIE");
 		location.href = "index.html#pantallaPrincipal";
 	});
-
+	*/
 	$("#btn-1").click(function(e){
 		e.preventDefault();
 		location.href = "#tarjeta-2";
@@ -271,14 +272,6 @@ $(document).ready(function(){
 	    }
 	  });
 	}
-
-
-
-	//Actualizar las alarmas al abrir la pantalla principal de seguridad publica
-	$(document).on( "pageinit", "#pantallaPrincipalSP", function(e) {
-   		e.preventDefault();
-   		//Actualizar alertas
-	});
 
 });
 
