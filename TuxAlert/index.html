@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Lambda Studios">
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-	<link type="text/css" rel="stylesheet" href="css/TuxAlert.css"/>
+	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -403,9 +403,9 @@
 			<br><br><br>
 			<div class="panel-group" id="accordion" style="background-color: green;">
 		    	<form>
-				    <fieldset data-role="collapsible">
-				        <legend>Cambiar Información De Mi Cuenta</legend>
-				        <form>
+				    <fieldset data-role="collapsible">
+				        <legend>Cambiar Información De Mi Cuenta</legend>
+				        <form>
 						<label>Nombre Usuario: </label>
 						  <input type="text" name="firstname" placeholder="Ingrese Nuevo Nombre Usuario" required="">
 						  <br>
@@ -416,18 +416,18 @@
 						  <br><br>
 						  <input type="submit" value="Guardar">
 						</form>
-				    </fieldset>
+				    </fieldset>
 				</form>
 			</div>
 			<div class="panel-group" id="accordion" style="background-color: green;">
 		    	<form>
-				    <fieldset data-role="collapsible">
-				        <legend>Reportar un Problema</legend>
-				        <form>
+				    <fieldset data-role="collapsible">
+				        <legend>Reportar un Problema</legend>
+				        <form>
 
 						  <input type="submit" value="Submit">
 						</form>
-				    </fieldset>
+				    </fieldset>
 				</form>
 			</div>
 		</div>
@@ -436,21 +436,25 @@
 
 
 	<!-- Div de tarjeta de Pantalla Principal -->
-	<div data-role="page" id="pantallaPrincipal">
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"> <a href="#" data-role="button" data-icon="video" data-theme="b">TV ENVIVO</a> </li>
-				<li class="sm"> <a href="#" data-role="button" data-icon="video" data-theme="b" data-transition="flip">PELÍCULAS</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">SERIES</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Pide tu película</a></li>
+	<div data-role="page" id="pantallaPrincipal" class="ui-responsive-panel">
+
+		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+				<li class="sm"> <a href="#" data-transition="flip">Inicio</a> </li>
+				<li class="sm"> <a href="#" data-transition="flip">Historial</a> </li>
+				<li class="sm"> <a href="#" data-transition="flip">FAQ</a> </li>
+				<li class="sm"> <a href="#" data-transition="flip">Contáctenos</a></li>
+				<li class="sm"> <a href="#" data-transition="flip">Acerca de</a></li>
+				<hr class="linea-separacion">
+				<li class="sm"> <a href="#" data-transition="flip">Configuración</a></li>
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
-		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
+		
 		<br><br>
 		<div >
 			<br><br><br><br><br>
@@ -467,18 +471,18 @@
 		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
-				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
-				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
-				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#ventana_acerca_de" id = "boton_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
-
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-icon="video" data-theme="b">Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-icon="video" data-theme="b" data-transition="flip">Historial</a> </li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Contáctenos</a></li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Acerca de</a></li>
+				<hr class="linea-separacion">
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Configuración</a></li>
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 			<h3>Contáctenos</h3>
 		</div>
 
@@ -506,18 +510,18 @@
 	<div data-role="page" id="historial">
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
-				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
-				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
-				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#ventana_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
-
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-icon="video" data-theme="b">Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-icon="video" data-theme="b" data-transition="flip">Historial</a> </li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Contáctenos</a></li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Acerca de</a></li>
+				<hr class="linea-separacion">
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Configuración</a></li>
 			</ul>
 		</div>
 
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 			<h3 class="red-text">Historial</h3>
 		</div>
 
@@ -569,17 +573,17 @@
 	<div data-role="page" id="FAQ">
 		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
 			<ul>
-				<li class="sm"><a href="#pantallaPrincipal" class="ui-icon-home ui-btn-icon-left">Inicio</a></li>
-				<li class="sm"><a href="#historial" class="ui-icon-eye ui-btn-icon-left">Historial</a></li>
-				<li class="sm"><a href="#FAQ" class="ui-icon-info ui-btn-icon-left">FAQ</a></li>
-				<li class="sm"><a href="#page_contact" class="ui-icon-phone ui-btn-icon-left">Contácto</a></li>
-				<li class="sm"><a href="#ventana_acerca_de" class="ui-icon-plus ui-btn-icon-left">Acerca de...</a></li>
-				<li class="sm"><a href="#" class="ui-icon-gear ui-btn-icon-left" id="btn_configuracion">Config.</a></li>
-
+				<li class="sm"> <a href="#pantallaPrincipal" data-role="button" data-icon="video" data-theme="b">Inicio</a> </li>
+				<li class="sm"> <a href="#historial" data-role="button" data-icon="video" data-theme="b" data-transition="flip">Historial</a> </li>
+				<li class="sm"> <a href="#FAQ" data-role="button"data-icon="video" data-theme="b" data-transition="flip">FAQ</a> </li>
+				<li class="sm"> <a href="#page_contact" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Contáctenos</a></li>
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Acerca de</a></li>
+				<hr class="linea-separacion">
+				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Configuración</a></li>
 			</ul>
 		</div>
 		<div data-role="header" class="header">
-			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-grid ui-btn-icon-notext"></a>
+			<a href="#menu-panel" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext"></a>
 			<h3 class="red-text">FAQ</h3>
 		</div>
 
