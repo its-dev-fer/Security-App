@@ -42,13 +42,6 @@ hr{
 	height: 90%;
 	background-color: green;
 }
-.sm{
-	width: 100%;
-	left: 1px;
-	right: 0px;
-	margin-top: 2%;
-	color: white!important;
-}
 
 .iconoConfig{
 	width: 20px;
@@ -60,27 +53,6 @@ hr{
 
 #menu-panel{
 	background-color: var(--default-background);
-}
-
-.sm a{
-	color: white;
-	text-decoration: none !important;
-	transition: ease 0.5;
-	width: 100%!important;
-	font-size: 33px;
-	padding: 10px;
-
-}
-
-.sm{
-	width: 100%;
-	margin-left: 0%;
-	left: 0;
-	position: relative;
-}
-
-.sm:hover{
-	background-color: lightgray;
 }
 
 /*Fuente que David puso - SEAS MAMÓN pinsHI VATO*/
@@ -153,7 +125,7 @@ li{
 a{
 	text-decoration: none  !important;
 	text-shadow: none !important;
-	border: solid 5px black !important;
+	/*border: solid 5px black !important;*/ 
 	display: inline !important;
 	/*float: right !important;*/
 }
@@ -518,7 +490,7 @@ input{
 
 
 /*REGLAS DEL MAPA*/
-#map-page, #map-canvas { width: 95%; height: 80%; padding: 0; 
+#map-page, #map-canvas { width: 95%; height: 80%; padding: 0;
 	margin:0 auto;
 	position: absolute;
 	border:1px solid black;
@@ -531,7 +503,7 @@ input{
 	width: 100%;
 	background-color: tomato;
 	left: 0;
-	font-family: Helvetica;	
+	font-family: Helvetica;
 	right: 0;
 	margin:0 auto;
 }
