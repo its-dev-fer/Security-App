@@ -1,19 +1,5 @@
 <?php
-
-    function salir(){
-        $url="http://127.0.0.1";
-        $ch = curl_init();
-        $a = curl_exec($ch); // $a will contain all headers
-        $ch = curl_init();
-        $url = curl_getinfo($ch, CURLINFO_EFFECTIVE_URL); // This is what you need, it will return you the last effective URL
-        exit(); //exit() ya es una función de php, oyeron >:v
-    }
-
-    function back(){
-        echo "xd";
-    }
-
-    echo "Hola, te estamos registrando...";
+    session_start();
     $serverName= "127.0.0.1";
     $userName= "root";
     $password= "";
@@ -60,9 +46,8 @@
         if($conn->query($sql) == TRUE){
             //echo $conn."<br>";
             mysqli_close($conn);
-            setcookie("MyCookie", "Soy una galletita :3");
-            echo "<script type='text/javascript>'"."localStorage.setItem('primeraVez',1);"."</script>";
-            salir();
+            header("location: http://127.0.0.1/index.html#tarjeta-login");
+            exit();        
         }
     }else{
         echo "<script type='text/javascript'>alert('Las contraseñas no coinciden, intente de nuevo.');</script>";
