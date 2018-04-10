@@ -54,7 +54,6 @@ hr{
 #menu-panel{
 	background-color: var(--default-background);
 }
-
 /*Fuente que David puso - SEAS MAMÓN pinsHI VATO*/
 /*		JAJAJAJA XD  - David*/
 @font-face {
@@ -116,7 +115,7 @@ li{
 	color: var(--fondo-tarjeta-1) !important;
 	font-size: 45px !important;
 	font-family: 'Myriad' !important;
-	text-align: center !important;
+	text-align: left !important;
 	-ms-transform: translate(0px, 0.3em) !important; /* IE 9 */
     -webkit-transform: translate(0px,  0.3em) !important; /* Safari */
     transform: translate(0px, 0.3em) !important;
@@ -125,7 +124,7 @@ li{
 a{
 	text-decoration: none  !important;
 	text-shadow: none !important;
-	/*border: solid 5px black !important;*/ 
+	/*border: solid 5px black !important;*/
 	display: inline !important;
 	/*float: right !important;*/
 }
@@ -509,7 +508,7 @@ input{
 }
 
 #map-canvas a{
-	border:0px solid black !important;
+	border:0px solid black!important;
 
 }
 
