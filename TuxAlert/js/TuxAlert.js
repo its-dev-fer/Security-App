@@ -1,14 +1,35 @@
-$(document).ready(function(){
-	alert("Holi");
+$(document).ready(function(){	
 	//gelocation aki pq soy mui cul
 	var kmaras = {
 		kmara1:{
-			center:{lat:16.7751810, lng: -93.0799510}
+			center:{lat: 16.6155879, lng: -93.0905934},
+			alerta: false
 		},
 
 		kmara2:{
-			center:{lat:16.7759637, lng: -93.0808115}
+			center:{lat:16.6152431, lng: -93.0897087},
+			alerta: false
+		},
+
+		kmara3:{
+			center:{lat:16.6155873, lng:-93.0884087},
+			alerta: false
+		},
+
+		kmara4:{
+			center:{lat:16.6275549,lng:-93.0980324},
+			alerta: false
+		},
+
+		kmara5:{
+			center:{lat:16.627588,lng:-93.0971251},
+			alerta: false
+		},
+		kmara6:{
+			center:{lat:16.6276658,lng:-93.0973038},
+			alerta: false
 		}
+
 	}
 
 	var distance;
@@ -35,8 +56,19 @@ $(document).ready(function(){
 
 	  //google.maps.event.addListener(marker, 'position_changed', update);
 
+	  var circle = new google.maps.Circle({
+		    center: location,
+		    radius: 10,
+			map: map,
+			fillColor: '#ff6666',
+			fillOpacity: 0.8,
+			strokeColor: '#000',
+			strokeOpacity: 1.0
+	   });
+	   circle.bindTo('center', marker, 'position');  
+
 	  map.setCenter(location);
-	  var i=0;
+	  var i=1;
 	  for(var kamara in kmaras){
 
 	  	var camaras = new google.maps.Circle({
@@ -48,7 +80,7 @@ $(document).ready(function(){
             map: map,
             icon:image,
             center: kmaras[kamara].center,
-            radius: 25
+            radius: 15
           });
 
 	  	 var markers = new google.maps.Marker({
@@ -58,25 +90,23 @@ $(document).ready(function(){
 		    icon:image
 	     });
 
-	  	 var path = [markers.getPosition(), marker.getPosition()];
-	  	 distance = google.maps.geometry.spherical.computeHeading(path[0], path[1]);
-	  	 if(distance<50){
+	  	 //manera 1212312
+	  	 
+
+
+	  	 ///
+
+	  	 var path = [markers.getPosition(), marker.getPosition()];	  	 
+	  	 distance = Math.ceil(google.maps.geometry.spherical.computeDistanceBetween(path[0], path[1]));	  
+	  	 if(distance<40 ){
 	  	 	console.log("ESTAS CERCA DE UNA KMARA");
+	  	 	kmaras[kamara].alerta = true;
 	  	 }
 	  	 console.log("Distancia camara["+ i +"]: "+ distance);
 	  	 i++;
 	  }
 
-	  var circle = new google.maps.Circle({
-		    center: location,
-		    radius: 20,
-			map: map,
-			fillColor: '#ff6666',
-			fillOpacity: 0.8,
-			strokeColor: '#000',
-			strokeOpacity: 1.0
-	   });
-	   circle.bindTo('center', marker, 'position');
+	
 	}
 
 	function showError() {
