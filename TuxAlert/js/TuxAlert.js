@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	$tipoUsuario = localStorage.getItem("userMode",null);
 	switch($tipoUsuario){
 		case '1':{//Página inicial para ciudadanos
@@ -22,10 +21,6 @@ $(document).ready(function(){
    		localStorage.setItem("userMode",2);
 	});
 
-	//Very important function
-	$("#btn-alarma").click(function(){
-		alert("Click");
-	});
 	//gelocation aki pq soy mui cul
 	var data={
 		id:1,
@@ -92,7 +87,6 @@ $(document).ready(function(){
 	    title: "Usted se encuentra aquí",
 	    draggable:true,
 	  });
-
 	  //google.maps.event.addListener(marker, 'position_changed', update);
 
 	  var circle = new google.maps.Circle({
@@ -138,7 +132,7 @@ $(document).ready(function(){
 	  	 }
 	  	 console.log("Distancia camara["+ i +"]: "+ distance);
 	  	 i++;
-	  }
+	}
 
 	var cont=0;
 	for(var kamara in kmaras){
@@ -148,11 +142,38 @@ $(document).ready(function(){
 			console.log("ip> "+ ipkam);
 		}
 	}
-
 	UpdateRecord(id,ipkam);
-		
-	}
+}
 
+	//Very important function
+	$("#btn-alarma").click(function(){
+		//gps
+		if (navigator.geolocation) {
+		  navigator.geolocation.getCurrentPosition(GoogleMap, showError);
+		} else {
+		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
+		}
+
+		var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	  	console.log(location);
+	  	console.log("latitud:" + position.coords.latitude+ " longitud:" + position.coords.longitude);
+
+		var latitud =  position.coords.latitude;
+		var longitud = position.coords.longitude;
+		console.log(latitud);
+		console.log(longitud);
+		$.ajax({
+		  type: "POST",
+		  url: "../php/alarma.php",
+		  data: {
+		  	"latitud": latitud,
+		  	"longitud": longitud
+		  },
+		  success: function(response){
+		  	alert("La alarma se ha enviado correctamente.");
+		  }
+		});
+	});
 
 	function UpdateRecord(id,ipkam){
 	  console.log("func>" + id+" - " + ipkam);
@@ -166,8 +187,7 @@ $(document).ready(function(){
          alert("Record successfully updated");
        }
      });
- }
-
+	}
 
 
 	function showError() {
@@ -182,7 +202,6 @@ $(document).ready(function(){
 		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
 		}
 	});
-
 	//fin geolocation
 	//Validar que el usario esté conectado a internet
 	if(!navigator.onLine){

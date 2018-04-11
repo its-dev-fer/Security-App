@@ -21,7 +21,7 @@
         $passEnc= md5($contraseniaUsuario);
 
     if($contraseniaUsuario == $contraseniaRepetidaUsuario){
-        $sql= "INSERT INTO Usuarios (
+        $sql= "INSERT INTO usuarios (
             Nombre,
             Apellidos,
             Correo_electronico,
