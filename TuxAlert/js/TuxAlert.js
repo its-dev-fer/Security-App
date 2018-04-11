@@ -1,6 +1,32 @@
-$(document).ready(function(){	
-	//gelocation aki pq soy mui cul
+$(document).ready(function(){
 
+	$tipoUsuario = localStorage.getItem("userMode",null);
+	switch($tipoUsuario){
+		case '1':{//Página inicial para ciudadanos
+			location.href = "#pantallaPrincipal";
+			break;
+		}
+		case '2':{//Página inicial para agentes de seguridad
+			location.href = "#pantallaPrincipalSP";
+			break;
+		}
+	}
+
+	 $(document).on( "pageinit", "#pantallaPrincipal", function(e) {
+   		e.preventDefault();
+   		localStorage.setItem("userMode",1);
+	});
+
+	 $(document).on( "pageinit", "#pantallaPrincipalSP", function(e) {
+   		e.preventDefault();
+   		localStorage.setItem("userMode",2);
+	});
+
+	//Very important function
+	$("#btn-alarma").click(function(){
+		alert("Click");
+	});
+	//gelocation aki pq soy mui cul
 	var data={
 		id:1,
 		ipkam:false
@@ -163,40 +189,7 @@ $(document).ready(function(){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
   		//navigator.app.exitApp();
  	}
-
-	//Checar si es la primera vez que se abre la app
-	/*
-	var primeraVez = localStorage.getItem('primeraVez',null);
-	var _tipoDeUsuario = localStorage.getItem("tipoUsuario",null);
-	if(!primeraVez){
-		//:v
-	}else{
-		if(_tipoDeUsuario == "NORMIE"){
-			location.href = "#pantallaPrincipal";
-		}else{
-			location.href = "#pantallaPrincipalSP";
-		}
-	}
-	*/
-
-	//Guardar datos del usuario al registrarse
-	/*
-	$("form-registro-usuariosp").on('submit',function(){
-		//localStorage.setItem('primeraVez',1);
-		$usrnme = $("#usrnmeSP").val();
-		//localStorage.setItem('usuario', $usrnme);
-		//localStorage.setItem('tipoUsuario', "SP");
-		location.href = "index.html#pantallaPrincipalSP";
-	});
-
-	$("#form-registro-usuario").on('submit',function(){
-		//localStorage.setItem('primeraVez',1);
-		$usrnme = $("#usrnme").val();
-		//localStorage.setItem('usuario', $usrnme);
-		//localStorage.setItem('tipoUsuario', "NORMIE");
-		location.href = "index.html#pantallaPrincipal";
-	});
-	*/
+	
 	$("#btn-1").click(function(e){
 		e.preventDefault();
 		location.href = "#tarjeta-2";
