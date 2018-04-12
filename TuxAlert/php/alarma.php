@@ -16,32 +16,35 @@
     $hora = date("H:i:s");
     $categoria = "Emergencia";
 
-    $sql= "INSERT INTO alertas (
-    		Fecha,
-    		Hora
-        ) VALUES (
-            '$fecha',
-            '$hora'
-        )";
-
-    $conn->query($sql);
-
-    $sql2 = "INSERT INTO categoriasalertas (
-    		Nombre_Categoria
-        ) VALUES (
-            '$categoria'
-        )";
-    
-    $conn->query($sql2);
-
-    $sql3 = "INSERT INTO ubicacionesalertas (
+    $sql= "INSERT INTO ubicacionesalertas (
     		Latitud,
     		Longitud
         ) VALUES (
-            '$latitud',
-            '$longitud'
+            '$lat',
+            '$longi'
         )";
 
-    $conn->query($sql3);
-    mysqli_close($conn);
-	exit();
+    $sql2 = "INSERT INTO alertas (
+            ID_CategoriaAlerta,
+            ID_UbicacionAlerta,
+            Fecha,
+            Hora
+        ) VALUES (
+            (SELECT ID_CategoriaAlerta FROM categoriasalertas WHERE Nombre_Categoria = '$categoria'),
+            (SELECT ID_UbicacionAlerta FROM ubicacionesalertas WHERE Latitud = '$lat' AND Longitud = '$longi'),
+            '$fecha',
+            '$hora'
+        )"; 
+    $conn->query($sql);
+    $conn->query($sql2);
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+        mysqli_close($conn);
+        header("location: www.google.com.mx");
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+        header("location: www.facebook.com");
+        exit();
+    }

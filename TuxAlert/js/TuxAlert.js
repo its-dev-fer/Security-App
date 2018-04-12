@@ -155,23 +155,22 @@ $(document).ready(function(){
 		}
 
 		var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-	  	console.log(location);
-	  	console.log("latitud:" + position.coords.latitude+ " longitud:" + position.coords.longitude);
 
 		var latitud =  position.coords.latitude;
 		var longitud = position.coords.longitude;
-		console.log(latitud);
-		console.log(longitud);
 		$.ajax({
 		  type: "POST",
 		  url: "../php/alarma.php",
 		  data: {
-		  	"latitud": latitud,
-		  	"longitud": longitud
+		  	latitud: latitud,
+		  	longitud: longitud
 		  },
 		  success: function(response){
-		  	alert("La alarma se ha enviado correctamente.");
-		  }
+		  	alert("La alarma se ha enviado correctamente. " + response);
+		  },
+		  error: function(XMLHttpRequest, textStatus, errorThrown) {
+     			alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
+  			}
 		});
 	});
 
@@ -184,7 +183,7 @@ $(document).ready(function(){
        cache: false,
        success: function(response)
        {
-         alert("Record successfully updated");
+         alert("Record successfully updated...");
        }
      });
 	}
@@ -206,7 +205,7 @@ $(document).ready(function(){
 	//Validar que el usario esté conectado a internet
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
-  		//navigator.app.exitApp();
+  		navigator.app.exitApp();
  	}
 	
 	$("#btn-1").click(function(e){
