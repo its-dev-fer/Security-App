@@ -1,4 +1,8 @@
+var ___lat = "xddd";
+var ___long = "xddd";
+
 $(document).ready(function(){
+
 	$tipoUsuario = localStorage.getItem("userMode",null);
 	switch($tipoUsuario){
 		case '1':{//Página inicial para ciudadanos
@@ -72,6 +76,8 @@ $(document).ready(function(){
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	  console.log(location);
 	  console.log("latitud:" + position.coords.latitude+ " longitud:" + position.coords.longitude);
+	  ___lat = position.coords.latitude;
+	  ___long = position.coords.longitude;
 	  var map = new google.maps.Map(document.getElementById('map-canvas'), {
 	    zoom: 20,
 	    disableDefaultUI: false,
@@ -148,25 +154,26 @@ $(document).ready(function(){
 	//Very important function
 	$("#btn-alarma").click(function(){
 		//gps
+		alert("K kierez");
 		if (navigator.geolocation) {
-		  navigator.geolocation.getCurrentPosition(GoogleMap, showError);
+		  navigator.geolocation.getCurrentPosition(success__MAP, error__MAP);
 		} else {
 		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
 		}
 
-		var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-		var latitud =  position.coords.latitude;
-		var longitud = position.coords.longitude;
+		setInterval(function(){
+			navigator.geolocation.getCurrentPosition(success__MAP, error__MAP);
+		}, 3000);
+		
 		$.ajax({
 		  type: "POST",
-		  url: "../php/alarma.php",
 		  data: {
-		  	latitud: latitud,
-		  	longitud: longitud
+		  	latitud: ___lat,
+		  	longitud: ___long
 		  },
-		  success: function(response){
-		  	alert("La alarma se ha enviado correctamente. " + response);
+		  url: "../php/alarma.php",
+		  success: function(){
+		  	alert("La alarma se ha enviado correctamente");
 		  },
 		  error: function(XMLHttpRequest, textStatus, errorThrown) {
      			alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
@@ -183,7 +190,7 @@ $(document).ready(function(){
        cache: false,
        success: function(response)
        {
-         alert("Record successfully updated...");
+         //alert("Record successfully updated...");
        }
      });
 	}
@@ -329,3 +336,13 @@ function regresarACasa(event){
 function getCookieValue(a) {
     return (name = new RegExp('(?:^|;\\s*)' + ('' + name).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&') + '=([^;]*)').exec(document.cookie)) && name[1];
 }
+
+function success__MAP(pos) {
+  var crd = pos.coords;
+  ___lat = crd.latitude;
+  ___long = crd.longitude;
+};
+
+function error__MAP(err){
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+};

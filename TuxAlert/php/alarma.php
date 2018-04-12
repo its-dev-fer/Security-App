@@ -1,5 +1,4 @@
 <?php
-	session_start();
     $serverName= "127.0.0.1";
     $userName= "root";
     $password= "";
@@ -41,10 +40,10 @@
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
         mysqli_close($conn);
-        header("location: www.google.com.mx");
+        //header("location: www.google.com.mx");
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
-        header("location: www.facebook.com");
+        //header("location: www.facebook.com");
         exit();
     }
