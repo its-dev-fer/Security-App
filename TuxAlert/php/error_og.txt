@@ -1,0 +1,17 @@
+xdddxddd12, 4, 201817:21:01INSERT INTO ubicacionesalertas (
+    		Latitud,
+    		Longitud
+        ) VALUES (
+            'xddd',
+            'xddd'
+        )INSERT INTO alertas (
+            ID_CategoriaAlerta,
+            ID_UbicacionAlerta,
+            Fecha,
+            Hora
+        ) VALUES (
+            (SELECT ID_CategoriaAlerta FROM categoriasalertas WHERE Nombre_Categoria = 'Emergencia'),
+            (SELECT ID_UbicacionAlerta FROM ubicacionesalertas WHERE Latitud = 'xddd' AND Longitud = 'xddd'),
+            '12, 4, 2018',
+            '17:21:01'
+        )Cannot add or update a child row: a foreign key constraint fails (`tuxalert_app_db`.`alertas`, CONSTRAINT `Foranea_ID_Alerta` FOREIGN KEY (`ID_Alerta`) REFERENCES `usuarios` (`ID_Alerta`) ON DELETE NO ACTION ON UPDATE CASCADE)
