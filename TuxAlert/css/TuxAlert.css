@@ -72,10 +72,12 @@ hr{
 
 .bienvenida_1{
 	background-color: var(--fondo-tarjeta-1) !important;
+    
 }
 
 .bienvenida_2{
 	background-color: var(--fondo-tarjeta-2) !important;
+    
 }
 .bienvenida_3{
 	background-color: var(--fondo-tarjeta-3) !important;
@@ -96,7 +98,7 @@ hr{
 	border-radius: 20px !important;
 	padding: 5px !important;
 	color: var(--fondo-tarjeta-1) !important;
-	font-size: 45px !important;
+	font-size: 2.5em!important;  
 	font-family: 'Myriad' !important;
 	font-weight: bold !important;
 }
@@ -219,7 +221,7 @@ h3{
 	border-radius: 20px;
 	padding: 5px;
 	color: var(--fondo-tarjeta-2);
-	font-size: 45px;
+	font-size: 2.5em!important;  
 	font-family: 'Myriad';
 	font-weight: lighter;
 }
@@ -233,7 +235,7 @@ h3{
 	border-radius: 20px;
 	padding: 5px;
 	color: var(--fondo-tarjeta-3);
-	font-size: 45px;
+	font-size: 2.5em!important;  
 	font-family: 'Myriad';
 	font-weight: lighter;
 }
@@ -247,7 +249,7 @@ h3{
 	border-radius: 20px;
 	padding: 5px;
 	color: var(--fondo-tarjeta-4);
-	font-size: 45px;
+	font-size: 2.5em!important;  
 	font-family: 'Myriad';
 	font-weight: lighter;
 }
@@ -260,7 +262,7 @@ h3{
 	border-radius: 20px;
 	padding: 5px;
 	color: var(--fondo-tarjeta-5);
-	font-size: 45px;
+	font-size: 2.5em!important;  
 	font-family: 'Myriad';
 	font-weight: lighter;
 }
