@@ -1,5 +1,5 @@
 <?php
-    $myfile = fopen("error_og.txt", "w") or die("Unable to open file!");
+    $myfile = fopen("error_log.txt", "w") or die("Unable to open file!");
     $serverName= "127.0.0.1";
     $userName= "root";
     $password= "";
@@ -14,36 +14,21 @@
     $longi = $_POST['longitud'];
     $fecha = date("j, n, Y");
     $hora = date("H:i:s");
-    $categoria = "Emergencia";
+
     fwrite($myfile, $lat);
     fwrite($myfile, $longi);
     fwrite($myfile, $fecha);
     fwrite($myfile, $hora);
 
-    $sql= "INSERT INTO ubicacionesalertas (
-    		Latitud,
-    		Longitud
-        ) VALUES (
-            '$lat',
-            '$longi'
-        )";
-
-    $sql2 = "INSERT INTO alertas (
-            ID_CategoriaAlerta,
-            ID_UbicacionAlerta,
-            Fecha,
-            Hora
-        ) VALUES (
-            (SELECT ID_CategoriaAlerta FROM categoriasalertas WHERE Nombre_Categoria = '$categoria'),
-            (SELECT ID_UbicacionAlerta FROM ubicacionesalertas WHERE Latitud = '$lat' AND Longitud = '$longi'),
-            '$fecha',
-            '$hora'
-        )"; 
+    $sql = 'INSERT INTO alertas (Fecha,Hora,Latitud,Longitud) VALUES(
+        '$fecha',
+        '$hora',
+        '$lat',
+        '$longi'
+    )';
+    
     $conn->query($sql);
-    $conn->query($sql2);
 
-    fwrite($myfile, $sql);
-    fwrite($myfile, $sql2);
     fwrite($myfile, $conn->error);
     fclose($myfile);
 
@@ -54,6 +39,5 @@
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
-        header("location: http://127.0.0..1/index.html#pantallaPrincipal?=$sql, $conn->error");
         exit();
     }

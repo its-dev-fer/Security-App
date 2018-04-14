@@ -154,26 +154,21 @@ $(document).ready(function(){
 	//Very important function
 	$("#btn-alarma").click(function(){
 		//gps
-		alert("K kierez");
 		if (navigator.geolocation) {
 		  navigator.geolocation.getCurrentPosition(success__MAP, error__MAP);
 		} else {
 		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
 		}
-
-		setInterval(function(){
-			navigator.geolocation.getCurrentPosition(success__MAP, error__MAP);
-		}, 3000);
 		
 		$.ajax({
 		  type: "POST",
 		  data: {
-		  	latitud: ___lat,
-		  	longitud: ___long
+		  	latitud: "1234",
+		  	longitud: "5678"
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
-		  	alert("La alarma se ha enviado correctamente");
+		  	alert("La alarma se ha enviado correctamente.");
 		  },
 		  error: function(XMLHttpRequest, textStatus, errorThrown) {
      			alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
@@ -343,6 +338,30 @@ function success__MAP(pos) {
   ___long = crd.longitude;
 };
 
+function success__MAP_RETURN_LAT(pos){
+	var crd = pos.coords;
+	return crd.latitude;
+}
+
+function success__MAP_RETURN_LONGITUD(pos){
+	var crd = pos.coords;
+	return crd.longitude;
+}
+
 function error__MAP(err){
   console.warn('ERROR(' + err.code + '): ' + err.message);
 };
+
+function getLat(pos){
+	var crd = pos.coords;
+	var lat = crd.latitude;
+	console.log("AVISO --> LAT =" + lat);
+	return lat;
+}
+
+function getLong(pos){
+	var crd = pos.coords;
+	var longi = crd.longitude;
+	console.log("AVISO --> LONG =" + longi);
+	return longi;
+}
