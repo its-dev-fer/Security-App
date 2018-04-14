@@ -1,4 +1,5 @@
 <?php
+    $myfile = fopen("error_og.txt", "w") or die("Unable to open file!");
     $serverName= "127.0.0.1";
     $userName= "root";
     $password= "";
@@ -14,6 +15,10 @@
     $fecha = date("j, n, Y");
     $hora = date("H:i:s");
     $categoria = "Emergencia";
+    fwrite($myfile, $lat);
+    fwrite($myfile, $longi);
+    fwrite($myfile, $fecha);
+    fwrite($myfile, $hora);
 
     $sql= "INSERT INTO ubicacionesalertas (
     		Latitud,
@@ -37,6 +42,11 @@
     $conn->query($sql);
     $conn->query($sql2);
 
+    fwrite($myfile, $sql);
+    fwrite($myfile, $sql2);
+    fwrite($myfile, $conn->error);
+    fclose($myfile);
+
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
         mysqli_close($conn);
@@ -44,6 +54,6 @@
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
-        //header("location: www.facebook.com");
+        header("location: http://127.0.0..1/index.html#pantallaPrincipal?=$sql, $conn->error");
         exit();
     }
