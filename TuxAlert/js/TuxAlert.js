@@ -76,8 +76,6 @@ $(document).ready(function(){
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 	  console.log(location);
 	  console.log("latitud:" + position.coords.latitude+ " longitud:" + position.coords.longitude);
-	  ___lat = position.coords.latitude;
-	  ___long = position.coords.longitude;
 	  var map = new google.maps.Map(document.getElementById('map-canvas'), {
 	    zoom: 20,
 	    disableDefaultUI: false,
@@ -159,12 +157,39 @@ $(document).ready(function(){
 		} else {
 		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
 		}
-		
+
+
+		// Try HTML5 geolocation.
+        if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(position) {
+				___lat = position.coords.latitude;
+				___long = position.coords.longitude;
+				console.log("TE ENCONTRE PRRO >> " + position.coords.latitude + " --- " + position.coords.longitude);
+			  var pos = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude,
+			  };
+			});
+		  }else {
+			// Browser doesn't support Geolocation
+			alert("No podemos ubicarte.");
+		  }
+
 		$.ajax({
 		  type: "POST",
 		  data: {
-		  	latitud: "1234",
-		  	longitud: "5678"
+		  	latitud: function(){
+				navigator.geolocation.getCurrentPosition(function(position) {
+					console.log("TE ENCONTRE PRRO >> " + position.coords.latitude + " --- " + position.coords.longitude);
+					return position.coords.latitude;
+				}	
+				)},
+		  	longitud: function(){
+				navigator.geolocation.getCurrentPosition(function(position) {
+					console.log("TE ENCONTRE PRRO >> " + position.coords.latitude + " --- " + position.coords.longitude);
+					return position.coords.longitude;
+				}	
+			)}
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
@@ -340,11 +365,13 @@ function success__MAP(pos) {
 
 function success__MAP_RETURN_LAT(pos){
 	var crd = pos.coords;
+	console.log("Tu latitud = " + crd.latitude);
 	return crd.latitude;
 }
 
 function success__MAP_RETURN_LONGITUD(pos){
 	var crd = pos.coords;
+	console.log("Tu longitud = " + crd.longitude);
 	return crd.longitude;
 }
 

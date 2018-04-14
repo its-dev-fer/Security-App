@@ -1,5 +1,5 @@
 <?php
-    $myfile = fopen("error_log.txt", "w") or die("Unable to open file!");
+    $myfile = fopen("error_og.txt", "w") or die("Unable to open file!");
     $serverName= "127.0.0.1";
     $userName= "root";
     $password= "";
@@ -12,25 +12,21 @@
 
     $lat = $_POST['latitud'];
     $longi = $_POST['longitud'];
-    $fecha = date("j, n, Y");
-    $hora = date("H:i:s");
+    $date = date("m/d/Y h:i A");
+    $hora = date("Y-m-d H:i:s");
+
+    $final = strtotime($date);
+    $time_posted = date("Y-m-d H:i:s", $final);
 
     fwrite($myfile, $lat);
     fwrite($myfile, $longi);
     fwrite($myfile, $fecha);
     fwrite($myfile, $hora);
 
-    $sql = 'INSERT INTO alertas (Fecha,Hora,Latitud,Longitud) VALUES(
-        '$fecha',
-        '$hora',
-        '$lat',
-        '$longi'
-    )';
-    
-    $conn->query($sql);
-
+    $sql = "INSERT INTO alertas(Fecha,Hora,Latitud,Longitud) VALUES('$time_posted',NOW(),'$lat','$longi')";
     fwrite($myfile, $conn->error);
     fclose($myfile);
+
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
