@@ -19,13 +19,17 @@ $(document).ready(function(){
 	 $(document).on( "pageinit", "#pantallaPrincipal", function(e) {
    		e.preventDefault();
 		localStorage.setItem("userMode",1);
+		//navigator.geolocation.getCurrentPosition(GoogleMap, showError);
+		//Borra estop
 		setInterval(function(){
 			navigator.geolocation.getCurrentPosition(function(position) {
 				//do_something(position.coords.latitude, position.coords.longitude);
 				lastLat = position.coords.latitude;
+				alert(lastLat);
 				lastLongi = position.coords.longitude;
-			});
-		},3000);
+				alert(lastLongi);
+			},error__MAP);
+		},6000);
 
 	});
 
@@ -358,5 +362,5 @@ function success__MAP_RETURN_LONGITUD(pos){
 }
 
 function error__MAP(err){
-  console.warn('ERROR(' + err.code + '): ' + err.message);
+  alert(err);
 };

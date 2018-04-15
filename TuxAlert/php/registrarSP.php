@@ -46,13 +46,13 @@
         if($conn->query($sql) == TRUE){
             //echo $conn."<br>";
             mysqli_close($conn);
-            header("location: http://127.0.0.1/index.html#tarjeta-login");
+            header("location: http://192.168.1.6/index.html#tarjeta-login");
             exit();
         }else{
             mysqli_close($conn);
-            header("location: http://127.0.0.1/index.html#tarjeta-login");
+            header("location: http://192.168.1.6/index.html#tarjeta-login");
             exit();
         }
     }else{
-        header("location: http://127.0.0.1/index.html#tarjeta-login");
+        header("location: http://192.168.1.6/index.html#tarjeta-login");
     }

@@ -22,19 +22,19 @@ $servername = "localhost";
 		while ($row = $result->fetch_assoc()) {
 			switch ($row['ID_TipoUsuario']) {
 				case 1:{
-					header("location: http://127.0.0.1/index.html#pantallaPrincipal");	
+					header("location: http://192.168.1.6/index.html#pantallaPrincipal");	
 					exit();	
 					break;
 				}
 
 				case 2:{
-					header("location: http://127.0.0.1/index.html#pantallaPrincipalSP");
+					header("location: http://192.168.1.6/index.html#pantallaPrincipalSP");
 					exit();
 					break;
 				}
 						
 				default:{
-					header("location: http://127.0.0.1/index.html#tarjeta-login");
+					header("location: http://192.168.1.6/index.html#tarjeta-login");
 					exit();
 					break;
 				}
