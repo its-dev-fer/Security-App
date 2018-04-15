@@ -1,6 +1,3 @@
-var ___lat = "xddd";
-var ___long = "xddd";
-
 $(document).ready(function(){
 
 	$tipoUsuario = localStorage.getItem("userMode",null);
@@ -151,45 +148,17 @@ $(document).ready(function(){
 
 	//Very important function
 	$("#btn-alarma").click(function(){
-		//gps
-		if (navigator.geolocation) {
-		  navigator.geolocation.getCurrentPosition(success__MAP, error__MAP);
-		} else {
-		  alert("Tu Dispositivo no te viene manejando la geolocalización.");
-		}
-
-
-		// Try HTML5 geolocation.
-        if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-				___lat = position.coords.latitude;
-				___long = position.coords.longitude;
-				console.log("TE ENCONTRE PRRO >> " + position.coords.latitude + " --- " + position.coords.longitude);
-			  var pos = {
-				lat: position.coords.latitude,
-				lng: position.coords.longitude,
-			  };
-			});
-		  }else {
-			// Browser doesn't support Geolocation
-			alert("No podemos ubicarte.");
-		  }
-
 		$.ajax({
 		  type: "POST",
 		  data: {
-		  	latitud: function(){
-				navigator.geolocation.getCurrentPosition(function(position) {
-					console.log("TE ENCONTRE PRRO >> " + position.coords.latitude + " --- " + position.coords.longitude);
-					return position.coords.latitude;
-				}	
-				)},
-		  	longitud: function(){
-				navigator.geolocation.getCurrentPosition(function(position) {
-					console.log("TE ENCONTRE PRRO >> " + position.coords.latitude + " --- " + position.coords.longitude);
-					return position.coords.longitude;
-				}	
-			)}
+		  	latitud: navigator.geolocation.getCurrentPosition(function(position) {
+				//do_something(position.coords.latitude, position.coords.longitude);
+				return position.coords.latitude;
+			  	}),
+		  	longitud: navigator.geolocation.getCurrentPosition(function(position) {
+				//do_something(position.coords.latitude, position.coords.longitude);
+				return position.coords.longitude;
+			  	})
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
@@ -200,6 +169,15 @@ $(document).ready(function(){
   			}
 		});
 	});
+
+	function getLat(){
+		return localStorage.getItem('latitud','0');
+	}
+
+	function getLong(){
+		return localStorage.getItem('longitud','0');
+	}
+
 
 	function UpdateRecord(id,ipkam){
 	  console.log("func>" + id+" - " + ipkam);
@@ -359,8 +337,6 @@ function getCookieValue(a) {
 
 function success__MAP(pos) {
   var crd = pos.coords;
-  ___lat = crd.latitude;
-  ___long = crd.longitude;
 };
 
 function success__MAP_RETURN_LAT(pos){
@@ -378,17 +354,3 @@ function success__MAP_RETURN_LONGITUD(pos){
 function error__MAP(err){
   console.warn('ERROR(' + err.code + '): ' + err.message);
 };
-
-function getLat(pos){
-	var crd = pos.coords;
-	var lat = crd.latitude;
-	console.log("AVISO --> LAT =" + lat);
-	return lat;
-}
-
-function getLong(pos){
-	var crd = pos.coords;
-	var longi = crd.longitude;
-	console.log("AVISO --> LONG =" + longi);
-	return longi;
-}
