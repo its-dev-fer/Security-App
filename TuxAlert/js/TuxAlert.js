@@ -1,4 +1,8 @@
+var lastLat = "1";
+var lastLongi = "2";
+
 $(document).ready(function(){
+
 
 	$tipoUsuario = localStorage.getItem("userMode",null);
 	switch($tipoUsuario){
@@ -14,7 +18,15 @@ $(document).ready(function(){
 
 	 $(document).on( "pageinit", "#pantallaPrincipal", function(e) {
    		e.preventDefault();
-   		localStorage.setItem("userMode",1);
+		localStorage.setItem("userMode",1);
+		setInterval(function(){
+			navigator.geolocation.getCurrentPosition(function(position) {
+				//do_something(position.coords.latitude, position.coords.longitude);
+				lastLat = position.coords.latitude;
+				lastLongi = position.coords.longitude;
+			});
+		},3000);
+
 	});
 
 	 $(document).on( "pageinit", "#pantallaPrincipalSP", function(e) {
@@ -151,14 +163,8 @@ $(document).ready(function(){
 		$.ajax({
 		  type: "POST",
 		  data: {
-		  	latitud: navigator.geolocation.getCurrentPosition(function(position) {
-				//do_something(position.coords.latitude, position.coords.longitude);
-				return position.coords.latitude;
-			  	}),
-		  	longitud: navigator.geolocation.getCurrentPosition(function(position) {
-				//do_something(position.coords.latitude, position.coords.longitude);
-				return position.coords.longitude;
-			  	})
+		  	latitud: lastLat,
+		  	longitud: lastLongi
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
