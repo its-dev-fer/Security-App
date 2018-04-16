@@ -17,8 +17,22 @@ $(document).ready(function(){
 	}
 
 	 $(document).on( "pageinit", "#pantallaPrincipal", function(e) {
+	 	var options = { enableHighAccuracy: true, maximumAge: 100, timeout: 50000 };
+
    		e.preventDefault();
 		localStorage.setItem("userMode",1);
+		if (navigator.geolocation) {
+		  var timeoutVal = 10 * 1000 * 1000;
+		  navigator.geolocation.getCurrentPosition(
+		    displayPosition, 
+		    displayError,
+		    { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+		  );
+		}
+		else {
+		  alert("No soportas la función GPS");
+		}
+		/*
 		//navigator.geolocation.getCurrentPosition(GoogleMap, showError);
 		//Borra estop
 		setInterval(function(){
@@ -30,8 +44,23 @@ $(document).ready(function(){
 				alert(lastLongi);
 			},error__MAP);
 		},6000);
-
+		*/
 	});
+
+	function displayPosition(position) {
+  		alert("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
+  		lastLat = position.coords.latitude;
+  		lastLongi = position.coords.longitude;
+	}
+
+	function displayError(error) {
+	  var errors = { 
+	    1: 'Permission denied',
+	    2: 'Position unavailable',
+	    3: 'Request timeout'
+	  };
+	  alert("Error: " + errors[error.code]);
+	}
 
 	 $(document).on( "pageinit", "#pantallaPrincipalSP", function(e) {
    		e.preventDefault();
@@ -347,17 +376,16 @@ function getCookieValue(a) {
 
 function success__MAP(pos) {
   var crd = pos.coords;
+  alert(crd.latitude + ", "  + crd.longitude);
 };
 
 function success__MAP_RETURN_LAT(pos){
 	var crd = pos.coords;
-	console.log("Tu latitud = " + crd.latitude);
 	return crd.latitude;
 }
 
 function success__MAP_RETURN_LONGITUD(pos){
 	var crd = pos.coords;
-	console.log("Tu longitud = " + crd.longitude);
 	return crd.longitude;
 }
 
