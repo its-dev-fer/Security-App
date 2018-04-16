@@ -19,7 +19,7 @@
         try{
             $stmt = $con->prepare('UPDATE `keys` SET `estado`=0 WHERE `key`= "'.$claveIngresada.'"');
             $stmt->execute();
-            header("location: http://192.168.1.6/index.html#registrosp");
+            header("location: ../index.html#registrosp");
         } catch (PDOException $e) {
           echo 'Error: '. $e->getMessage();
         }
