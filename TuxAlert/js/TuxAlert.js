@@ -1,5 +1,6 @@
 var lastLat = "1";
 var lastLongi = "2";
+var aipe ="3";
 
 $(document).ready(function(){
 
@@ -42,9 +43,9 @@ $(document).ready(function(){
 				alert(lastLat);
 				lastLongi = position.coords.longitude;
 				alert(lastLongi);
-			},error__MAP);
-		},6000);
-		*/
+			},error__MAP); 
+		},6000); 
+		*/ 
 	});
 
 	function displayPosition(position) {
@@ -68,10 +69,8 @@ $(document).ready(function(){
 	});
 
 	//gelocation aki pq soy mui cul
-	var data={
-		id:1,
-		ipkam:false
-	}
+
+	var CamOrStream = false;
 
 	var kmaras = {
 		kmara1:{
@@ -112,7 +111,7 @@ $(document).ready(function(){
 	}
 
 	var distance;
-	var ipkam,id;
+	var ipkam,id,ipe;
 
 	function GoogleMap(position) {
 	  var location = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -184,12 +183,22 @@ $(document).ready(function(){
 	for(var kamara in kmaras){
 		if(kmaras[kamara].alerta==true && cont==0){
 			cont++;
-			ipkam = kmaras[kamara].alerta;
-			console.log("ip> "+ ipkam);
+			ipkam = kmaras[kamara].ip;
+			console.log("ip> "+ ipkam.ip);
+			console.log()
+			CamOrStream = true;
 		}
 	}
 	UpdateRecord(id,ipkam);
 }
+
+	if(CamOrStream){
+		aipi = ipkam;
+	}else{
+		$.getJSON("https://api.ipify.org/?format=json", function(e) {    
+    		aipi = e.ip;
+		});
+	}
 
 	//Very important function
 	$("#btn-alarma").click(function(){
@@ -197,7 +206,8 @@ $(document).ready(function(){
 		  type: "POST",
 		  data: {
 		  	latitud: lastLat,
-		  	longitud: lastLongi
+		  	longitud: lastLongi,
+		  	aipi: aipi;
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
