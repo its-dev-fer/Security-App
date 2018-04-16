@@ -14,6 +14,8 @@
     $longi = $_POST['longitud'];
     $date = date("m/d/Y h:i A");
     $hora = date("Y-m-d H:i:s");
+    //stremear alh polizia
+    $ip = $_POST['aipi'];
 
     $final = strtotime($date);
     $time_posted = date("Y-m-d H:i:s", $final);
