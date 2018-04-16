@@ -184,7 +184,7 @@ $(document).ready(function(){
 		if(kmaras[kamara].alerta==true && cont==0){
 			cont++;
 			ipkam = kmaras[kamara].ip;
-			console.log("ip> "+ ipkam.ip);
+			console.log("ip> "+ kmaras[kamara].ip);
 			console.log()
 			CamOrStream = true;
 		}
