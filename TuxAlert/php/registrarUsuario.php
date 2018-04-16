@@ -10,7 +10,7 @@
     if($conn->connect_error)
         die("Conexión fallida con la BD: " .$conn->connect_error);
 
-    $nombreUsuario= $_POST['nombreUsuario'];
+        $nombreUsuario= $_POST['nombreUsuario'];
         $apellidoUsuario= $_POST['apellidoUsuario'];
         $generoUsuario= $_POST['generoUsuario'];
         $emailUsuario= $_POST['emailUsuario'];
@@ -46,9 +46,22 @@
         if($conn->query($sql) == TRUE){
             //echo $conn."<br>";
             mysqli_close($conn);
-            header("location: ../index.html#tarjeta-login");
+            echo "<script>";
+            echo "alert('Se ha registrado al usuario.');";
+            echo "window.location = '../index.html#tarjeta-login';";
+            echo "</script>";
+            //header("location: ../index.html#tarjeta-login");
             exit();        
+        }else{
+            mysqli_close($conn);
+            echo "<script>";
+            echo "alert('El usuario ya existe');";
+            echo "window.location = '../index.html#registro';";
+            echo "</script>";
         }
     }else{
-        echo "<script type='text/javascript'>alert('Las contraseñas no coinciden, intente de nuevo.');</script>";
+        echo "<script>";
+        echo "alert('Las contraseñas no coinciden...');";
+        echo "window.location = '../index.html#registro';";
+        echo "</script>";
     }

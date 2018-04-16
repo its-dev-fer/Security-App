@@ -44,8 +44,10 @@ $servername = "localhost";
 		//ID_TipoUsuario
 		//header("location: http://127.0.0.1/index.html#pantallaPrincipal");
 	}else{
-		header("location: ../index.html#tarjeta-login");
-		echo "<script type='text/javascript>'"."alert('Datos incorrectos');"."</script>";
-	}
-	$conn->close();
-	exit();
+		echo "<script>";
+		echo "alert('Correo o contraseña incorrectos, verifique sus datos.');";
+		echo "window.location = '../index.html#tarjeta-login';";
+		echo "</script>";
+		$conn->close();
+		exit();
+	}	

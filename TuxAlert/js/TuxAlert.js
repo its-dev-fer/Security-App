@@ -33,23 +33,9 @@ $(document).ready(function(){
 		else {
 		  alert("No soportas la función GPS");
 		}
-		/*
-		//navigator.geolocation.getCurrentPosition(GoogleMap, showError);
-		//Borra estop
-		setInterval(function(){
-			navigator.geolocation.getCurrentPosition(function(position) {
-				//do_something(position.coords.latitude, position.coords.longitude);
-				lastLat = position.coords.latitude;
-				alert(lastLat);
-				lastLongi = position.coords.longitude;
-				alert(lastLongi);
-			},error__MAP); 
-		},6000); 
-		*/ 
 	});
 
 	function displayPosition(position) {
-  		alert("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
   		lastLat = position.coords.latitude;
   		lastLongi = position.coords.longitude;
 	}
@@ -257,7 +243,7 @@ $(document).ready(function(){
 
 		rawfile.send(null);//ams
 
-	}
+	});
 
 
 	function showError() {
@@ -276,7 +262,7 @@ $(document).ready(function(){
 	//Validar que el usario esté conectado a internet
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
-  		navigator.app.exitApp();
+  		//navigator.app.exitApp();
  	}
 	
 	$("#btn-1").click(function(e){

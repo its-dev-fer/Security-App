@@ -11,16 +11,17 @@
         die("Conexión fallida con la BD: " .$conn->connect_error);
 
     $nombreUsuario= $_POST['nombreUsuarioSP'];
-        $apellidoUsuario= $_POST['apellidoUsuarioSP'];
-        $generoUsuario= $_POST['generoSP'];
-        $emailUsuario= $_POST['emailUsuarioSP'];
-        $fechaUsuario= $_POST['fechaUsuarioSP'];
-        $numeroUsuario= $_POST['numeroUsuarioSP'];
-        $contraseniaUsuario= $_POST['contraseniaUsuarioSP'];
-        $contraseniaRepetidaUsuario= $_POST['contraseniaRepetidaUsuarioSP'];
-        $passEnc= md5($contraseniaUsuario);
+    $apellidoUsuario= $_POST['apellidoUsuarioSP'];
+    $generoUsuario= $_POST['generoSP'];
+    $emailUsuario= $_POST['emailUsuarioSP'];
+    $fechaUsuario= $_POST['fechaUsuarioSP'];
+    $numeroUsuario= $_POST['numeroUsuarioSP'];
+    $contraseniaUsuario= $_POST['contraseniaUsuarioSP'];
+    $contraseniaRepetidaUsuario= $_POST['contraseniaRepetidaUsuarioSP'];
+    $passEnc= md5($contraseniaUsuario);
+    $passRepEnc = md5($contraseniaRepetidaUsuario);
 
-    if($contraseniaUsuario == $contraseniaRepetidaUsuario){
+    if($passEnc == $passRepEnc){
         $sql= "INSERT INTO usuarios (
             Nombre,
             Apellidos,
@@ -42,17 +43,25 @@
             '1',
             '2'
         )";
-
         if($conn->query($sql) == TRUE){
             //echo $conn."<br>";
             mysqli_close($conn);
-            header("location: ../index.html#tarjeta-login");
+            echo "<script>";
+            echo "alert('Se ha registrado al usuario.');";
+            echo "window.location = '../index.html#tarjeta-login';";
+            echo "</script>";
+            //header("location: ../index.html#tarjeta-login?ok");
             exit();
         }else{
             mysqli_close($conn);
-            header("location: ../index.html#tarjeta-login");
+            header("location: ../index.html#tarjeta-login?=error");
             exit();
         }
     }else{
-        header("location: ../index.html#tarjeta-login");
+        echo "<script>";
+        echo "alert('Las contraseñas no coinciden...');";
+        echo "window.location = '../index.html#registrosp';";
+        echo "</script>";
+        //header("location: ../index.html#registrosp?=noiguales");
+        exit();
     }

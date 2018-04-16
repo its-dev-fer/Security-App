@@ -276,8 +276,8 @@
 				Inicio de sesión
 			</p>
 			<form action="php/validar.php" method="POST" id="form-login" data-ajax="false">
-				<label class="texto-negritas">Nombre de usuario</label>
-				<input name="login_username" type="text" class="text-field-contacto" placeholder="Nombre de usuario" required/>
+				<label class="texto-negritas">Correo electrónico:</label>
+				<input name="login_username" type="email" class="text-field-contacto" placeholder="usuario@dominio.com" required/>
 				<label class="texto-negritas">Contraseña:</label>
 				<input name="login_password" type="password" class="text-field-contacto" placeholder="Contraseña" required/>
 				<br><br>
@@ -630,7 +630,7 @@
 				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuarioSP" type="text" class="text-field-contacto" id="usrnmeSP" placeholder="Ingresa tu(s) nombre(s)" required/>
 				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuarioSP" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
 				Género<span class="dato-Obligatorio">*</span>:
-					<select id="generoSP" name="generoUsuario" required>
+					<select id="generoSP" name="generoSP" required>
 						<option value="masculino" selected>Masculino</option>
 						<option value="femenino">Femenino</option>
 						<option value="otro">Helicóptero de combate</option>
@@ -639,8 +639,8 @@
 				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuarioSP" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
 				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuarioSP" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
 				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuarioSP" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
-				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
-				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuarioSP" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuarioSP" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
 				<input type="submit" name="registarBD" id="button-registrarUsuarioSP" value="Registar">
 			</form>
 		</div>
