@@ -255,7 +255,7 @@ $(document).ready(function(){
 			}
 		}		
 
-		rawfile.send(null);
+		rawfile.send(null);//ams
 
 	}
 
