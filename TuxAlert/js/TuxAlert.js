@@ -195,9 +195,9 @@ $(document).ready(function(){
 	if(CamOrStream){
 		aipi = ipkam;
 	}else{
-		$.getJSON("https://api.ipify.org/?format=json", function(e) {    
+		/*$.getJSON("https://api.ipify.org/?format=json", function(e) {    
     		aipi = e.ip;
-		});
+		});*/
 	}
 
 	//Very important function
@@ -245,7 +245,7 @@ $(document).ready(function(){
 
 	$(document).on( "pageinit", "#streaming-card", function(e) {
 		var rawfile = new XMLHttpRequest();
-		rawfile.open("GET",file,false);
+		rawfile.open("GET","../php/error_og.txt",false);
 		rawfile.onreadystatechange = function(){
 			if(rawFile.readtState === 4){
 				if(rawFile.status === 200 || rawfile.status == 0){
@@ -257,7 +257,7 @@ $(document).ready(function(){
 
 		rawfile.send(null);//ams
 
-	}
+	});
 
 
 	function showError() {
