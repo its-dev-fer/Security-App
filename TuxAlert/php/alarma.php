@@ -19,11 +19,11 @@
 
     $final = strtotime($date);
     $time_posted = date("Y-m-d H:i:s", $final);
-
+/*
     fwrite($myfile, $lat);
     fwrite($myfile, $longi);
     fwrite($myfile, $fecha);
-    fwrite($myfile, $hora);
+    fwrite($myfile, $hora);*/
     fwrite($myfile, $ip);//nomas xd
 
     $sql = "INSERT INTO alertas(Fecha,Hora,Latitud,Longitud) VALUES('$time_posted',NOW(),'$lat','$longi')";

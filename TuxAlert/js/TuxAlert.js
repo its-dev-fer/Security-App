@@ -243,6 +243,23 @@ $(document).ready(function(){
 	}
 
 
+	$(document).on( "pageinit", "#streaming-card", function(e) {
+		var rawfile = new XMLHttpRequest();
+		rawfile.open("GET",file,false);
+		rawfile.onreadystatechange = function(){
+			if(rawFile.readtState === 4){
+				if(rawFile.status === 200 || rawfile.status == 0){
+					var testo = rawfile.responseText;
+					console.log("> "+ testo);
+				}
+			}
+		}		
+
+		rawfile.send(null);
+
+	}
+
+
 	function showError() {
 	  alert("No te pudimos encontrar:(");
 	}
