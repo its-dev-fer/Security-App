@@ -82,7 +82,7 @@ $(document).ready(function(){
 		kmara2:{
 			center:{lat:16.6152431, lng: -93.0897087},
 			alerta: false,
-			ip: "192.1691.0"
+			ip: "192.169.1.0"
 		},
 
 		kmara3:{
@@ -170,7 +170,7 @@ $(document).ready(function(){
 
 	  	 var path = [markers.getPosition(), marker.getPosition()];	  	 
 	  	 distance = Math.ceil(google.maps.geometry.spherical.computeDistanceBetween(path[0], path[1]));	  
-	  	 if(distance<70 ){
+	  	 if(distance<200 ){
 	  	 	console.log("ESTAS CERCA DE UNA KMARA");
 	  	 	kmaras[kamara].alerta = true;
 	  	 	id=i;
