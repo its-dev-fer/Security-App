@@ -263,9 +263,9 @@
 					</select>
 				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuario" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
 				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuario" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
-				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
-				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
-				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuario" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" minlength="10" maxlength="10" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuario" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" minlength="8" maxlength="16" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuario" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" minlength="8" maxlength="16" required/>
 				<input type="submit" name="registarBD" id="button-registrarUsuario" value="Registar">
 			</form>
 		</div>
@@ -443,7 +443,7 @@
 	</div>
 	<!--mapita-->
 	<!-- Div vista de la pagina CONTACTANOS -->
-	<div data-role="page" class="screen" id="page_contact">
+	<div data-role="page" id="page_contact">
 
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
@@ -455,7 +455,7 @@
 			<hr class="linea-separacion">
 			<p class="subtitulo-contacto-2">¿Tienes algún problema o sugerencia?</p>
 			<small class="subtitulo-contacto-3">Descuida, estamos aquí para ayudarte:</small>
-			<form class="" method="post" id="mail_contactanos" action="php/sendMail.php">
+			<form class="" method="post" id="mail_contactanos" action="php/sendMail.php" data-ajax="false">
 
 				<p class="titulo-operaciones-contacto">Asunto: </p> <input type="text" name="asunto" value="" class="text-field-contacto" placeholder="Asunto" required>
 				<p class="titulo-operaciones-contacto">Mensaje: </p> <textarea name="mensaje" rows="8" cols="80" placeholder="Mensaje" class="textAreaContacto" required></textarea>
@@ -576,9 +576,9 @@
 					</select>
 				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuarioSP" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
 				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuarioSP" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
-				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuarioSP" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
-				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuarioSP" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
-				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuarioSP" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuarioSP" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" minlength="10" maxlength="10" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuarioSP" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" minlength="8" maxlength="16" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuarioSP" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" minlength="8" maxlength="16" required/>
 				<input type="submit" name="registarBD" id="button-registrarUsuarioSP" value="Registar">
 			</form>
 		</div>
