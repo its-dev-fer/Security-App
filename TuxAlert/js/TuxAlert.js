@@ -1,6 +1,7 @@
 var lastLat = "1";
 var lastLongi = "2";
 var aipe ="3";
+var textoip=null;
 
 $(document).ready(function(){
 
@@ -106,6 +107,11 @@ $(document).ready(function(){
 			center:{lat:16.6276658,lng:-93.0973038},
 			alerta: false,
 			ip: "192.169.1.0"
+		},
+		kamara7:{
+			center:{lat:16.6246559, lng:-93.09269959999999},
+			alerta:false,
+			ip: "cientonovientaydosekisdé"
 		}
 
 	}
@@ -242,15 +248,22 @@ $(document).ready(function(){
      });
 	}
 
+	var rawfile=null;
+
+	
 
 	$(document).on( "pageinit", "#streaming-card", function(e) {
-		var rawfile = new XMLHttpRequest();
+		console.log("1");
+		rawfile = new XMLHttpRequest();
 		rawfile.open("GET","../php/error_og.txt",false);
 		rawfile.onreadystatechange = function(){
-			if(rawFile.readtState === 4){
-				if(rawFile.status === 200 || rawfile.status == 0){
-					var testo = rawfile.responseText;
-					console.log("> "+ testo);
+			console.log("2");
+			if(rawfile.readyState  === 4){
+				console.log("3");
+				if(rawfile.status === 200 || rawfile.status == 0){
+					textoip = rawfile.responseText;
+					console.log("> "+ textoip);
+					localStorage.setItem("ip", textoip);
 				}
 			}
 		}		
@@ -259,6 +272,13 @@ $(document).ready(function(){
 
 	});
 
+	$(document).on("pageinit","#pantallaPrincipalSP", function(e){
+
+		
+
+		console.log("rezive> "+  localStorage.getItem("ip"));
+		$("#IDBERGAS").attr("src", localStorage.getItem("ip"));
+	});
 
 	function showError() {
 	  alert("No te pudimos encontrar:(");
