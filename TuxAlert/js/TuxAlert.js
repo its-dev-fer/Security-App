@@ -181,6 +181,11 @@ $(document).ready(function(){
 			center:{lat:16.6246559, lng:-93.09269959999999},
 			alerta:false,
 			ip: "cientonovientaydosekisdé"
+		},
+		kamara8:{
+			center:{lat:16.6239199, lng:-93.0926997},
+			alerta:false,
+			ip:"192.168.0.22:80088"
 		}
 
 	}
@@ -324,17 +329,17 @@ $(document).ready(function(){
      });
 	}
 
-<<<<<<< HEAD
+
 	var rawfile=null;
 
 	
-=======
+
 	$(document).on("pageinit","#historial",function(e){
 		e.preventDefault();
 		var data = localStorage.getItem("append","");
 		$("#hereComesTheSunTururu").append(data);
 	});
->>>>>>> eed34a80dfa2637e4795e475139126afcb966198
+
 
 	$(document).on( "pageinit", "#streaming-card", function(e) {
 		console.log("1");
