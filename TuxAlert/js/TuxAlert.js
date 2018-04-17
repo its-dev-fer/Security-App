@@ -4,6 +4,10 @@ var aipe ="3";
 
 $(document).ready(function(){
 
+	$(function () {
+		$("#nav-panel").panel().enhanceWithin();
+		$("[data-role=header], [data-role=footer]").toolbar().enhanceWithin();
+	});
 
 	$tipoUsuario = localStorage.getItem("userMode",null);
 	switch($tipoUsuario){
@@ -234,7 +238,9 @@ $(document).ready(function(){
 			  $divHistorial = $("#hereComesTheSunTururu");
 			  var fecha = new Date().toJSON().slice(0,10).replace(/-/g,'/');
 			  alert(fecha);
-			  $divHistorial.append("<tr><td><li class='historial-item'>Emergencia</li></td>" + "<td><li class='historial-item'>" + fecha + "</li></td></tr>");
+			  var previousData = localStorage.getItem("append","");
+			  var newData = previousData + "<tr><td><li class='historial-item'>Emergencia</li></td>" + "<td><li class='historial-item'>" + fecha + "</li></td></tr>";
+			  localStorage.setItem("append",newData);
 		  },
 		  error: function(XMLHttpRequest, textStatus, errorThrown) {
      			alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
@@ -265,6 +271,11 @@ $(document).ready(function(){
      });
 	}
 
+	$(document).on("pageinit","#historial",function(e){
+		e.preventDefault();
+		var data = localStorage.getItem("append","");
+		$("#hereComesTheSunTururu").append(data);
+	});
 
 	$(document).on( "pageinit", "#streaming-card", function(e) {
 		var rawfile = new XMLHttpRequest();

@@ -21,6 +21,20 @@
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtxMuwsaP5UbC2LVmRE5eimZf8VhMx1J0&libraries=geometry"></script>
 	<script type="text/javascript" src="js/TuxAlert.js"></script>
 
+	<!--	DIV DEL PANEL PARA CIUDADANOS	-->
+	<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+		<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+			<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+			<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+			<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+			<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+			<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
+			<hr class="linea-separacion">
+			<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
+		</ul>
+	</div>
+	<!--	DIV DEL PANEL PARA SP-->
+
 	<!-- Tarjeta de bienvenida 1-->
 	<div id="tarjeta-1" data-role="page" class="bienvenida_1">
 		<br><br> <!-- XD -->
@@ -291,19 +305,10 @@
 
 	<!-- TARJETA ACERCA DE -->
 	<div id="ventana_acerca_de" data-role="page">
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
+		
 
 		<div data-role="header" class="header">
+			<!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>-->
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3>ACERCA DE</h3>
 		</div>
@@ -363,18 +368,7 @@
 	<!-- TARJETA CONFIGURACION -->
 
 	<div id="ventana_configuracion" data-role="page" >
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
-
+		
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 style="margin-left: 80px; margin-right: 40px;">Configuración</h3>
@@ -409,21 +403,8 @@
 
 	<!-- Div de tarjeta de Pantalla Principal -->
 	<div data-role="page" id="pantallaPrincipal" class="ui-responsive-panel">
-
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
-
 		<div data-role="header" class="header">
-			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon ui-alt-icon">Open left panel</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 
@@ -439,19 +420,6 @@
 	<!--mapita-->
 	<!-- Div vista de la pagina CONTACTANOS -->
 	<div data-role="page" class="screen" id="page_contact">
-
-		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
 
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
@@ -480,18 +448,6 @@
 
 
 	<div data-role="page" id="historial">
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
-
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">Historial</h3>
@@ -509,32 +465,7 @@
 				</thead>
 
 				<tbody id="hereComesTheSunTururu">
-					<!-- 
-					<tr>
-						<td>
-							<li class="historial-item">Choque de automóviles</li>
-						</td>
-						<td>
-							<li class="historial-item">07/01/2018</li>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<li class="historial-item">Atropello de peatón</li>
-						</td>
-						<td>
-							<li class="historial-item">14/02/2018</li>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<li class="historial-item">Asalto a mano armada</li>
-						</td>
-						<td>
-							<li class="historial-item">08/03/2018</li>
-						</td>
-					</tr>
-					-->
+				
 				</tbody>
 
 			</table>
@@ -545,17 +476,6 @@
 
 	<!-- Div de FAQ -->
 	<div data-role="page" id="FAQ">
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de"data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">FAQ</h3>
@@ -595,15 +515,6 @@
 
 	<!-- DIV PAGE GEN KEY -->
 	<div data-role="page" id="sp_genKey">
-
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"> <a href="#tvenvivo" data-role="button" data-icon="video" data-theme="b">TV ENVIVO</a> </li>
-				<li class="sm"> <a href="#" data-role="button" data-icon="video" data-theme="b" data-transition="flip">PELÍCULAS</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">SERIES</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Pide tu película</a></li>
-			</ul>
-		</div>
 
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
