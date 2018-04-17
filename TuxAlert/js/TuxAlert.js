@@ -17,12 +17,24 @@ $(document).ready(function(){
 		}
 	}
 
+	//recuperar el correo electrónico del usuario
+	$("#form-login").on("submit",function(){
+		$lastEmail = $("#usr-email").val();
+		localStorage.setItem("email",$lastEmail);
+	});
+
 	 $(document).on( "pageinit", "#pantallaPrincipal", function(e) {
 	 	var options = { enableHighAccuracy: true, maximumAge: 100, timeout: 50000 };
+		e.preventDefault();
 
-   		e.preventDefault();
+		
+		
 		localStorage.setItem("userMode",1);
+
+		/*	Solicitar la ubicación	*/
 		if (navigator.geolocation) {
+		//GoogleMaps para activar el mapa y las cámaras
+		navigator.geolocation.getCurrentPosition(GoogleMap, displayError);
 		  var timeoutVal = 10 * 1000 * 1000;
 		  navigator.geolocation.getCurrentPosition(
 		    displayPosition, 
@@ -33,6 +45,26 @@ $(document).ready(function(){
 		else {
 		  alert("No soportas la función GPS");
 		}
+	});
+
+	$(document).on("pageinit","#pantallaPrincipalSP",function(e){
+
+		e.preventDefault();
+
+		//Recuperar el correo del usuario logueado
+		var rawfile = new XMLHttpRequest();
+		rawfile.open("GET","../php/user_info.txt",false);
+		rawfile.onreadystatechange = function(){
+			if(rawFile.readtState === 4){
+				if(rawFile.status === 200 || rawfile.status == 0){
+					var testo = rawfile.responseText;
+					localStorage.setItem("email",testo);
+				}
+			}
+		}		
+
+		rawfile.send(null);
+
 	});
 
 	function displayPosition(position) {

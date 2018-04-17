@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Lambda Studios">
 	<link rel="manifest" href="/manifest.json">
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -267,7 +268,7 @@
 	<!-- Tarjeta de inicio de sesión -->
 	<div data-role="page" id="tarjeta-login">
 		<div data-role="header" class="header">
-			<a href="#inicio" class="little-button"> Volver</a>
+			<a href="#inicio" class="little-button">Volver</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 
@@ -277,7 +278,7 @@
 			</p>
 			<form action="php/validar.php" method="POST" id="form-login" data-ajax="false">
 				<label class="texto-negritas">Correo electrónico:</label>
-				<input name="login_username" type="email" class="text-field-contacto" placeholder="usuario@dominio.com" required/>
+				<input id="usr-email" name="login_username" type="email" class="text-field-contacto" placeholder="usuario@dominio.com" required/>
 				<label class="texto-negritas">Contraseña:</label>
 				<input name="login_password" type="password" class="text-field-contacto" placeholder="Contraseña" required/>
 				<br><br>

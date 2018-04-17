@@ -1,7 +1,8 @@
 <?php
 /*Validar que los datos sean correctos*/
 session_start();
-$servername = "localhost";
+$myfile = fopen("user_info.txt", "w") or die("Unable to open file!");
+	$servername = "localhost";
 	$username = "root";
 	$passwordBD = "";
 	$dbname = "tuxalert_app_db";
@@ -16,25 +17,39 @@ $servername = "localhost";
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "SELECT * FROM usuarios WHERE Nombre = '$usuario' AND Contrasenia = '$md5ps'";
+	fwrite($myfile, $usuario);
+	fclose($myfile);
+
+	$sql = "SELECT * FROM usuarios WHERE Correo_electronico = '$usuario' AND Contrasenia = '$md5ps'";
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while ($row = $result->fetch_assoc()) {
 			switch ($row['ID_TipoUsuario']) {
 				case 1:{
-					header("location: ../index.html#pantallaPrincipal");	
+					echo "<script>";
+					echo "window.location = '../index.html#pantallaPrincipal';";
+					echo "</script>";
+					//header("location: ../index.html#pantallaPrincipal");	
 					exit();	
 					break;
 				}
 
 				case 2:{
-					header("location: ../index.html#pantallaPrincipalSP");
+					echo "<script>";
+					echo "alert('Correo o contraseña incorrectos, verifique sus datos.');";
+					echo "window.location = '../index.html#tarjeta-login';";
+					echo "</script>";
+					//header("location: ../index.html#pantallaPrincipalSP");
 					exit();
 					break;
 				}
 						
 				default:{
-					header("location: ../index.html#tarjeta-login");
+					echo "<script>";
+					echo "alert('Correo o contraseña incorrectos, verifique sus datos.');";
+					echo "window.location = '../index.html#tarjeta-login';";
+					echo "</script>";
+					//header("location: ../index.html#tarjeta-login");
 					exit();
 					break;
 				}
