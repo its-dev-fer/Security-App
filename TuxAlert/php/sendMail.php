@@ -27,11 +27,11 @@ require("PHPMailer/class.smtp.php");
 		$mail->AltBody  = "Leer";
 		$mail->MsgHTML($body);
 
-		$mail->AddAddress("163189@ids.upchiapas.edu.mx",'');
+		$mail->AddAddress("163202@ids.upchiapas.edu.mx",'');
 		$mail->SMTPAuth = true;
 
-		$mail->Username = "163189@ids.upchiapas.edu.mx";
-		$mail->Password = "TICHATICHA";
+		$mail->Username = "163202@ids.upchiapas.edu.mx";
+		$mail->Password = "pesddya97";
 		if($mail->Send())
 		{
 			$mail->ClearAllRecipients();
