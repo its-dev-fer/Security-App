@@ -194,6 +194,16 @@ $(document).ready(function(){
 			center:{lat:16.6239199, lng:-93.0926997},
 			alerta:false,
 			ip:"192.168.0.22:8888"
+		},
+		kamara9:{
+			center:{lat:16.614673,lng: -93.088961},
+			alerta:false,
+			ip:"tbd"
+		},
+		kamara10:{
+			center:{lat:16.627043928896992,lng:-93.09710889851111},
+			alerta:false,
+			ip:"192.168.0.22:8888"
 		}
 
 	}
@@ -258,7 +268,7 @@ $(document).ready(function(){
 
 	  	 var path = [markers.getPosition(), marker.getPosition()];	  	 
 	  	 distance = Math.ceil(google.maps.geometry.spherical.computeDistanceBetween(path[0], path[1]));	  
-	  	 if(distance<200 ){
+	  	 if(distance<30 ){
 	  	 	console.log("ESTAS CERCA DE UNA KMARA");
 	  	 	kmaras[kamara].alerta = true;
 	  	 	id=i;
@@ -273,6 +283,7 @@ $(document).ready(function(){
 			cont++;
 			ipkam = kmaras[kamara].ip;
 			console.log("ip> "+ kmaras[kamara].ip);
+			localStorage.setItem("ip", ipkam);
 			console.log()
 			CamOrStream = true;
 		}
@@ -295,7 +306,7 @@ $(document).ready(function(){
 		  data: {
 		  	latitud: lastLat,
 		  	longitud: lastLongi,
-		  	aipi: aipi
+		  	aipi: localStorage.getItem("ip")
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
@@ -360,7 +371,7 @@ $(document).ready(function(){
 				if(rawfile.status === 200 || rawfile.status == 0){
 					textoip = rawfile.responseText;
 					console.log("> "+ textoip);
-					localStorage.setItem("ip", textoip);
+					localStorage.setItem("ipoli", textoip);
 				}
 			}
 		}		
@@ -373,8 +384,8 @@ $(document).ready(function(){
 
 		
 
-		console.log("rezive> "+  localStorage.getItem("ip"));
-		$("#IDBERGAS").attr("src", localStorage.getItem("ip"));
+		console.log("rezive> "+  localStorage.getItem("ipoli"));
+		$("#IDBERGAS").attr("src", localStorage.getItem("ipoli"));
 	});
 
 	function showError() {
