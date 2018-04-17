@@ -46,6 +46,14 @@ $(document).ready(function(){
 		location.href = "#inicio";
 	});
 
+	$("#txt-cerrar-sesionSP").click(function(e){
+		e.preventDefault();
+		localStorage.removeItem('userMode');
+		localStorage.removeItem('append');
+		localStorage.removeItem('email');
+		location.href = "#inicio";
+	});
+
 	$(document).on('pageinit','#update-Data',function(e){
 		e.preventDefault();
 		var current_email = localStorage.getItem('email',"");
