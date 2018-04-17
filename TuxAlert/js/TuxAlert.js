@@ -208,15 +208,15 @@ $(document).ready(function(){
 		}
 	}
 	UpdateRecord(id,ipkam);
-}
-
 	if(CamOrStream){
 		aipi = ipkam;
 	}else{
+		aipi = "127.0.0.1";
 		/*$.getJSON("https://api.ipify.org/?format=json", function(e) {    
     		aipi = e.ip;
 		});*/
 	}
+}
 
 	//Very important function
 	$("#btn-alarma").click(function(){
@@ -229,7 +229,12 @@ $(document).ready(function(){
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
-		  	alert("La alarma se ha enviado correctamente.");
+			  alert("La alarma se ha enviado correctamente.");
+			  //registrar en el historial
+			  $divHistorial = $("#hereComesTheSunTururu");
+			  var fecha = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+			  alert(fecha);
+			  $divHistorial.append("<tr><td><li class='historial-item'>Emergencia</li></td>" + "<td><li class='historial-item'>" + fecha + "</li></td></tr>");
 		  },
 		  error: function(XMLHttpRequest, textStatus, errorThrown) {
      			alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
