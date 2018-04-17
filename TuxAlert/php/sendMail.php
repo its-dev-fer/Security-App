@@ -27,17 +27,27 @@ require("PHPMailer/class.smtp.php");
 		$mail->AltBody  = "Leer";
 		$mail->MsgHTML($body);
 
-		$mail->AddAddress("tuxalertcontacto@gmail.com",'');
+		$mail->AddAddress("163189@ids.upchiapas.edu.mx",'');
 		$mail->SMTPAuth = true;
 
-		$mail->Username = "tuxalertcontacto@gmail.com";
-		$mail->Password = "contacto123";
+		$mail->Username = "163189@ids.upchiapas.edu.mx";
+		$mail->Password = "TICHATICHA";
 		if($mail->Send())
 		{
-			return header("Location: #page_contact");
+			$mail->ClearAllRecipients();
+			echo "<script>";
+            echo "alert('El mensaje se ha enviado satisfactoriamente...');";
+            echo "window.location = '../index.html#page_contact';";
+            echo "</script>";
+			//return header("Location: #page_contact");
+			exit();
 		}else
 		{
-			return false;
+			echo "<script>";
+            echo "alert('El mensaje no se pudo enviar...');";
+            echo "window.location = '../index.html#page_contact';";
+            echo "</script>";
+			//return false;
 			die();
 		}
 	}
