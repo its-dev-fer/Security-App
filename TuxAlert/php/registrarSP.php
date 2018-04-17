@@ -19,9 +19,8 @@
     $contraseniaUsuario= $_POST['contraseniaUsuarioSP'];
     $contraseniaRepetidaUsuario= $_POST['contraseniaRepetidaUsuarioSP'];
     $passEnc= md5($contraseniaUsuario);
-    $passRepEnc = md5($contraseniaRepetidaUsuario);
 
-    if($passEnc == $passRepEnc){
+    if($contraseniaUsuario == $contraseniaRepetidaUsuario){
         $sql= "INSERT INTO usuarios (
             Nombre,
             Apellidos,
@@ -54,7 +53,10 @@
             exit();
         }else{
             mysqli_close($conn);
-            header("location: ../index.html#tarjeta-login?=error");
+            echo "<script>";
+            echo "alert('No se ha podido registrado al usuario.');";
+            echo "window.location = '../index.html#tarjeta-login';";
+            echo "</script>";
             exit();
         }
     }else{

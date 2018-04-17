@@ -17,7 +17,7 @@
 
       if($existeClave == true){
         try{
-            $stmt = $con->prepare('UPDATE `keys` SET `estado`=0 WHERE `key`= "'.$claveIngresada.'"');
+            $stmt = $con->prepare('UPDATE `keys` SET `estado`=0 WHERE `clave`= "'.$claveIngresada.'"');
             $stmt->execute();
             header("location: ../index.html#registrosp");
         } catch (PDOException $e) {
