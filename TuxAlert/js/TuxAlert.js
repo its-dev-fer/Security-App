@@ -188,12 +188,12 @@ $(document).ready(function(){
 		kamara7:{
 			center:{lat:16.6246559, lng:-93.09269959999999},
 			alerta:false,
-			ip: "192.168.0.22:8888"
+			ip: "192.168.0.22:8080"
 		},
 		kamara8:{
 			center:{lat:16.6239199, lng:-93.0926997},
 			alerta:false,
-			ip:"192.168.0.22:8888"
+			ip:"192.168.0.22:8080"
 		},
 		kamara9:{
 			center:{lat:16.614673,lng: -93.088961},
@@ -203,7 +203,7 @@ $(document).ready(function(){
 		kamara10:{
 			center:{lat:16.627043928896992,lng:-93.09710889851111},
 			alerta:false,
-			ip:"192.168.0.22:8888"
+			ip:"192.168.0.22:8080"
 		}
 
 	}
@@ -385,7 +385,7 @@ $(document).ready(function(){
 		
 
 		console.log("rezive> "+  localStorage.getItem("ipoli"));
-		$("#IDBERGAS").attr("src", localStorage.getItem("ipoli"));
+		$("#wacheando-kmera").attr("src", "http://"+localStorage.getItem("ipoli")+"/video");
 	});
 
 	function showError() {
