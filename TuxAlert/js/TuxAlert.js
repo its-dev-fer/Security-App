@@ -107,8 +107,8 @@ $(document).ready(function(){
 		var rawfile = new XMLHttpRequest();
 		rawfile.open("GET","../php/user_info.txt",false);
 		rawfile.onreadystatechange = function(){
-			if(rawFile.readtState === 4){
-				if(rawFile.status === 200 || rawfile.status == 0){
+			if(rawfile.readtState === 4){
+				if(rawfile.status === 200 || rawfile.status == 0){
 					var testo = rawfile.responseText;
 					localStorage.setItem("email",testo);
 				}
@@ -185,7 +185,7 @@ $(document).ready(function(){
 		kamara8:{
 			center:{lat:16.6239199, lng:-93.0926997},
 			alerta:false,
-			ip:"192.168.0.22:80088"
+			ip:"192.168.0.22:8888"
 		}
 
 	}
