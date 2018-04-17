@@ -19,10 +19,20 @@
         try{
             $stmt = $con->prepare('UPDATE `keys` SET `estado`=0 WHERE `clave`= "'.$claveIngresada.'"');
             $stmt->execute();
-            header("location: ../index.html#registrosp");
+            //header("location: ../index.html#registrosp");
+            echo "<script>";
+            echo "window.location = '../index.html#verificacionDeUsuario';";
+            echo "</script>";
+            exit();
         } catch (PDOException $e) {
           echo 'Error: '. $e->getMessage();
         }
+      }else{
+        echo "<script>";
+        echo "alert('La clave ingresada no es válida.');";
+        echo "window.location = '../index.html#verificacionDeUsuario';";
+        echo "</script>";
+        exit();
       }
 
       $con = null;
