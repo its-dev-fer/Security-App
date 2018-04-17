@@ -180,7 +180,7 @@ $(document).ready(function(){
 		kamara7:{
 			center:{lat:16.6246559, lng:-93.09269959999999},
 			alerta:false,
-			ip: "cientonovientaydosekisdé"
+			ip: "192.168.0.22:8888"
 		},
 		kamara8:{
 			center:{lat:16.6239199, lng:-93.0926997},
