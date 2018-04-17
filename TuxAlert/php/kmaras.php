@@ -1,10 +1,7 @@
 <?php
 	
-	$var id = @$_POST['id'] ;
-	$var ipkam = @$_POST['ipkam'] ;
+	$id = @$_POST['id'] ;
+	$ipkam = @$_POST['ipkam'] ;
 	echo "jelo wuorl>". $id. " - ".$ipkam;
-
-
-
 
 ?>
