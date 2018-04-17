@@ -387,7 +387,7 @@ $(document).ready(function(){
 		console.log("rezive> "+  localStorage.getItem("ipoli"));
 		$("#wacheando-kmera").attr("src", "http://"+localStorage.getItem("ipoli")+"/video");
 	});
-
+	//comentario para que suba el githubxdxdxd
 	function showError() {
 	  alert("No te pudimos encontrar:(");
 	}
