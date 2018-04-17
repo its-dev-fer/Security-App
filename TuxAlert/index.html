@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta author="Lambda Studios">
 	<link rel="manifest" href="/manifest.json">
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="css/TuxAlert.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -19,6 +20,28 @@
 	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtxMuwsaP5UbC2LVmRE5eimZf8VhMx1J0&libraries=geometry"></script>
 	<script type="text/javascript" src="js/TuxAlert.js"></script>
+
+	<!--	DIV DEL PANEL PARA CIUDADANOS	-->
+	<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
+		<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+			<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
+			<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
+			<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
+			<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
+			<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
+			<hr class="linea-separacion">
+			<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
+		</ul>
+	</div>
+	<!--	DIV DEL PANEL PARA SP-->
+	<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panelSP" data-theme="a">
+		<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
+			<li class="sm"> <a href="#streaming-card" data-rel="close" data-role="button" data-transition="flip" class="fa fa-camera-retro"> Ver camara</a> </li>
+			<li class="sm"> <a href="#" data-rel="close" data-role="button" data-transition="flip" class="fa fa-bell"> Ver alertas</a> </li>
+			<hr class="linea-separacion">
+			<li class="sm"> <a href="#sp_genKey" data-rel="close" data-role="button" data-transition="flip" class="fa fa-key"> Generar KEY</a> </li>
+		</ul>
+	</div>
 
 	<!-- Tarjeta de bienvenida 1-->
 	<div id="tarjeta-1" data-role="page" class="bienvenida_1">
@@ -267,7 +290,7 @@
 	<!-- Tarjeta de inicio de sesión -->
 	<div data-role="page" id="tarjeta-login">
 		<div data-role="header" class="header">
-			<a href="#inicio" class="little-button"> Volver</a>
+			<a href="#inicio" class="little-button">Volver</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 
@@ -276,8 +299,8 @@
 				Inicio de sesión
 			</p>
 			<form action="php/validar.php" method="POST" id="form-login" data-ajax="false">
-				<label class="texto-negritas">Nombre de usuario</label>
-				<input name="login_username" type="text" class="text-field-contacto" placeholder="Nombre de usuario" required/>
+				<label class="texto-negritas">Correo electrónico:</label>
+				<input id="usr-email" name="login_username" type="email" class="text-field-contacto" placeholder="usuario@dominio.com" required/>
 				<label class="texto-negritas">Contraseña:</label>
 				<input name="login_password" type="password" class="text-field-contacto" placeholder="Contraseña" required/>
 				<br><br>
@@ -290,90 +313,71 @@
 
 	<!-- TARJETA ACERCA DE -->
 	<div id="ventana_acerca_de" data-role="page">
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
+		
 
 		<div data-role="header" class="header">
+			<!-- <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>-->
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3>ACERCA DE</h3>
 		</div>
-		<BR>
-			</BR>
-			<div id="acercaFuente">
-				<h5 style="color: red; line-height:normal;"><b>&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;ACERCA DE NOSOTROS</b></h5>
-				<hr style="border-width: 3px;  margin-left: 40px; margin-right: 40px; border-top: 4px solid black;">
-				<strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;Desarrollado por: </strong>
-			</div>
-
 		<div data-role="content">
-			<BR>
-			<BR>
-			<h5><b>&nbsp; &nbsp; ACERCA DE NOSOTROS</b></h5>
-			<strong>&nbsp; &nbsp; Desarrollado por: </strong>
-			<br><br><br>
-
-		    <p> &nbsp; <img class="card-img-top " src="img/Andre.jpg" alt="Card image" style="width:100px; height: 100px; margin-left: 30px; border-radius: 90%; float: left;">
-
-		    		<strong> &nbsp; &nbsp;&nbsp;Carlos André Sanchez M.<br></strong>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sora_69@hotmail.com<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +52 961 114 85 37<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tuxtla Gutiérrez, Chis.
-		    </p><br><br>
-		    <p> &nbsp; <img class="card-img-top " src="img/David.jpg" alt="Card image" style="width:100px; height: 100px; border-radius: 90%; margin-left: 30px; float: left;">
-
-		    		<strong> &nbsp; &nbsp;&nbsp;David Pérez S.<br></strong>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; playeando.97@hotmail.com<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +52 961 38 78 23<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tuxtla Gutiérrez, Chis.
-		    </p><br><br>
-		    <p> &nbsp; <img class="card-img-top " src="img/luis.jpg" alt="Card image" style="width:100px; height: 100px; margin-left: 30px; border-radius: 90%; float: left;">
-
-		    		<strong> &nbsp; &nbsp; &nbsp;Luis Fernando Hérnandez<br></strong>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; fer_itamar@hotmail.com<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +52 961 100 31 41<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Tuxtla Gutiérrez, Chis.
-		    </p><br><br>
-		    <p> &nbsp; <img class="card-img-top " src="img/ramon.jpg" alt="Card image" style="width:100px; height: 100px; margin-left: 30px; border-radius: 90%; float: left;">
-
-		    		<strong> &nbsp; &nbsp; &nbsp;Jose Ramón Palacios<br></strong>
-		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;fer_itamar@hotmail.com<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;+52 966 117 59 91<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;Tonalá, Chis.
-		    </p><br><br>
-		    <p> &nbsp; <img class="card-img-top " src="img/yo_merengues.jpg" alt="Card image" style="width:100px; margin-left: 30px; height: 100px; border-radius: 90%; float: left;">
-
-		    		<strong> &nbsp; &nbsp; &nbsp; Kevin Alejandro Martinez <br></strong>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; kamh.1996.hmak@hotmail.com<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; u n k n o w n<br>
-		    		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Villaflores, Chis.
-		    </p>
+			<div class="contenedor-desarrollador">
+					<img class="card-img-desarrollador" src="img/Andre.jpg" alt="Carlos André">
+					<br>
+					<div class="contenedor-datos-desarrollador">
+						<p>Carlos André Sánchez Malpica</p><br>
+						<p>sora_69@hotmail.com</p><br>
+						<p>+52 961 114 85 37</p><br>
+						<p>Tuxtla Gutiérrez, Chis.</p><br>
+					</div>
+			</div>
+			<div class="contenedor-desarrollador">
+					<img class="card-img-desarrollador" src="img/David.jpg" alt="David">
+					<br>
+					<div class="contenedor-datos-desarrollador">
+						<p>David Pérez Sánchez</p><br>
+						<p>playeando.97@hotmail.com</p><br>
+						<p>+52 961 238 78 23</p><br>
+						<p>Tuxtla Gutiérrez, Chis.</p><br>
+					</div>
+			</div>
+			<div class="contenedor-desarrollador">
+					<img class="card-img-desarrollador" src="img/luis.jpg" alt="Luis Fernando">
+					<br>
+					<div class="contenedor-datos-desarrollador">
+						<p>Luis Fernando Hernández Morales</p><br>
+						<p>163189@ids.upchiapas.edu.mx</p><br>
+						<p>+52 961 100 31 41</p><br>
+						<p>Tuxtla Gutiérrez, Chis.</p><br>
+					</div>
+			</div>
+			<div class="contenedor-desarrollador">
+					<img class="card-img-desarrollador" src="img/ramon.jpg" alt="José Ramón">
+					<br>
+					<div class="contenedor-datos-desarrollador">
+						<p>Jose Ramón Palacios</p><br>
+						<p>---</p><br>
+						<p>+52 966 117 59 91</p><br>
+						<p>Tonalá, Chis.</p><br>
+					</div>
+			</div>
+			<div class="contenedor-desarrollador">
+					<img class="card-img-desarrollador" src="img/yo_merengues.jpg" alt="Kevin">
+					<br>
+					<div class="contenedor-datos-desarrollador">
+						<p>Kevin Alejandro Martinez</p><br>
+						<p>kamh.1996.hmak@hotmail.com</p><br>
+						<p>Sin número</p><br>
+						<p>Villaflores, Chis.</p><br>
+					</div>
+			</div>
 		</div>
 	</div>
 
 	<!-- TARJETA CONFIGURACION -->
 
 	<div id="ventana_configuracion" data-role="page" >
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
-
+		
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 style="margin-left: 80px; margin-right: 40px;">Configuración</h3>
@@ -383,24 +387,16 @@
 
 
 		<div data-role="content">
-			<div style="margin-left: 50px">
+			<div class="contenedor-desarrollador">
 				<h4><b>Cuenta de Usuario</b></h4>
-				<hr style="border-top: 4px solid black; margin-right: 80px">
-				<div style="margin-left: 40px"><br>
-					información<br><br>
-					Actualizar Datos<br><br>
-					<strong>Eliminar Cuenta</strong>
+				<hr class="linea-separacion">
+				<br>
+				<div class="contenedor-datos-desarrollador">
+					<button id="cambiar-informacion">Actualizar datos</button><br>
+					<button id="txt-cerrar-sesion">Cerrar sesión</button><br>
+					<button id="eliminar-cuenta" class="danger-txt">Eliminar mi cuenta</button><br>
 				</div>
-				<br><br>
-
-				<h4><b>Aplicación </b></h4>
-				<hr style="border-top: 4px solid black; margin-right: 80px">
-				<div style="margin-left: 40px">
-					<strong>Versión: </strong>1.0<br><br>
-					<strong>Fecha: </strong>12 de marzo
-
-					</div>
-					</div>
+			</div>
 		</div>
 	</div>
 
@@ -408,21 +404,8 @@
 
 	<!-- Div de tarjeta de Pantalla Principal -->
 	<div data-role="page" id="pantallaPrincipal" class="ui-responsive-panel">
-
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
-
 		<div data-role="header" class="header">
-			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			<a href="#nav-panel" data-icon="bars" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-nodisc-icon ui-alt-icon">Open left panel</a>
 			<h3 class="red-text">TuxAlert</h3>
 		</div>
 
@@ -438,19 +421,6 @@
 	<!--mapita-->
 	<!-- Div vista de la pagina CONTACTANOS -->
 	<div data-role="page" class="screen" id="page_contact">
-
-		<!-- panel COPIA Y PEGA ESTO EN LA PÁGINA PRINCIPAL PARA ABRIR EL MENÚ-->
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
 
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
@@ -479,18 +449,6 @@
 
 
 	<div data-role="page" id="historial">
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
-
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">Historial</h3>
@@ -507,31 +465,8 @@
 					</tr>
 				</thead>
 
-				<tbody>
-					<tr>
-						<td>
-							<li class="historial-item">Choque de automóviles</li>
-						</td>
-						<td>
-							<li class="historial-item">07/01/2018</li>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<li class="historial-item">Atropello de peatón</li>
-						</td>
-						<td>
-							<li class="historial-item">14/02/2018</li>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<li class="historial-item">Asalto a mano armada</li>
-						</td>
-						<td>
-							<li class="historial-item">08/03/2018</li>
-						</td>
-					</tr>
+				<tbody id="hereComesTheSunTururu">
+				
 				</tbody>
 
 			</table>
@@ -542,17 +477,6 @@
 
 	<!-- Div de FAQ -->
 	<div data-role="page" id="FAQ">
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-home"> Inicio</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-address-book"> Historial</a> </li>
-				<li class="sm"> <a href="#FAQ" data-rel="close" data-role="button" data-transition="flip" class="fa fa-question"> FAQ</a> </li>
-				<li class="sm"> <a href="#page_contact" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-comment"> Contáctenos</a></li>
-				<li class="sm"> <a href="#ventana_acerca_de"data-rel="close" data-role="button" data-transition="flip" class="	fa fa-info"> Acerca de</a></li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#ventana_configuracion" data-rel="close" data-role="button" data-transition="flip" class="	fa fa-cogs"> Configuración</a></li>
-			</ul>
-		</div>
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">FAQ</h3>
@@ -593,15 +517,6 @@
 	<!-- DIV PAGE GEN KEY -->
 	<div data-role="page" id="sp_genKey">
 
-		<div data-role="panel" class="ui-panel" id="menu-panel" data-position="left" data-display="overlay">
-			<ul>
-				<li class="sm"> <a href="#tvenvivo" data-role="button" data-icon="video" data-theme="b">TV ENVIVO</a> </li>
-				<li class="sm"> <a href="#" data-role="button" data-icon="video" data-theme="b" data-transition="flip">PELÍCULAS</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">SERIES</a> </li>
-				<li class="sm"> <a href="#" data-role="button"data-icon="video" data-theme="b" data-transition="flip">Pide tu película</a></li>
-			</ul>
-		</div>
-
 		<div data-role="header" class="header">
 			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-text">Generar Clave</h3>
@@ -630,7 +545,7 @@
 				Nombre<span class="dato-Obligatorio">*</span>: <input name="nombreUsuarioSP" type="text" class="text-field-contacto" id="usrnmeSP" placeholder="Ingresa tu(s) nombre(s)" required/>
 				Apellidos<span class="dato-Obligatorio">*</span>: <input name="apellidoUsuarioSP" type="text" class="text-field-contacto" placeholder="Ingresa tus Apellidos" required/>
 				Género<span class="dato-Obligatorio">*</span>:
-					<select id="generoSP" name="generoUsuario" required>
+					<select id="generoSP" name="generoSP" required>
 						<option value="masculino" selected>Masculino</option>
 						<option value="femenino">Femenino</option>
 						<option value="otro">Helicóptero de combate</option>
@@ -639,8 +554,8 @@
 				Correo Electrónico<span class="dato-Obligatorio">*</span>: <input name="emailUsuarioSP" type="email" class="text-field-contacto" placeholder="Ingresa tu Email que más usas" required/>
 				Fecha de Nacimiento<span class="dato-Obligatorio">*</span>: <input name="fechaUsuarioSP" type="date" class="text-field-contacto" placeholder="Ingresa tu fecha de nacimiento" required/>
 				Teléfono<span class="dato-Obligatorio">*</span>: <input name="numeroUsuarioSP" type="number" class="text-field-contacto" placeholder="Ingresa tu número de celular personal" required/>
-				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuario" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
-				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuario" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
+				Contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaUsuarioSP" name="contraseniaUsuarioSP" type="password" class="text-field-contacto" placeholder="Ingresa una contraseña segura" required/>
+				Repetir contraseña<span class="dato-Obligatorio">*</span>: <input id="contraseniaRepetidaUsuarioSP" name="contraseniaRepetidaUsuarioSP" type="password" class="text-field-contacto" placeholder="Repite la contraseña de arriba" required/>
 				<input type="submit" name="registarBD" id="button-registrarUsuarioSP" value="Registar">
 			</form>
 		</div>
@@ -648,22 +563,32 @@
 
 	<!-- DIV de la vista para los agentes de seguridad pública -->
 	<div data-role="page" id="pantallaPrincipalSP">
-		<div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="nav-panel" data-theme="a">
-			<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin:-16px;">
-				<li class="sm"> <a href="#pantallaPrincipal" data-rel="close" data-role="button" data-transition="flip" class="fa fa-camera-retro"> Ver camara</a> </li>
-				<li class="sm"> <a href="#historial" data-rel="close" data-role="button" data-transition="flip" class="fa fa-bell"> Ver alertas</a> </li>
-				<hr class="linea-separacion">
-				<li class="sm"> <a href="#sp_genKey" data-rel="close" data-role="button" data-transition="flip" class="fa fa-key"> Generar KEY</a> </li>
-			</ul>
-		</div>
-
 		<div data-role="header" class="header">
-			<a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+			<a href="#nav-panelSP" data-icon="bars" data-iconpos="notext">Menu</a>
 			<h3 class="red-tex">Seguridad pública</h3>
 		</div>
 
 		<div data-role="content" id="contenedor-alarmas-nuevas">
 			<img id="IDBERGAS" src=""/>
+		</div>
+	</div>
+
+	<div data-role="page" id="update-Data">
+		<div data-role="header" class="header">
+			<h3 class="red-tex">Actualizar mis datos</h3>
+		</div>
+		<div data-role="content">
+			<form method="POST" action="php/actualizar.php" id="update-my-data" data-ajax="false">
+				Correo electrónico:
+				<input type="email" id="current-email" name="email" readonly><br>
+				Nombre:
+				<input type="text" name="nuevo-nombre" placeholder="Nuevo(s) nombre(s)" required><br>
+				Apellidos:
+				<input type="text" name="nuevo-apellidos" placeholder="Nuevos apellidos" required><br>
+				Nuevo número:
+				<input type="number" name="nuevo-numero" placeholder="Nuevo número" required><br>
+				<input type="submit" value="Actualizar mis datos">
+			</form>
 		</div>
 	</div>
 

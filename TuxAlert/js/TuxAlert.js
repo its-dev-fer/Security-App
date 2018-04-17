@@ -5,6 +5,57 @@ var textoip=null;
 
 $(document).ready(function(){
 
+	$("#eliminar-cuenta").on('click',function(e){
+		e.preventDefault();
+		var result = confirm("*** Atención ***\n¿Está seguro de eliminar su cuenta?\nNo la podrá recuperar después.");
+		if(result == true){
+			var _email = localStorage.getItem('email',"");
+			$.ajax({
+				type: "POST",
+				data: {
+					email: _email
+				},
+				url: "../php/delete.php",
+				success: function(){
+					alert("Su cuenta se ha eliminado de nuestros sistemas.");
+					localStorage.removeItem('userMode');
+					localStorage.removeItem('append');
+					localStorage.removeItem('email');
+					location.href = "#inicio";
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
+				}
+			});
+		}else{
+			alert("Operación cancelada.");
+		}
+	});
+
+	$(function () {
+		$("#nav-panel").panel().enhanceWithin();
+		$("#nav-panelSP").panel().enhanceWithin();
+		$("[data-role=header], [data-role=footer]").toolbar().enhanceWithin();
+	});
+
+	$("#txt-cerrar-sesion").click(function(e){
+		e.preventDefault();
+		localStorage.removeItem('userMode');
+		localStorage.removeItem('append');
+		localStorage.removeItem('email');
+		location.href = "#inicio";
+	});
+
+	$(document).on('pageinit','#update-Data',function(e){
+		e.preventDefault();
+		var current_email = localStorage.getItem('email',"");
+		$("#current-email").val(current_email);
+	});
+
+	$("#cambiar-informacion").click(function(e){
+		e.preventDefault();
+		location.href = "#update-Data";
+	});
 
 	$tipoUsuario = localStorage.getItem("userMode",null);
 	switch($tipoUsuario){
@@ -18,12 +69,24 @@ $(document).ready(function(){
 		}
 	}
 
+	//recuperar el correo electrónico del usuario
+	$("#form-login").on("submit",function(){
+		$lastEmail = $("#usr-email").val();
+		localStorage.setItem("email",$lastEmail);
+	});
+
 	 $(document).on( "pageinit", "#pantallaPrincipal", function(e) {
 	 	var options = { enableHighAccuracy: true, maximumAge: 100, timeout: 50000 };
+		e.preventDefault();
 
-   		e.preventDefault();
+		
+		
 		localStorage.setItem("userMode",1);
+
+		/*	Solicitar la ubicación	*/
 		if (navigator.geolocation) {
+		//GoogleMaps para activar el mapa y las cámaras
+		navigator.geolocation.getCurrentPosition(GoogleMap, displayError);
 		  var timeoutVal = 10 * 1000 * 1000;
 		  navigator.geolocation.getCurrentPosition(
 		    displayPosition, 
@@ -34,23 +97,29 @@ $(document).ready(function(){
 		else {
 		  alert("No soportas la función GPS");
 		}
-		/*
-		//navigator.geolocation.getCurrentPosition(GoogleMap, showError);
-		//Borra estop
-		setInterval(function(){
-			navigator.geolocation.getCurrentPosition(function(position) {
-				//do_something(position.coords.latitude, position.coords.longitude);
-				lastLat = position.coords.latitude;
-				alert(lastLat);
-				lastLongi = position.coords.longitude;
-				alert(lastLongi);
-			},error__MAP); 
-		},6000); 
-		*/ 
+	});
+
+	$(document).on("pageinit","#pantallaPrincipalSP",function(e){
+
+		e.preventDefault();
+
+		//Recuperar el correo del usuario logueado
+		var rawfile = new XMLHttpRequest();
+		rawfile.open("GET","../php/user_info.txt",false);
+		rawfile.onreadystatechange = function(){
+			if(rawFile.readtState === 4){
+				if(rawFile.status === 200 || rawfile.status == 0){
+					var testo = rawfile.responseText;
+					localStorage.setItem("email",testo);
+				}
+			}
+		}		
+
+		rawfile.send(null);
+
 	});
 
 	function displayPosition(position) {
-  		alert("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
   		lastLat = position.coords.latitude;
   		lastLongi = position.coords.longitude;
 	}
@@ -196,15 +265,15 @@ $(document).ready(function(){
 		}
 	}
 	UpdateRecord(id,ipkam);
-}
-
 	if(CamOrStream){
 		aipi = ipkam;
 	}else{
+		aipi = "127.0.0.1";
 		/*$.getJSON("https://api.ipify.org/?format=json", function(e) {    
     		aipi = e.ip;
 		});*/
 	}
+}
 
 	//Very important function
 	$("#btn-alarma").click(function(){
@@ -217,7 +286,14 @@ $(document).ready(function(){
 		  },
 		  url: "../php/alarma.php",
 		  success: function(){
-		  	alert("La alarma se ha enviado correctamente.");
+			  alert("La alarma se ha enviado correctamente.");
+			  //registrar en el historial
+			  $divHistorial = $("#hereComesTheSunTururu");
+			  var fecha = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+			  alert(fecha);
+			  var previousData = localStorage.getItem("append","");
+			  var newData = previousData + "<tr><td><li class='historial-item'>Emergencia</li></td>" + "<td><li class='historial-item'>" + fecha + "</li></td></tr>";
+			  localStorage.setItem("append",newData);
 		  },
 		  error: function(XMLHttpRequest, textStatus, errorThrown) {
      			alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
@@ -248,9 +324,17 @@ $(document).ready(function(){
      });
 	}
 
+<<<<<<< HEAD
 	var rawfile=null;
 
 	
+=======
+	$(document).on("pageinit","#historial",function(e){
+		e.preventDefault();
+		var data = localStorage.getItem("append","");
+		$("#hereComesTheSunTururu").append(data);
+	});
+>>>>>>> eed34a80dfa2637e4795e475139126afcb966198
 
 	$(document).on( "pageinit", "#streaming-card", function(e) {
 		console.log("1");
@@ -296,7 +380,7 @@ $(document).ready(function(){
 	//Validar que el usario esté conectado a internet
 	if(!navigator.onLine){
 	  	alert('Necesitamos conexión a Internet para ofrecerte nuestro servicio :c');
-  		navigator.app.exitApp();
+  		//navigator.app.exitApp();
  	}
 	
 	$("#btn-1").click(function(e){
