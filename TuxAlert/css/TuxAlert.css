@@ -532,3 +532,36 @@ input{
 	height: auto !important;
 	box-shadow:0px 8px 23px #807978 !important;
 }
+
+.contenedor-desarrollador{
+	width: 100%;
+	display: block;
+}
+
+.card-img-desarrollador{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	width: 20em;
+	height: 20em;
+	border-radius: 50%;
+	text-align: center;
+	margin-top: 2em;
+}
+
+.contenedor-desarrollador{
+	background-color: rgb(232, 232, 232) !important;
+	border: solid 0.3px black;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Myriad';
+	margin-top: 2em;
+	-webkit-box-shadow: 0px 28px 78px -23px rgba(122,122,122,0.77);
+	-moz-box-shadow: 0px 28px 78px -23px rgba(122,122,122,0.77);
+	box-shadow: 0px 28px 78px -23px rgba(122,122,122,0.77);
+	border-radius: 2%;
+}
+
+.danger-txt{
+	color: var(--fondo-tarjeta-1);
+}

@@ -4,9 +4,56 @@ var aipe ="3";
 
 $(document).ready(function(){
 
+	$("#eliminar-cuenta").on('click',function(e){
+		e.preventDefault();
+		var result = confirm("*** Atención ***\n¿Está seguro de eliminar su cuenta?\nNo la podrá recuperar después.");
+		if(result == true){
+			var _email = localStorage.getItem('email',"");
+			$.ajax({
+				type: "POST",
+				data: {
+					email: _email
+				},
+				url: "../php/delete.php",
+				success: function(){
+					alert("Su cuenta se ha eliminado de nuestros sistemas.");
+					localStorage.removeItem('userMode');
+					localStorage.removeItem('append');
+					localStorage.removeItem('email');
+					location.href = "#inicio";
+				},
+				error: function(XMLHttpRequest, textStatus, errorThrown) {
+					alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
+				}
+			});
+		}else{
+			alert("Operación cancelada.");
+		}
+	});
+
 	$(function () {
 		$("#nav-panel").panel().enhanceWithin();
+		$("#nav-panelSP").panel().enhanceWithin();
 		$("[data-role=header], [data-role=footer]").toolbar().enhanceWithin();
+	});
+
+	$("#txt-cerrar-sesion").click(function(e){
+		e.preventDefault();
+		localStorage.removeItem('userMode');
+		localStorage.removeItem('append');
+		localStorage.removeItem('email');
+		location.href = "#inicio";
+	});
+
+	$(document).on('pageinit','#update-Data',function(e){
+		e.preventDefault();
+		var current_email = localStorage.getItem('email',"");
+		$("#current-email").val(current_email);
+	});
+
+	$("#cambiar-informacion").click(function(e){
+		e.preventDefault();
+		location.href = "#update-Data";
 	});
 
 	$tipoUsuario = localStorage.getItem("userMode",null);
