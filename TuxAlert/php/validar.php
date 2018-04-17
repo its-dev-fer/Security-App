@@ -38,8 +38,7 @@ $myfile = fopen("user_info.txt", "w") or die("Unable to open file!");
 	
 					case 2:{
 						echo "<script>";
-						echo "alert('Correo o contraseña incorrectos, verifique sus datos.');";
-						echo "window.location = '../index.html#tarjeta-login';";
+						echo "window.location = '../index.html#pantallaPrincipalSP';";
 						echo "</script>";
 						//header("location: ../index.html#pantallaPrincipalSP");
 						exit();
