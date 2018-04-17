@@ -30,6 +30,7 @@
     fwrite($myfile, $conn->error);
     fclose($myfile);
 
+    
 
     if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
