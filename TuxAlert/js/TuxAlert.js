@@ -160,7 +160,7 @@ $(document).ready(function(){
 		kmara2:{
 			center:{lat:16.6152431, lng: -93.0897087},
 			alerta: false,
-			ip: "192.169.1.0"
+			ip: "192.168.43.137:8080"
 		},
 
 		kmara3:{
@@ -193,12 +193,12 @@ $(document).ready(function(){
 		kamara8:{
 			center:{lat:16.6239199, lng:-93.0926997},
 			alerta:false,
-			ip:"192.168.0.22:8080"
+			ip:"192.168.43.137:8080"
 		},
 		kamara9:{
 			center:{lat:16.614673,lng: -93.088961},
 			alerta:false,
-			ip:"tbd"
+			ip:"192.168.43.137:8080"
 		},
 		kamara10:{
 			center:{lat:16.627043928896992,lng:-93.09710889851111},
@@ -268,7 +268,7 @@ $(document).ready(function(){
 
 	  	 var path = [markers.getPosition(), marker.getPosition()];	  	 
 	  	 distance = Math.ceil(google.maps.geometry.spherical.computeDistanceBetween(path[0], path[1]));	  
-	  	 if(distance<30 ){
+	  	 if(distance<55 ){
 	  	 	console.log("ESTAS CERCA DE UNA KMARA");
 	  	 	kmaras[kamara].alerta = true;
 	  	 	id=i;
@@ -314,10 +314,10 @@ $(document).ready(function(){
 			  //registrar en el historial
 			  $divHistorial = $("#hereComesTheSunTururu");
 			  var fecha = new Date().toJSON().slice(0,10).replace(/-/g,'/');
-			  alert(fecha);
 			  var previousData = localStorage.getItem("append","");
 			  var newData = previousData + "<tr><td><li class='historial-item'>Emergencia</li></td>" + "<td><li class='historial-item'>" + fecha + "</li></td></tr>";
 			  localStorage.setItem("append",newData);
+			  location.href="#mapaVista";
 		  },
 		  error: function(XMLHttpRequest, textStatus, errorThrown) {
      			alert("No se pudo enviar :''v " + XMLHttpRequest + " " + textStatus + " " + errorThrown);
@@ -346,9 +346,8 @@ $(document).ready(function(){
          //alert("Record successfully updated...");
        }
      });
-	}
 
-
+}
 	var rawfile=null;
 
 	
@@ -361,7 +360,13 @@ $(document).ready(function(){
 
 
 	$(document).on( "pageinit", "#streaming-card", function(e) {
-		console.log("1");
+		
+
+	});
+
+	$(document).on("pageinit","#pantallaPrincipalSP", function(e){
+
+		console.log("========");
 		rawfile = new XMLHttpRequest();
 		rawfile.open("GET","../php/error_og.txt",false);
 		rawfile.onreadystatechange = function(){
@@ -378,11 +383,7 @@ $(document).ready(function(){
 
 		rawfile.send(null);//ams
 
-	});
 
-	$(document).on("pageinit","#pantallaPrincipalSP", function(e){
-
-		
 
 		console.log("rezive> "+  localStorage.getItem("ipoli"));
 		$("#wacheando-kmera").attr("src", "http://"+localStorage.getItem("ipoli")+"/video");
